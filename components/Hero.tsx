@@ -103,7 +103,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-xl text-gray-600 mb-8 leading-relaxed"
             >
-              a software engineer who loves improving life, through technology.
+              a <strong>software engineer</strong> who loves using technology to make life simpler and more enjoyable.
             </motion.p>
             <motion.div 
               variants={itemVariants}
@@ -125,7 +125,10 @@ export default function Hero() {
                 Get in Touch
               </motion.a>
               <motion.a
-                href="#resume"
+                href="/resume/ngo-hai-van-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
                 whileHover={{ 
                   scale: 1.05, 
                   x: 5,

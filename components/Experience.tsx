@@ -6,23 +6,43 @@ export default function Experience() {
   const experiences = [
     {
       company: 'Onehousing',
-      position: 'Full-Stack Web Developer & Hybrid Mobile App Developer',
-      period: '2/2025 - Hiện tại',
+      position: 'Full-Stack Web & Hybrid Mobile Developer',
+      period: 'Feb 2025 - Present',
+      details: [
+        'Owns the HRM & AI callbot platform covering Flask APIs, RBAC, and WebSocket notifications.',
+        'Builds a Next.js dashboard (SSR) plus Flutter mobile apps that handle check-in and workflow updates.',
+        'Automates CI/CD with Docker + GitHub Actions and monitors production workloads on Linux VPS environments.',
+      ],
     },
     {
       company: 'EPOSO AI',
-      position: 'FullStack Developer (Remote)',
-      period: '11/2024 - 1/2025',
+      position: 'Full-Stack Developer (Remote)',
+      period: 'Nov 2024 - Jan 2025',
+      details: [
+        'Delivered the Energy Simulator web app that calculates cost savings for new HVAC models.',
+        'Partnered with distributed teams to shape UX flows, Nest.js APIs, and Redux Toolkit state.',
+        'Packaged the solution with Docker to guarantee parity from local development to production demos.',
+      ],
     },
     {
       company: 'OpenWay Vietnam',
       position: 'Associate Implementation Engineer',
-      period: '7/2024 - 11/2024',
+      period: 'Jul 2024 - Nov 2024',
+      details: [
+        'Integrated Way4 ATM flows for withdraw, balance inquiry, and fund transfers across test → prod environments.',
+        'Mapped ISO-like routing between core banking services and Way4, ensuring compliance and resilience.',
+        'Accelerated incident resolution by ≈45% through improved transaction log tracing and documentation.',
+      ],
     },
     {
       company: 'OpenWay Vietnam',
-      position: 'Frontend Web Developer & Hybrid Mobile App Developer',
-      period: '10/2022 - 7/2024',
+      position: 'Frontend Web & Hybrid Mobile Developer',
+      period: 'Oct 2022 - Jul 2024',
+      details: [
+        'Developed banking mobile apps and admin portals using React, React Native, Flutter, and Next.js.',
+        'Implemented reusable UI components for card management, transaction history, and role-based admin controls.',
+        'Collaborated with backend, QA, and product stakeholders to optimize GraphQL integrations and performance.',
+      ],
     },
   ]
 
@@ -80,9 +100,7 @@ export default function Experience() {
           }}
           className="text-lg text-gray-600 mb-8 max-w-3xl"
         >
-          I have a diverse background in software development, having worked with various technologies 
-          and frameworks. My experience includes both front-end and back-end development, mobile app 
-          development, as well as payment solution engineering.
+          3+ years shipping full-stack web platforms, hybrid mobile apps, and payment solutions across startups and enterprise-scale teams.
         </motion.p>
         <motion.div 
           className="space-y-6"
@@ -127,9 +145,14 @@ export default function Experience() {
                   {exp.period}
                 </span>
               </div>
-              <p className="text-gray-700">
+              <p className="text-gray-700 font-medium mb-3">
                 {exp.position}
               </p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-600">
+                {exp.details.map((detail, detailIndex) => (
+                  <li key={detailIndex}>{detail}</li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>

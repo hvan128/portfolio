@@ -6,37 +6,61 @@ export default function Projects() {
   const projects = [
     {
       name: 'HRM & Work Management + AI Callbot System',
-      period: '2/2025 - Hiện tại',
+      period: 'Feb 2025 - Present',
       role: 'Full-Stack Developer',
-      summary: 'Hệ thống chuyển đổi số toàn diện cho nhân viên nội bộ: HRM, quản lý công việc/tác vụ, workflow, AI callbot outbound.',
+      summary: 'All-in-one digital transformation platform for internal staff, workflows, and outbound AI callbots.',
+      highlights: [
+        'Designed a Flask REST API with authentication, RBAC, and WebSocket-driven updates.',
+        'Built a Next.js SSR dashboard plus a Flutter mobile app (Provider/Riverpod) for check-in and task updates.',
+        'Containerized and automated deployments with Docker + GitHub Actions and instrumented monitoring on a Linux VPS.',
+      ],
       tech: ['Flask', 'Next.js', 'Flutter', 'WebSocket', 'Docker', 'GitHub Actions'],
     },
     {
       name: 'Automotive Service Platform',
-      period: '5/2025 - Hiện tại',
+      period: 'May 2025 - Present',
       role: 'Mobile App Developer (Flutter)',
-      summary: 'Nền tảng kết nối chủ xe với các garage địa phương để đặt lịch sửa chữa, bảo dưỡng và quản lý lịch sử xe.',
+      summary: 'Two-sided marketplace that connects vehicle owners with garages for booking, servicing, and history tracking.',
+      highlights: [
+        'Implemented Clean Architecture with Riverpod to keep feature modules scalable.',
+        'Shipped booking workflows, quotation requests, notifications, and responsive UI for owners and garages.',
+        'Integrated REST APIs, Firebase Cloud Messaging, and automated CI/CD pipelines with GitHub Actions + Fastlane.',
+      ],
       tech: ['Flutter', 'Firebase', 'Fastlane', 'GitHub Actions', 'REST API'],
     },
     {
       name: 'Energy Simulator',
-      period: '11/2024 - 1/2025',
+      period: 'Nov 2024 - Jan 2025',
       role: 'Full-Stack Developer',
-      summary: 'Công cụ web giúp người dùng phân tích hiệu quả năng lượng, tiết kiệm chi phí dự kiến và thời gian hoàn vốn khi chuyển sang mô hình điều hòa mới.',
+      summary: 'Web tool that calculates energy efficiency, savings, and payback when switching air-conditioner models.',
+      highlights: [
+        'Delivered a responsive Next.js + Tailwind UI with real-time energy calculations from backend formulas.',
+        'Synced data with Nest.js services, MySQL, and Redux Toolkit for consistent multi-device state.',
+        'Packaged the app via Docker for reproducible deployments used by remote sales teams.',
+      ],
       tech: ['Next.js', 'Tailwind CSS', 'Redux Toolkit', 'Nest.js', 'MySQL', 'Docker'],
     },
     {
       name: 'Way4 ATM Payment Integration',
-      period: '7/2024 - 11/2024',
+      period: 'Jul 2024 - Nov 2024',
       role: 'Associate Implementation Engineer',
-      summary: 'Tích hợp và cấu hình luồng giao dịch ATM: Rút tiền, kiểm tra số dư, chuyển khoản.',
+      summary: 'Integration of ATM transaction flows across withdraw, balance inquiry, and fund transfer scenarios.',
+      highlights: [
+        'Configured ISO-like routing between core banking services and the Way4 platform.',
+        'Traced financial logs to cut issue isolation time by ~45% and ensured compliance across environments.',
+      ],
       tech: ['Way4 platform', 'Oracle', 'PL/SQL'],
     },
     {
       name: 'Banking App & Admin Portal',
-      period: '10/2022 - 4/2024',
-      role: 'FE & Mobile Developer',
-      summary: 'Ứng dụng ngân hàng di động và cổng quản trị cho hoạt động thanh toán: Quản lý thẻ, lịch sử giao dịch, cấu hình admin theo vai trò.',
+      period: 'Oct 2022 - Apr 2024',
+      role: 'Frontend & Mobile Developer',
+      summary: 'Omni-channel banking experience covering mobile apps and admin portal for payment operations.',
+      highlights: [
+        'Built reusable UI modules for card management, transaction history, and role-based admin settings.',
+        'Delivered React, React Native, and Flutter experiences that reduced re-render overhead and sped up prototypes.',
+        'Partnered closely with backend and QA teams to optimize GraphQL interactions and user flows.',
+      ],
       tech: ['React', 'React Native', 'Flutter', 'Next.js', 'GraphQL'],
     },
   ]
@@ -166,6 +190,13 @@ export default function Projects() {
                   {project.role}
                 </p>
                 <p className="text-gray-700 mb-4">{project.summary}</p>
+                {project.highlights && (
+                  <ul className="list-disc pl-5 text-gray-600 space-y-2 mb-4">
+                    {project.highlights.map((highlight, highlightIndex) => (
+                      <li key={highlightIndex}>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
                 <motion.div 
                   className="flex flex-wrap gap-2"
                   variants={techTagsContainerVariants}

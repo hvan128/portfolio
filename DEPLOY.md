@@ -4,7 +4,7 @@ Hướng dẫn chi tiết để deploy project Next.js lên VPS với CI/CD tự
 
 ## 📋 Yêu cầu
 
-- VPS với Ubuntu/Debian
+- VPS với Ubuntu/Debian hoặc CentOS/RHEL
 - Node.js 20+ đã được cài đặt
 - PM2 đã được cài đặt
 - Nginx đã được cài đặt (cho reverse proxy)
@@ -15,12 +15,23 @@ Hướng dẫn chi tiết để deploy project Next.js lên VPS với CI/CD tự
 
 ### 1.1. Cài đặt Node.js
 
+#### Ubuntu/Debian
+
 ```bash
-# Cài đặt Node.js 20
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
+```
 
-# Kiểm tra version
+#### CentOS/RHEL
+
+```bash
+sudo dnf install -y curl
+curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+sudo dnf install -y nodejs
+```
+
+```bash
+# Kiểm tra version (cả hai distro)
 node -v
 npm -v
 ```
@@ -37,13 +48,23 @@ pm2 save
 
 ### 1.3. Cài đặt Nginx
 
+#### Ubuntu/Debian
+
 ```bash
 sudo apt update
 sudo apt install nginx -y
+```
 
-# Khởi động Nginx
-sudo systemctl start nginx
-sudo systemctl enable nginx
+#### CentOS/RHEL
+
+```bash
+sudo dnf install -y epel-release
+sudo dnf install -y nginx
+```
+
+```bash
+# Khởi động và bật dịch vụ (cả hai distro)
+sudo systemctl enable --now nginx
 ```
 
 ### 1.4. Tạo thư mục project
@@ -108,13 +129,10 @@ Copy toàn bộ output (bao gồm `-----BEGIN OPENSSH PRIVATE KEY-----` và `---
 
 ## 🌐 Bước 4: Cấu hình Nginx
 
-Tạo file cấu hình Nginx:
+- **Ubuntu/Debian**: tạo `/etc/nginx/sites-available/portfolio` rồi symlink sang `sites-enabled`.
+- **CentOS/RHEL**: tạo trực tiếp `/etc/nginx/conf.d/portfolio.conf`.
 
-```bash
-sudo nano /etc/nginx/sites-available/portfolio
-```
-
-Thêm nội dung sau:
+Ví dụ nội dung cấu hình:
 
 ```nginx
 server {
@@ -135,18 +153,36 @@ server {
 }
 ```
 
-Kích hoạt site:
+Kích hoạt & reload:
 
 ```bash
+# Ubuntu/Debian
 sudo ln -s /etc/nginx/sites-available/portfolio /etc/nginx/sites-enabled/
+
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+```bash
+# CentOS/RHEL không cần symlink, chỉ cần reload
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
 ## 🔒 Bước 5: Cấu hình SSL với Let's Encrypt (Tùy chọn)
 
+#### Ubuntu/Debian
+
 ```bash
 sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+```
+
+#### CentOS/RHEL
+
+```bash
+sudo dnf install -y epel-release
+sudo dnf install -y certbot python3-certbot-nginx
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 ```
 

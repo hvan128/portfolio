@@ -12,6 +12,13 @@ export default function Skills() {
     'Cloud & Services': ['Firebase (Auth, Firestore, FCM)', 'VPS deployment', 'AWS basics', 'Realtime Communication (WebSocket/Socket.IO)'],
   }
 
+  const softSkills = [
+    'Read and synthesize technical documentation in English quickly.',
+    'Collaborate closely with business, QA, and infrastructure teams; proactive problem-solving.',
+    'End-to-end product thinking with a full-stack mindset for both web and mobile.',
+    'Clean coding advocate with focus on performance, profiling, and maintainability.',
+  ]
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -172,6 +179,23 @@ export default function Skills() {
                 </motion.div>
               </motion.div>
             ))}
+          </motion.div>
+          <motion.div 
+            className="mt-10 bg-blue-50 rounded-2xl p-8 border border-blue-100"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ 
+              duration: 0.5,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+          >
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Soft Skills</h3>
+            <ul className="list-disc pl-5 space-y-3 text-gray-700">
+              {softSkills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
           </motion.div>
         </motion.div>
       </div>

@@ -86,7 +86,7 @@ export default function Contact() {
           }}
           className="text-lg text-gray-600 mb-8 max-w-3xl"
         >
-          Get in touch with me anytime, through social media, e-mail.
+          Reach out anytime via email, phone, or the social platforms listed below.
         </motion.p>
         <motion.div 
           className="bg-white rounded-lg shadow-xl p-8 lg:p-12 mb-8 will-change-transform border border-gray-200"
@@ -107,8 +107,7 @@ export default function Contact() {
             className="text-gray-700 mb-8"
           >
             Just a friendly reminder that the information provided here is for <strong>business purposes only</strong>. 
-            If you have any questions, feel free to chat with me directly on my social media. 
-            I appreciate your understanding in using this responsibly.
+            Feel free to ping me on social media first if you need a quick response—I appreciate you using this responsibly.
           </motion.p>
           
           <motion.div 
@@ -140,9 +139,10 @@ export default function Contact() {
                 </thead>
                 <tbody>
                   {[
-                    { label: 'Address', value: 'Gia Lâm, Hà Nội', isLink: false },
+                    { label: 'Address', value: 'Gia Lâm District, Hanoi, Vietnam', isLink: false },
                     { label: 'Timezone', value: 'GMT+7', isLink: false },
-                    { label: 'E-mail', value: 'van.nh120802@gmail.com', isLink: true, href: 'mailto:van.nh120802@gmail.com' },
+                    { label: 'Phone', value: '+84 383 274 914', isLink: true, href: 'tel:+84383274914', icon: 'phone' },
+                    { label: 'E-mail', value: 'van.nh120802@gmail.com', isLink: true, href: 'mailto:van.nh120802@gmail.com', icon: 'mail' },
                   ].map((row, index) => (
                     <motion.tr 
                       key={row.label}
@@ -174,7 +174,11 @@ export default function Contact() {
                             }}
                           >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              {row.icon === 'phone' ? (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5.25c0-.966.784-1.75 1.75-1.75h2.086c.83 0 1.55.586 1.71 1.402l.657 3.283a1.75 1.75 0 01-.503 1.616l-.94.94a12.044 12.044 0 005.042 5.042l.94-.94a1.75 1.75 0 011.616-.503l3.283.657c.816.16 1.402.88 1.402 1.71V19a1.75 1.75 0 01-1.75 1.75h-.5C8.71 20.75 3.25 15.29 3.25 8v-.5z" />
+                              ) : (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              )}
                             </svg>
                             {row.value}
                           </motion.a>
@@ -194,7 +198,7 @@ export default function Contact() {
               transition={{ delay: 0.7 }}
               className="text-gray-600 text-sm mt-4"
             >
-              If you need any further information, such as my phone number, please do not hesitate to send me an email first.
+              You can also DM me on LinkedIn or Facebook for quicker coordination.
             </motion.p>
           </motion.div>
 
@@ -232,9 +236,9 @@ export default function Contact() {
                 </thead>
                 <tbody>
                   {[
-                    { name: 'LinkedIn', url: 'https://linkedin.com' },
-                    { name: 'GitHub', url: 'https://github.com' },
-                    { name: 'Facebook', url: 'https://facebook.com' },
+                    { name: 'LinkedIn', url: 'https://linkedin.com/hvan128' },
+                    { name: 'GitHub', url: 'https://github.com/hvan128' },
+                    { name: 'Facebook', url: 'https://facebook.com/hvan128' },
                   ].map((social, index) => (
                     <motion.tr 
                       key={social.name}
@@ -266,7 +270,7 @@ export default function Contact() {
                             }
                           }}
                         >
-                          https://www.{social.name.toLowerCase()}.com/...
+                          {social.url}
                         </motion.a>
                       </td>
                     </motion.tr>
