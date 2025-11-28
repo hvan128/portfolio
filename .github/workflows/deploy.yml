@@ -28,6 +28,9 @@ jobs:
         env:
           NODE_ENV: production
       
+      - name: Prune dev dependencies
+        run: npm prune --omit=dev
+
       - name: Deploy to VPS
         uses: appleboy/scp-action@master
         with:
@@ -40,8 +43,6 @@ jobs:
           exclude: |
             .git
             .github
-            node_modules
-            .next
             .DS_Store
             *.log
             .env*.local

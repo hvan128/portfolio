@@ -10,13 +10,8 @@ echo "🚀 Bắt đầu quá trình deploy..."
 # Di chuyển đến thư mục project
 cd /var/www/portfolio
 
-# Cài đặt dependencies
-echo "📦 Đang cài đặt dependencies..."
-npm ci --production=false
-
-# Build project
-echo "🔨 Đang build project..."
-npm run build
+# Node_modules và build đã được copy sẵn từ CI/CD
+echo "📦 Bỏ qua bước cài đặt & build (đã thực hiện trên CI)."
 
 # Restart ứng dụng với PM2
 echo "🔄 Đang restart ứng dụng..."
