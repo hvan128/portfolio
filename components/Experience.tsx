@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 export default function Experience() {
   const experiences = [
     {
-      company: 'Onehousing',
+      company: 'Automotive Service Platform Startup',
       position: 'Full-Stack Web & Hybrid Mobile Developer',
       period: 'Feb 2025 - Present',
       details: [
