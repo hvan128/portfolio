@@ -9,9 +9,9 @@ export default function Experience() {
       position: 'Full-Stack Web & Hybrid Mobile Developer',
       period: 'Feb 2025 - Present',
       details: [
-        'Owns the HRM & AI callbot platform covering Flask APIs, RBAC, and WebSocket notifications.',
-        'Builds a Next.js dashboard (SSR) plus Flutter mobile apps that handle check-in and workflow updates.',
-        'Automates CI/CD with Docker + GitHub Actions and monitors production workloads on Linux VPS environments.',
+        'Developed a two-sided marketplace mobile app using Flutter with Clean Architecture and Riverpod state management.',
+        'Implemented booking workflows, quotation requests, and real-time push notifications via Firebase Cloud Messaging.',
+        'Automated CI/CD pipelines with Fastlane and GitHub Actions to streamline mobile app deployment processes.',
       ],
     },
     {
