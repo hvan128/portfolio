@@ -11,9 +11,9 @@ export default function Quote() {
   ]
 
   const educationHighlights = [
-    'Focused on scalable software architecture, distributed systems, and system design.',
-    'Led project-based courses in mobile development and DevOps workflows.',
-    'Actively mentored juniors on clean code and performance-first engineering practices.',
+    'Strong foundation in data structures, algorithms, and object-oriented programming principles.',
+    'Completed coursework in database systems, computer networks, operating systems, and software engineering.',
+    'Applied theoretical knowledge through hands-on projects in web development and system design.',
   ]
 
   return (
