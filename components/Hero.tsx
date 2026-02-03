@@ -101,10 +101,33 @@ export default function Hero() {
             </motion.h1>
             <motion.p 
               variants={itemVariants}
-              className="text-xl text-gray-600 mb-8 leading-relaxed"
+              className="text-xl text-gray-600 mb-6 leading-relaxed"
             >
-              a <strong>software engineer</strong> who loves using technology to make life simpler and more enjoyable.
+              a <strong>full-stack engineer</strong> with <strong>3+ years</strong> of experience building scalable web applications and specialized <strong>payment systems</strong> that power seamless transactions.
             </motion.p>
+            
+            {/* Metrics Badges */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-wrap gap-4 mb-8"
+            >
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-lg shadow-md border border-gray-200">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-gray-800">3+ Years</span>
+                <span className="text-xs text-gray-500">Experience</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-lg shadow-md border border-gray-200">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-gray-800">20+ Projects</span>
+                <span className="text-xs text-gray-500">Delivered</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-lg shadow-md border border-gray-200">
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-gray-800">Payment Systems</span>
+                <span className="text-xs text-gray-500">Expert</span>
+              </div>
+            </motion.div>
+
             <motion.div 
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
@@ -120,12 +143,15 @@ export default function Hero() {
                   }
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-xl hover:shadow-2xl will-change-transform"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-xl hover:shadow-2xl will-change-transform transform"
               >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
                 Get in Touch
               </motion.a>
               <motion.a
-                href="/resume/ngo-hai-van-resume.pdf"
+                href="/resume/ngo_hai_van_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
@@ -139,12 +165,12 @@ export default function Hero() {
                   }
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 text-gray-700 font-medium hover:text-blue-600 transition-colors duration-200 will-change-transform"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-blue-600 hover:text-blue-600 bg-white/50 backdrop-blur-sm transition-all duration-200 shadow-md hover:shadow-lg will-change-transform"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                RESUME
+                Download Resume
               </motion.a>
             </motion.div>
           </motion.div>
