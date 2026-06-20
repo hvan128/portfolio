@@ -23,8 +23,8 @@
     "greeting": "hi!",
     "namePrefix": "I'm",
     "intro": "A <b>software engineer</b> who likes building things that make life a bit simpler. There's something satisfying about turning an idea into a product that people genuinely enjoy using. Still learning, still experimenting, and always looking for the next thing worth building.",
-    "getInTouch": "Get in Touch",
-    "downloadResume": "Download Resume",
+    "viewWork": "See what I build",
+    "resume": "Résumé",
     "stats": [
       { "label": "4+ Years", "sub": "Experience" },
       { "label": "Full-stack & AI", "sub": "Engineer" },

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { site } from '@/lib/site'
+import { site, socials } from '@/lib/site'
 
 const container = {
   hidden: { opacity: 0 },
@@ -66,26 +66,49 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-3.5 font-semibold text-white shadow-xl transition-all duration-200 hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl"
+                href="#projects"
+                className="group inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-3.5 font-semibold text-white shadow-xl transition-all duration-200 hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl"
               >
-                <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                {t('viewWork')}
+                <svg
+                  className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-y-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-                {t('getInTouch')}
               </a>
               <a
                 href={site.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                download
                 className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-300 bg-white/50 px-6 py-3.5 font-semibold text-gray-700 shadow-md backdrop-blur-sm transition-all duration-200 hover:border-blue-600 hover:text-blue-600 hover:shadow-lg"
               >
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                {t('downloadResume')}
+                {t('resume')}
               </a>
+            </motion.div>
+
+            {/* Social links — brand colors */}
+            <motion.div variants={item} className="mt-6 flex items-center gap-5">
+              {socials.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.name}
+                  style={{ color: s.color }}
+                  className="transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={s.icon} />
+                  </svg>
+                </a>
+              ))}
             </motion.div>
           </motion.div>
 

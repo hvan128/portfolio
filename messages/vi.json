@@ -23,8 +23,8 @@
     "greeting": "xin chào!",
     "namePrefix": "Mình là",
     "intro": "Một <b>kỹ sư phần mềm</b> thích tạo ra những thứ giúp cuộc sống đơn giản hơn một chút. Có gì đó rất đã khi biến một ý tưởng thành sản phẩm mà mọi người thật sự thích dùng. Vẫn đang học hỏi, vẫn đang thử nghiệm, và luôn đi tìm điều tiếp theo đáng để bắt tay vào làm.",
-    "getInTouch": "Liên hệ",
-    "downloadResume": "Tải CV",
+    "viewWork": "Xem những gì tôi làm",
+    "resume": "Résumé",
     "stats": [
       { "label": "4+ Năm", "sub": "Kinh nghiệm" },
       { "label": "Full-stack & AI", "sub": "Kỹ sư" },
