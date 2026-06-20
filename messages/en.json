@@ -22,7 +22,7 @@
   "hero": {
     "greeting": "hi!",
     "namePrefix": "I'm",
-    "intro": "An <b>AI engineer</b> who likes using technology to make everyday things a little simpler. I love turning ideas into products people genuinely enjoy — always learning, always chasing the next thing worth building.",
+    "intro": "A <b>software engineer</b> who likes building things that make life a bit simpler. There's something satisfying about turning an idea into a product that people genuinely enjoy using. Still learning, still experimenting, and always looking for the next thing worth building.",
     "getInTouch": "Get in Touch",
     "downloadResume": "Download Resume",
     "stats": [
@@ -114,7 +114,7 @@
     }
   },
   "footer": {
-    "about": "{role} who loves using technology — and lately AI — to make life simpler, smarter, and more enjoyable.",
+    "about": "{role} who loves building things that make life a little simpler — and turning ideas into products people genuinely enjoy using.",
     "navigate": "Navigate",
     "getInTouch": "Get in touch",
     "rights": "All rights reserved."

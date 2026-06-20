@@ -22,7 +22,7 @@
   "hero": {
     "greeting": "xin chào!",
     "namePrefix": "Mình là",
-    "intro": "Một <b>kỹ sư AI</b> thích dùng công nghệ để những việc thường ngày trở nên đơn giản hơn một chút. Mình mê biến ý tưởng thành sản phẩm mà mọi người thật sự thích dùng — luôn học hỏi và luôn đi tìm thứ tiếp theo đáng để bắt tay vào làm.",
+    "intro": "Một <b>kỹ sư phần mềm</b> thích tạo ra những thứ giúp cuộc sống đơn giản hơn một chút. Có gì đó rất đã khi biến một ý tưởng thành sản phẩm mà mọi người thật sự thích dùng. Vẫn đang học hỏi, vẫn đang thử nghiệm, và luôn đi tìm điều tiếp theo đáng để bắt tay vào làm.",
     "getInTouch": "Liên hệ",
     "downloadResume": "Tải CV",
     "stats": [
@@ -114,7 +114,7 @@
     }
   },
   "footer": {
-    "about": "{role} yêu thích dùng công nghệ — và gần đây là AI — để giúp cuộc sống đơn giản, thông minh và thú vị hơn.",
+    "about": "{role} thích tạo ra những thứ giúp cuộc sống đơn giản hơn một chút — và biến ý tưởng thành sản phẩm mà mọi người thật sự thích dùng.",
     "navigate": "Điều hướng",
     "getInTouch": "Liên hệ",
     "rights": "Bảo lưu mọi quyền."

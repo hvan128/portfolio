@@ -9,8 +9,8 @@ export const site = {
   name: 'Ngô Hải Văn',
   shortName: 'Hải Văn',
   role: {
-    en: 'Full-Stack & AI Engineer',
-    vi: 'Kỹ sư Full-Stack & AI',
+    en: 'Software Engineer',
+    vi: 'Kỹ sư phần mềm',
   } satisfies Localized,
   url: 'https://ngohaivan.dev',
   githubUser: 'hvan128',
