@@ -1,158 +1,65 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLocale, useTranslations } from 'next-intl'
+import { experiences } from '@/lib/experience'
+import { pick, type Locale } from '@/lib/i18n-content'
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+}
 
 export default function Experience() {
-  const experiences = [
-    {
-      company: 'Automotive Service Platform Startup',
-      position: 'Full-Stack Web & Hybrid Mobile Developer',
-      period: 'Feb 2025 - Present',
-      details: [
-        'Developed a two-sided marketplace mobile app using Flutter with Clean Architecture and Riverpod state management.',
-        'Implemented booking workflows, quotation requests, and real-time push notifications via Firebase Cloud Messaging.',
-        'Automated CI/CD pipelines with Fastlane and GitHub Actions to streamline mobile app deployment processes.',
-      ],
-    },
-    {
-      company: 'EPOSO AI',
-      position: 'Full-Stack Developer (Remote)',
-      period: 'Nov 2024 - Jan 2025',
-      details: [
-        'Delivered the Energy Simulator web app that calculates cost savings for new HVAC models.',
-        'Partnered with distributed teams to shape UX flows, Nest.js APIs, and Redux Toolkit state.',
-        'Packaged the solution with Docker to guarantee parity from local development to production demos.',
-      ],
-    },
-    {
-      company: 'OpenWay Vietnam',
-      position: 'Associate Implementation Engineer',
-      period: 'Jul 2024 - Nov 2024',
-      details: [
-        'Integrated Way4 ATM flows for withdraw, balance inquiry, and fund transfers across test → prod environments.',
-        'Mapped ISO-like routing between core banking services and Way4, ensuring compliance and resilience.',
-        'Accelerated incident resolution by ≈45% through improved transaction log tracing and documentation.',
-      ],
-    },
-    {
-      company: 'OpenWay Vietnam',
-      position: 'Frontend Web & Hybrid Mobile Developer',
-      period: 'Oct 2022 - Jul 2024',
-      details: [
-        'Developed banking mobile apps and admin portals using React, React Native, Flutter, and Next.js.',
-        'Implemented reusable UI components for card management, transaction history, and role-based admin controls.',
-        'Collaborated with backend, QA, and product stakeholders to optimize GraphQL integrations and performance.',
-      ],
-    },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.06,
-        delayChildren: 0.05,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0,
-      y: 30,
-      x: -10,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  }
+  const locale = useLocale() as Locale
+  const t = useTranslations('experienceSection')
 
   return (
-    <section id="experience" className="relative z-10 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
+    <section id="experience" className="relative z-10 py-8 lg:py-12">
+      <div className="section-shell">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ 
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94]
-          }}
-          className="text-4xl font-bold text-gray-900 mb-6"
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="max-w-2xl"
         >
-          Work Experience
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ 
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            delay: 0.1
-          }}
-          className="text-lg text-gray-600 mb-8 max-w-3xl"
-        >
-          3+ years shipping full-stack web platforms, hybrid mobile apps, and payment solutions across startups and enterprise-scale teams.
-        </motion.p>
-        <motion.div 
-          className="space-y-6"
-          variants={containerVariants}
+          <span className="eyebrow">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
+            {t('eyebrow')}
+          </span>
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
+            {t('headingBefore')}
+            <span className="text-gradient">{t('headingHighlight')}</span>
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">{t('intro')}</p>
+        </motion.div>
+
+        <motion.div
+          className="relative mt-12 space-y-6 before:absolute before:left-[7px] before:top-2 before:hidden before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-primary-300 before:to-transparent md:before:block"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ staggerChildren: 0.1 }}
         >
-          {experiences.map((exp, index) => (
-            <motion.div 
-              key={index} 
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.02,
-                x: 10,
-                transition: { 
-                  type: 'spring',
-                  stiffness: 400,
-                  damping: 30,
-                  mass: 0.8
-                }
-              }}
-              className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-all duration-300 border-l-4 border-transparent hover:border-blue-600 relative overflow-hidden group will-change-transform border border-gray-200"
-            >
-              {/* Animated border gradient */}
-              <motion.div
-                className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ scaleY: 0 }}
-                whileHover={{ scaleY: 1 }}
-                transition={{ 
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 25
-                }}
-              />
-              
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {exp.company}
-                </h3>
-                <span className="text-blue-600 font-medium text-sm md:text-base">
-                  {exp.period}
-                </span>
+          {experiences.map((exp, i) => (
+            <motion.div key={`${exp.company}-${i}`} variants={itemVariants} className="relative md:pl-10">
+              <span className="absolute left-0 top-6 hidden h-4 w-4 rounded-full border-4 border-white bg-primary-500 md:block" />
+              <div className="glass-card p-6 lg:p-7 transition-shadow hover:shadow-card-hover">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="font-display text-xl font-bold text-slate-900">{exp.company}</h3>
+                  <span className="text-sm font-medium text-primary-600">{pick(exp.period, locale)}</span>
+                </div>
+                <p className="mt-1 font-medium text-slate-700">{pick(exp.position, locale)}</p>
+                <ul className="mt-4 space-y-2">
+                  {pick(exp.details, locale).map((d) => (
+                    <li key={d} className="flex items-start gap-2 text-sm leading-relaxed text-slate-600">
+                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-primary-400" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-gray-700 font-medium mb-3">
-                {exp.position}
-              </p>
-              <ul className="list-disc pl-5 space-y-2 text-gray-600">
-                {exp.details.map((detail, detailIndex) => (
-                  <li key={detailIndex}>{detail}</li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </motion.div>

@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Ngô Hải Văn — Full-Stack & AI Engineer",
+    "description": "Full-stack & AI engineer with 4+ years of experience building real-time AI products, scalable web platforms, and cross-platform mobile apps. Working with Next.js, GPT-4o Realtime, Flutter, Node.js and payment systems.",
+    "ogDescription": "Full-stack & AI engineer building real-time AI products, scalable web platforms, and cross-platform mobile apps."
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "switch": "Switch language"
+  },
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "contact": "Contact",
+    "resume": "Résumé",
+    "downloadResume": "Download Résumé",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "greeting": "hi!",
+    "namePrefix": "I'm",
+    "intro": "An <b>AI engineer</b> who likes using technology to make everyday things a little simpler. I love turning ideas into products people genuinely enjoy — always learning, always chasing the next thing worth building.",
+    "getInTouch": "Get in Touch",
+    "downloadResume": "Download Resume",
+    "stats": [
+      { "label": "4+ Years", "sub": "Experience" },
+      { "label": "Full-stack & AI", "sub": "Engineer" },
+      { "label": "20+ Projects", "sub": "Delivered" }
+    ]
+  },
+  "about": {
+    "headingBefore": "I'm still learning to build ",
+    "headingHighlight": "better products",
+    "headingAfter": " every day.",
+    "intro": "Right now I'm focused on AI, web, and mobile. What excites me isn't just new technology — it's watching an idea slowly turn into a product other people can actually use and create value from.",
+    "highlights": [
+      "Building AI features for real users",
+      "Developing products end to end",
+      "Always putting simplicity and the experience first",
+      "Always learning and trying new things"
+    ]
+  },
+  "github": {
+    "eyebrow": "Building daily",
+    "contributions": "<g>{count}</g> contributions in the last year",
+    "viewGithub": "View GitHub",
+    "fallback": "Building in the open — see my activity on GitHub.",
+    "dayTooltip": "{count, plural, =1 {# contribution} other {# contributions}} on {date}",
+    "less": "Less",
+    "more": "More",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "weekdays": ["", "Mon", "", "Wed", "", "Fri", ""]
+  },
+  "projectsSection": {
+    "eyebrow": "Selected Work",
+    "headingBefore": "Projects I've ",
+    "headingHighlight": "shipped",
+    "intro": "From AI-powered products to apps people use every day. Tap any card for the full story — the problem, what I built, and the impact.",
+    "moreProjects": "More projects",
+    "viewCaseStudy": "View case study",
+    "live": "Live",
+    "openCaseStudy": "Open {name} case study"
+  },
+  "experienceSection": {
+    "eyebrow": "Experience",
+    "headingBefore": "Where I've ",
+    "headingHighlight": "worked",
+    "intro": "4+ years shipping full-stack web platforms, hybrid mobile apps, and payment systems across startups and enterprise-scale teams."
+  },
+  "educationSection": {
+    "eyebrow": "Education",
+    "headingBefore": "Always ",
+    "headingHighlight": "learning",
+    "intro": "A computer-science foundation, now sharpened by an applied AI program where I build and ship real products."
+  },
+  "skillsSection": {
+    "eyebrow": "Skills & Tools",
+    "headingBefore": "The ",
+    "headingHighlight": "toolbox",
+    "intro": "The capabilities and tools I reach for, day to day.",
+    "beyondTheCode": "Beyond the code",
+    "aiCapabilities": [
+      "Voice agents (realtime)",
+      "RAG / retrieval",
+      "Agentic chatbots",
+      "LLM app integration",
+      "OCR & vision"
+    ],
+    "softSkills": [
+      "Read and synthesize English technical documentation quickly.",
+      "Collaborate closely with business, QA, and infrastructure teams; proactive problem-solving.",
+      "End-to-end product thinking with a full-stack mindset for both web and mobile.",
+      "Clean-coding advocate focused on performance, profiling, and maintainability."
+    ]
+  },
+  "contact": {
+    "availableForWork": "Available for work",
+    "heading": "Let's build something great together.",
+    "intro": "Have a project, a role, or just want to talk AI and full-stack? My inbox is always open.",
+    "sayHello": "Say hello",
+    "responseTime": "Usually replies within a day",
+    "localTime": "local time",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "findMeOnline": "Find me online",
+    "rows": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "timezone": "Timezone"
+    }
+  },
+  "footer": {
+    "about": "{role} who loves using technology — and lately AI — to make life simpler, smarter, and more enjoyable.",
+    "navigate": "Navigate",
+    "getInTouch": "Get in touch",
+    "rights": "All rights reserved."
+  },
+  "projectDetail": {
+    "allProjects": "All projects",
+    "problem": "The problem",
+    "solution": "What I built",
+    "impact": "The impact",
+    "whatIWorkedOn": "What I worked on",
+    "techStack": "Tech stack",
+    "screens": "Screens",
+    "otherProjects": "Other projects",
+    "ctaTitle": "Want to see {name} in action?",
+    "ctaSubtitle": "Try it live, or head back to explore more of my work.",
+    "ctaMoreProjects": "More projects"
+  },
+  "appLanding": {
+    "caseStudy": "Case study",
+    "everythingYouNeed": "Everything you need",
+    "seeItInAction": "See it in action",
+    "realScreens": "Real screens from the App Store listing.",
+    "get": "Get {name}",
+    "ctaSubtitle": "Free on the App Store. Download and start today.",
+    "readCaseStudy": "Read the case study →",
+    "downloadOnThe": "Download on the",
+    "appStore": "App Store"
+  }
+}

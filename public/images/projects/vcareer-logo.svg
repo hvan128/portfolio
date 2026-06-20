@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="VCareer">
+  <defs>
+    <linearGradient id="vc-bg" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4D8AF7"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="url(#vc-bg)"/>
+  <path d="M21 9.6 A 8.2 8.2 0 1 0 21 22.4" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+</svg>

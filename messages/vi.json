@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Ngô Hải Văn — Kỹ sư Full-Stack & AI",
+    "description": "Kỹ sư full-stack & AI với hơn 4 năm kinh nghiệm xây dựng sản phẩm AI thời gian thực, nền tảng web dễ mở rộng và ứng dụng mobile đa nền tảng. Thành thạo Next.js, GPT-4o Realtime, Flutter, Node.js và các hệ thống thanh toán.",
+    "ogDescription": "Kỹ sư full-stack & AI xây dựng sản phẩm AI thời gian thực, nền tảng web dễ mở rộng và ứng dụng mobile đa nền tảng."
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "switch": "Đổi ngôn ngữ"
+  },
+  "nav": {
+    "projects": "Dự án",
+    "experience": "Kinh nghiệm",
+    "education": "Học vấn",
+    "skills": "Kỹ năng",
+    "contact": "Liên hệ",
+    "resume": "CV",
+    "downloadResume": "Tải CV",
+    "toggleMenu": "Mở menu"
+  },
+  "hero": {
+    "greeting": "xin chào!",
+    "namePrefix": "Mình là",
+    "intro": "Một <b>kỹ sư AI</b> thích dùng công nghệ để những việc thường ngày trở nên đơn giản hơn một chút. Mình mê biến ý tưởng thành sản phẩm mà mọi người thật sự thích dùng — luôn học hỏi và luôn đi tìm thứ tiếp theo đáng để bắt tay vào làm.",
+    "getInTouch": "Liên hệ",
+    "downloadResume": "Tải CV",
+    "stats": [
+      { "label": "4+ Năm", "sub": "Kinh nghiệm" },
+      { "label": "Full-stack & AI", "sub": "Kỹ sư" },
+      { "label": "20+ Dự án", "sub": "Hoàn thành" }
+    ]
+  },
+  "about": {
+    "headingBefore": "Mình đang học cách để xây dựng sản phẩm ",
+    "headingHighlight": "tốt hơn",
+    "headingAfter": " mỗi ngày.",
+    "intro": "Hiện tại mình tập trung vào AI, web và mobile. Điều khiến mình hứng thú không chỉ là công nghệ mới, mà là cảm giác nhìn thấy một ý tưởng dần trở thành sản phẩm mà người khác có thể sử dụng và tạo ra giá trị từ đó.",
+    "highlights": [
+      "Xây tính năng AI cho người dùng thực",
+      "Phát triển sản phẩm từ đầu đến cuối",
+      "Luôn ưu tiên sự đơn giản và trải nghiệm sử dụng",
+      "Không ngừng học hỏi và thử những điều mới"
+    ]
+  },
+  "github": {
+    "eyebrow": "Code mỗi ngày",
+    "contributions": "<g>{count}</g> đóng góp trong năm qua",
+    "viewGithub": "Xem GitHub",
+    "fallback": "Mình làm việc công khai — ghé GitHub xem mình đang code gì.",
+    "dayTooltip": "{count} đóng góp vào {date}",
+    "less": "Ít",
+    "more": "Nhiều",
+    "months": ["Th 1", "Th 2", "Th 3", "Th 4", "Th 5", "Th 6", "Th 7", "Th 8", "Th 9", "Th 10", "Th 11", "Th 12"],
+    "weekdays": ["", "T2", "", "T4", "", "T6", ""]
+  },
+  "projectsSection": {
+    "eyebrow": "Dự án tiêu biểu",
+    "headingBefore": "Những dự án mình đã ",
+    "headingHighlight": "ra mắt",
+    "intro": "Từ sản phẩm tích hợp AI đến những ứng dụng người ta dùng mỗi ngày. Bấm vào thẻ bất kỳ để xem trọn câu chuyện — vấn đề là gì, mình đã giải quyết ra sao và kết quả thế nào.",
+    "moreProjects": "Các dự án khác",
+    "viewCaseStudy": "Xem chi tiết",
+    "live": "Truy cập",
+    "openCaseStudy": "Mở chi tiết dự án {name}"
+  },
+  "experienceSection": {
+    "eyebrow": "Kinh nghiệm",
+    "headingBefore": "Những nơi mình đã ",
+    "headingHighlight": "làm việc",
+    "intro": "Hơn 4 năm xây dựng nền tảng web full-stack, ứng dụng mobile hybrid và hệ thống thanh toán — từ startup cho đến những đội ngũ quy mô doanh nghiệp."
+  },
+  "educationSection": {
+    "eyebrow": "Học vấn",
+    "headingBefore": "Luôn ",
+    "headingHighlight": "học hỏi",
+    "intro": "Nền tảng khoa học máy tính, nay được mài giũa thêm qua một chương trình AI ứng dụng, nơi mình xây dựng và ra mắt sản phẩm thật."
+  },
+  "skillsSection": {
+    "eyebrow": "Kỹ năng & Công cụ",
+    "headingBefore": "Bộ ",
+    "headingHighlight": "đồ nghề",
+    "intro": "Những năng lực và công cụ mình dùng đến mỗi ngày.",
+    "beyondTheCode": "Ngoài việc code",
+    "aiCapabilities": [
+      "Voice agent (thời gian thực)",
+      "RAG / truy hồi",
+      "Chatbot agentic",
+      "Tích hợp LLM vào ứng dụng",
+      "OCR & thị giác"
+    ],
+    "softSkills": [
+      "Đọc và tổng hợp tài liệu kỹ thuật tiếng Anh nhanh chóng.",
+      "Phối hợp chặt chẽ với các đội business, QA và hạ tầng; chủ động xử lý vấn đề.",
+      "Tư duy sản phẩm từ đầu đến cuối, với góc nhìn full-stack cho cả web lẫn mobile.",
+      "Đề cao clean code, chú trọng hiệu năng, profiling và khả năng bảo trì."
+    ]
+  },
+  "contact": {
+    "availableForWork": "Sẵn sàng nhận việc",
+    "heading": "Cùng nhau tạo nên điều gì đó tuyệt vời nhé.",
+    "intro": "Bạn có một dự án, một vị trí, hay chỉ muốn trò chuyện về AI và full-stack? Hộp thư của mình luôn rộng mở.",
+    "sayHello": "Chào một câu",
+    "responseTime": "Thường phản hồi trong vòng một ngày",
+    "localTime": "giờ địa phương",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép!",
+    "findMeOnline": "Kết nối với mình",
+    "rows": {
+      "email": "Email",
+      "phone": "Điện thoại",
+      "location": "Địa điểm",
+      "timezone": "Múi giờ"
+    }
+  },
+  "footer": {
+    "about": "{role} yêu thích dùng công nghệ — và gần đây là AI — để giúp cuộc sống đơn giản, thông minh và thú vị hơn.",
+    "navigate": "Điều hướng",
+    "getInTouch": "Liên hệ",
+    "rights": "Bảo lưu mọi quyền."
+  },
+  "projectDetail": {
+    "allProjects": "Tất cả dự án",
+    "problem": "Vấn đề",
+    "solution": "Mình đã làm gì",
+    "impact": "Kết quả",
+    "whatIWorkedOn": "Những gì mình đã làm",
+    "techStack": "Công nghệ sử dụng",
+    "screens": "Giao diện",
+    "otherProjects": "Các dự án khác",
+    "ctaTitle": "Muốn xem {name} hoạt động thực tế?",
+    "ctaSubtitle": "Trải nghiệm trực tiếp, hoặc quay lại khám phá thêm các dự án khác của mình.",
+    "ctaMoreProjects": "Dự án khác"
+  },
+  "appLanding": {
+    "caseStudy": "Chi tiết dự án",
+    "everythingYouNeed": "Tất cả những gì bạn cần",
+    "seeItInAction": "Xem ứng dụng hoạt động",
+    "realScreens": "Ảnh chụp thật từ trang App Store.",
+    "get": "Tải {name}",
+    "ctaSubtitle": "Miễn phí trên App Store. Tải về và bắt đầu ngay hôm nay.",
+    "readCaseStudy": "Xem chi tiết dự án →",
+    "downloadOnThe": "Tải về trên",
+    "appStore": "App Store"
+  }
+}

@@ -3,36 +3,123 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 15, 23, 42;
+  --bg-base: #f7faff;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky nav when jumping to #anchors */
+  scroll-padding-top: 5rem;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(180deg, #bfdbfe 0%, #dbeafe 15%, #eff6ff 30%, #f8fafc 50%, #ffffff 70%, #ffffff 100%);
-  background-attachment: fixed;
+  background-color: var(--bg-base);
   position: relative;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* Aurora wash — keeps the blue identity but adds depth + a soft glow up top. */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 80% -10%, rgba(99, 102, 241, 0.18), transparent 60%),
+    radial-gradient(50rem 36rem at -5% 5%, rgba(14, 165, 233, 0.16), transparent 55%),
+    linear-gradient(180deg, #dbeafe 0%, #eef4ff 22%, #f7faff 55%, #ffffff 100%);
+}
+
+/* Faint engineering grid over the wash. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 70%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 70%);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+  color: #1e3a8a;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Brand gradient text. */
+  .text-gradient {
+    background-image: linear-gradient(120deg, #1d4ed8, #0ea5e9 60%, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-ai {
+    background-image: linear-gradient(120deg, #6366f1, #3b82f6 45%, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer components {
+  /* Frosted card — the workhorse surface across the site. */
+  .glass-card {
+    @apply rounded-2xl border border-white/60 bg-white/80 shadow-card backdrop-blur-md;
+  }
+
+  /* Eyebrow label above section titles. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-200/70 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-700 backdrop-blur;
+  }
+
+  /* AI badge — clean, professional pill that reads on any background. */
+  .ai-badge {
+    @apply inline-flex items-center gap-1 rounded-md bg-white/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-indigo-600 shadow-sm ring-1 ring-indigo-100 backdrop-blur;
+  }
+  /* A small accent dot rendered before the label via the badge itself. */
+  .ai-badge::before {
+    content: '';
+    @apply h-1.5 w-1.5 rounded-full bg-ai-gradient;
+  }
+
+  .section-shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Vietnamese display fallback.
+   Sora (the heading face) ships only latin + latin-ext, so Vietnamese diacritics
+   (ơ ư ạ ế đ …) fall back to another font per-glyph and headings look uneven.
+   Lexend has full Vietnamese coverage, so use it for VI headings — consistent and
+   already loaded. The higher-specificity selector overrides the font-display utility. */
+html[lang='vi'] .font-display {
+  font-family: var(--font-lexend), system-ui, sans-serif;
+}
+
+/* Respect reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
