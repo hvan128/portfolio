@@ -62,7 +62,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'keothom',
-    name: 'Keothom',
+    name: 'hoantien.shop',
     tagline: {
       en: 'Shopee cashback for shoppers — on web and mobile.',
       vi: 'Hoàn tiền Shopee cho người mua sắm — trên cả web và mobile.',
