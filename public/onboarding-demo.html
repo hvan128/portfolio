@@ -1,0 +1,793 @@
+<!doctype html><html><head><script>(()=>{function C(b){if(window===top)return;if(b.type==="auxclick"&&b.button!==1)return;const z=b.composedPath?b.composedPath():[b.target];let j=null;for(let x=0;x<z.length;x++){const q=z[x];if(q&&q.matches&&q.matches("a[href],area[href]")){j=q;break}}if(!j&&b.target&&b.target.closest){j=b.target.closest("a[href],area[href]")}if(!j)return;const A=j.getAttribute("href");if(!A)return;let k,B;try{k=new URL(A,document.baseURI);B=new URL(document.baseURI).origin}catch{return}if((k.protocol==="http:"||k.protocol==="https:")&&k.origin!==B){b.preventDefault();parent.postMessage({__frame_nav:true,url:k.href},"*")}}addEventListener("click",C,true);addEventListener("auxclick",C,true);})();</script><meta charset=utf8><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700&display=swap"><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>hoantien.shop · Cách hoàn tiền Shopee</title>
+<style>
+  :root{
+    --ground:#1a1216;--ground-2:#241420;--stage-text:#f6ece4;--stage-muted:#c9b3a6;--line:rgba(246,236,228,.14);
+    --ee:#ee4d2d;--ee-hover:#d63f1f;--ee2:#ff7a5c;--ee-grad:linear-gradient(135deg,#ee4d2d 0%,#ff7a5c 100%);
+    --sp:#ee4d2d;--sp-red:#f53d2d;
+    --c2410c:#c2410c;
+    --z900:#18181b;--z700:#3f3f46;--z500:#71717a;--z400:#a1a1aa;--z200:#e4e4e7;--z100:#f4f4f5;--z50:#fafafa;
+    --emerald:#059669;--emerald-fg:#047857;--emerald-bg:#ecfdf5;--emerald-bd:#a7f3d0;
+    --teal:#26aa99;
+    --sans:"Lexend",system-ui,-apple-system,"SF Pro Text","Segoe UI",Roboto,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono","Cascadia Code",monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--stage-text);
+    background:radial-gradient(120% 90% at 50% -10%,#2e1722 0%,transparent 60%),linear-gradient(180deg,var(--ground) 0%,var(--ground-2) 100%);
+    overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  .stage{max-width:980px;margin:0 auto;padding:30px 20px 46px}
+  .ic{display:inline-grid;place-items:center;line-height:0}
+  .ic svg{width:1em;height:1em;display:block}
+
+  .brandline{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+  .brandline .wm{font-weight:700;letter-spacing:-.01em;font-size:17px;line-height:1}
+  .brandline .wm .o{color:var(--ee2)}.brandline .wm .s{color:#fff}
+  .brandline .tag{margin-left:6px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stage-muted)}
+  h1{font-weight:700;font-size:clamp(26px,5vw,42px);line-height:1.04;letter-spacing:-.02em;margin:0 0 13px}
+  h1 .glow{color:#43d999}
+  .sub{max-width:56ch;margin:0;color:var(--stage-muted);font-size:14.5px;line-height:1.55}
+
+  .player{display:flex;gap:40px;align-items:flex-start;justify-content:center;margin-top:34px}
+
+  .rail{width:250px;flex:0 0 auto;padding-top:4px}
+  .rail-head{display:flex;align-items:center;gap:9px;font-weight:700;font-size:13px;letter-spacing:.03em;color:var(--stage-muted);margin:0 0 18px 4px}
+  .rail-head .ring{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ee2);color:var(--ee2);display:grid;place-items:center;font-size:13px;animation:spin 9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .steps{list-style:none;margin:0;padding:0;position:relative}
+  .steps::before{content:"";position:absolute;left:15px;top:14px;bottom:14px;width:2px;background:var(--line);border-radius:2px}
+  .step{position:relative;display:flex;gap:13px;padding:7px 0;cursor:pointer;align-items:flex-start}
+  .step .dot{flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:var(--ground-2);color:var(--stage-muted);border:2px solid var(--line);z-index:1;transition:all .35s ease}
+  .step .txt{font-size:13.5px;line-height:1.32;color:var(--stage-muted);padding-top:6px;transition:color .3s ease;font-weight:500}
+  .step.done .dot{background:rgba(67,217,153,.16);color:#43d999;border-color:rgba(67,217,153,.5)}
+  .step.active .dot{background:var(--ee-grad);color:#fff;border-color:transparent;box-shadow:0 6px 18px -4px rgba(238,77,45,.7);transform:scale(1.12)}
+  .step.active .txt{color:var(--stage-text);font-weight:700}
+
+  .phone-col{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .phone-scaler{width:312px;height:658px;position:relative}
+  .phone{position:absolute;top:0;left:0;width:410px;transform:scale(.761);transform-origin:top left;
+    border-radius:52px;padding:10px;background:#0a0a0c;
+    box-shadow:0 0 0 1px rgba(255,255,255,.06) inset,0 30px 70px -20px rgba(0,0,0,.7)}
+  .viewport{position:relative;width:390px;height:844px;background:var(--z50);border-radius:44px;overflow:hidden}
+  .island{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:120px;height:35px;border-radius:19px;background:#000;z-index:60}
+
+  /* iOS status bar */
+  .statusbar{position:absolute;top:0;left:0;right:0;height:52px;z-index:55;display:flex;align-items:center;justify-content:space-between;padding:16px 26px 0;pointer-events:none;color:var(--z900)}
+  .statusbar .clock{font-size:16px;font-weight:600;letter-spacing:.3px;font-family:var(--sans)}
+  .sbr{display:flex;align-items:center;gap:7px}
+  .sbr .bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+  .sbr .bars i{width:3px;background:currentColor;border-radius:1px}
+  .sbr .bars i:nth-child(1){height:5px}.sbr .bars i:nth-child(2){height:7px}.sbr .bars i:nth-child(3){height:9px}.sbr .bars i:nth-child(4){height:11px}
+  .sbr .g5{font-size:15px;font-weight:600;letter-spacing:.2px}
+  .sbr .wf{width:18px;height:13px}
+  .sbr .bt{width:26px;height:13px}
+
+  .screen{position:absolute;inset:0;background:var(--z50);color:var(--z900);opacity:0;visibility:hidden;transform:scale(.99);transition:opacity .26s ease,transform .26s ease,visibility .26s;display:flex;flex-direction:column;overflow:hidden}
+  .screen.is-active{opacity:1;visibility:visible;transform:scale(1)}
+  .tappable{transition:transform .15s ease,filter .15s ease}
+  .tappable.pressing{transform:scale(.93);filter:brightness(.92)}
+
+  .bg-dot{background-color:var(--z50);background-image:radial-gradient(circle,#d4d4d8 1px,transparent 1.6px);background-size:24px 24px}
+
+  /* ===== SHOPEE product ===== */
+  .sh-photo{position:relative;height:300px;background:radial-gradient(circle at 50% 44%,#fff,#f1e7e1 86%);display:grid;place-items:center;flex:0 0 auto}
+  .sh-photo .emoji{font-size:150px;filter:drop-shadow(0 20px 26px rgba(0,0,0,.16))}
+  .sh-top{position:absolute;top:54px;left:0;right:0;display:flex;align-items:center;padding:8px 14px;gap:11px;z-index:6}
+  .sh-top .rnd{width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.30);display:grid;place-items:center;color:#fff;font-size:19px;position:relative}
+  .sh-top .sp{flex:1}
+  .sh-top .cartbadge{position:absolute;top:-4px;right:-4px;background:var(--sp-red);color:#fff;font-size:10px;font-weight:700;padding:1px 5px;border-radius:9px;font-family:var(--sans)}
+  .sh-play{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.32);display:grid;place-items:center;color:#fff;font-size:18px;z-index:6}
+  .sh-pageno{position:absolute;right:14px;bottom:12px;background:rgba(0,0,0,.42);color:#fff;font-size:13px;font-family:var(--mono);padding:3px 12px;border-radius:14px;z-index:6}
+  .sh-scroll{flex:1;overflow:hidden;background:var(--z100)}
+  .sh-variants{background:#fff;padding:12px 16px;display:flex;align-items:center;gap:11px}
+  .sh-variants .lbl{font-size:13px;color:var(--z700)}
+  .sh-variants .vt{width:42px;height:42px;border-radius:8px;border:1px solid var(--z200);background:radial-gradient(circle at 50% 40%,#fff,#f1e7e1);display:grid;place-items:center;font-size:20px}
+  .sh-price-block{background:#fff;padding:14px 16px;margin-top:8px}
+  .sh-price{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sh-price .now{color:var(--sp);font-weight:700;font-size:30px}
+  .sh-price .now .u{font-size:18px;vertical-align:top;margin-right:1px}
+  .sh-price .vch{display:inline-flex;align-items:center;gap:3px;border:1px solid var(--sp);color:var(--sp);font-size:11px;font-weight:600;border-radius:3px;padding:1px 5px}
+  .sh-price .aftvoucher{color:var(--z500);font-size:14px;font-weight:500}
+  .sh-price .soldwrap{margin-left:auto;display:flex;align-items:center;gap:13px;color:var(--z500);font-size:13px}
+  .sh-spaylater{color:var(--z700);font-size:13.5px;margin-top:9px}
+  .sh-spaylater b{color:var(--sp);font-weight:600}
+  .sh-tags{display:flex;align-items:center;gap:8px;margin-top:11px}
+  .sh-tag{border:1px solid #ffd0c4;color:var(--sp);font-size:11.5px;border-radius:4px;padding:3px 7px;font-weight:500}
+  .sh-name-block{background:#fff;margin-top:8px;padding:14px 16px}
+  .sh-name{font-size:17px;line-height:1.45;font-weight:400;color:var(--z900)}
+  .sh-name .mall{display:inline-flex;align-items:center;background:var(--sp-red);color:#fff;font-size:12px;font-weight:700;padding:1px 6px;border-radius:3px;vertical-align:middle;margin-right:6px;font-style:italic}
+  .sh-row{background:#fff;margin-top:8px;padding:13px 16px;display:flex;align-items:center;gap:11px;font-size:14px;color:var(--z700)}
+  .sh-row .lic{color:var(--teal);font-size:19px}
+  .sh-row .lic.g{color:var(--emerald)}
+  .sh-row .gray{color:var(--z500);font-size:12.5px}
+  .sh-row .chev{margin-left:auto;color:var(--z400);font-size:15px}
+  .sh-buybar{flex:0 0 auto;display:flex;align-items:stretch;background:#fff;border-top:1px solid var(--z200);height:76px;padding-bottom:18px}
+  .sh-bb-ic{width:74px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10.5px;color:var(--sp);border-right:1px solid var(--z100)}
+  .sh-bb-ic .ic{font-size:21px}
+  .sh-bb-voucher{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--sp);color:#fff;line-height:1.15}
+  .sh-bb-voucher .l1{font-size:13px;font-weight:500}
+  .sh-bb-voucher .l2{font-size:17px;font-weight:700}
+
+  /* ===== iOS share sheet ===== */
+  .scrim{position:absolute;inset:0;background:rgba(10,8,12,.42);opacity:0;visibility:hidden;transition:.4s;z-index:70}
+  .scrim.is-up{opacity:1;visibility:visible}
+  .sheet{position:absolute;left:0;right:0;bottom:0;z-index:71;background:#f1f1f4;border-radius:30px 30px 0 0;transform:translateY(102%);transition:transform .5s cubic-bezier(.2,.8,.2,1);padding:14px 12px 34px}
+  .sheet.is-up{transform:translateY(0)}
+  .sheet .grip{width:48px;height:6px;border-radius:3px;background:#cdced4;margin:2px auto 16px}
+  .sheet-prev{display:flex;align-items:center;gap:13px;background:#fff;border-radius:18px;padding:12px 14px;margin-bottom:18px}
+  .sheet-prev .th{width:48px;height:48px;border-radius:11px;background:radial-gradient(circle at 50% 40%,#fff,#f1e7e1);display:grid;place-items:center;font-size:26px}
+  .sheet-prev .meta b{display:block;font-size:16px;color:var(--z900);font-weight:700;line-height:1.3}
+  .sheet-prev .meta span{color:var(--z500);font-size:14px}
+  .sheet-row{display:flex;gap:9px;padding:2px;justify-content:space-between}
+  .appicon{flex:0 0 auto;width:64px;text-align:center;font-size:12px;color:var(--z500);line-height:1.2}
+  .appicon .sq{width:60px;height:60px;border-radius:15px;margin:0 auto 7px;display:grid;place-items:center;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  .appicon .sq .ic{font-size:34px}
+  .appicon .sq svg{display:block}
+  .appicon.copy .sq .ic,.appicon.more .sq .ic{font-size:28px;color:var(--z700)}
+  .appicon.ht{color:var(--z900);font-weight:700}
+  .appicon.ht .sq,.appicon.zalo .sq,.appicon.msg .sq{padding:0;overflow:hidden}
+  .appicon.ht.pulse .sq{animation:tilePulse 1.1s ease-in-out infinite}
+  @keyframes tilePulse{0%,100%{box-shadow:0 0 0 0 rgba(238,77,45,.6)}50%{box-shadow:0 0 0 14px rgba(238,77,45,0)}}
+
+  /* ===== hoantien chrome ===== */
+  .ht-head{flex:0 0 auto;padding:62px 16px 14px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--z200);display:flex;align-items:center;gap:11px}
+  .ht-head .greet .hi{font-size:13px;color:var(--z500);font-weight:500;line-height:1;margin-bottom:5px}
+  .ht-head .greet .nm{display:flex;align-items:center;gap:7px}
+  .ht-head .greet .nm b{font-size:17px;font-weight:600;color:var(--z900);line-height:1}
+  .rankchip{display:inline-flex;align-items:center;gap:3px;background:#fefce8;color:#a16207;border:1px solid #fde68a;border-radius:5px;padding:3px 6px;font-size:11px;font-weight:800;line-height:1}
+  .rankchip .ic{font-size:12px;color:#eab308}
+  .ht-head .sp{flex:1}
+  .ht-head .hbtn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--z700);font-size:21px;position:relative}
+  .ht-head .ava{width:40px;height:40px;border-radius:50%;background:var(--z900);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:700;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(0,0,0,.08)}
+  .ht-head .dotred{position:absolute;top:6px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--ee);border:2px solid #fff}
+  .ht-body{flex:1;overflow:hidden;padding:16px;position:relative}
+  .ht-nav{flex:0 0 auto;display:flex;background:rgba(255,255,255,.97);border-top:1px solid var(--z200);box-shadow:0 -4px 20px -8px rgba(0,0,0,.10);padding-bottom:20px}
+  .ht-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 0;font-size:11px;font-weight:600;color:var(--z500);position:relative}
+  .ht-tab .ti{font-size:24px;padding:5px;border-radius:10px}
+  .ht-tab.on{color:var(--ee)}
+  .ht-tab.on::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:3px;border-radius:0 0 4px 4px;background:var(--ee)}
+  .ht-tab.on .ti{background:rgba(238,77,45,.08)}
+
+  /* link tool */
+  .lk-input-card{background:#fff;border:1px solid var(--z200);border-radius:16px;padding:16px;box-shadow:0 4px 24px -14px rgba(0,0,0,.12)}
+  .lk-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--z400);line-height:1}
+  .lk-h1{font-size:17px;font-weight:700;color:var(--z900);margin:8px 0 14px;line-height:1.2}
+  .lk-inrow{display:flex;gap:10px}
+  .lk-field{flex:1;position:relative;border-radius:13px;padding:2px;background:linear-gradient(120deg,#ee4d2d,#ff7a5c,#ee4d2d);min-width:0}
+  .lk-field .inner{display:flex;align-items:center;gap:9px;background:#fff;border-radius:11px;height:46px;padding:0 12px}
+  .lk-field .wand{color:var(--ee);font-size:17px;flex:0 0 auto}
+  .lk-field .val{flex:1;font-size:14px;color:var(--z700);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+  .lk-field .paste{color:var(--z400);font-size:17px;flex:0 0 auto}
+  .lk-go{flex:0 0 auto;height:50px;padding:0 17px;border-radius:13px;background:var(--ee-grad);color:#fff;font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:7px;box-shadow:0 6px 18px -6px rgba(238,77,45,.5)}
+  .lk-go .ic{font-size:17px}
+
+  .lk-result{margin-top:16px;background:#fff;border:1px solid var(--z200);border-radius:16px;overflow:hidden;box-shadow:0 10px 36px -16px rgba(0,0,0,.16)}
+  .lk-prod{display:flex;gap:14px;padding:16px}
+  .lk-prod .img{width:96px;height:96px;border-radius:10px;background:radial-gradient(circle at 50% 40%,#fff,#f1e7e1);display:grid;place-items:center;font-size:50px;flex:0 0 auto;border:1px solid var(--z200)}
+  .lk-prod .col{min-width:0;flex:1}
+  .lk-pill{display:inline-flex;align-items:center;gap:4px;background:rgba(238,77,45,.08);color:var(--c2410c);font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:2px 6px;border-radius:6px;border:1px solid rgba(238,77,45,.25)}
+  .lk-pill .ic{font-size:11px}
+  .lk-pn{font-size:13.5px;font-weight:600;color:var(--z900);line-height:1.35;margin:7px 0 5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .lk-pp{display:flex;align-items:baseline;gap:8px}
+  .lk-pp .now{font-family:var(--mono);font-weight:800;font-size:18px;color:var(--ee)}
+  .lk-pp .was{font-family:var(--mono);font-size:11.5px;color:var(--z400);text-decoration:line-through}
+  .lk-meta{display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--z500);margin-top:6px}
+  .lk-meta .st{color:#f5a623;font-family:var(--mono);display:inline-flex;align-items:center;gap:3px}
+  .lk-meta .shop{display:inline-flex;align-items:center;gap:4px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lk-strips{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 12px}
+  .lk-strip{border-radius:8px;padding:10px 12px}
+  .lk-strip.c1{background:rgba(0,0,0,.03);border:1px solid var(--z200)}
+  .lk-strip.c2{background:rgba(238,77,45,.10);border:1px solid rgba(238,77,45,.28)}
+  .lk-strip .k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--z500)}
+  .lk-strip.c2 .k{color:var(--ee)}
+  .lk-strip .v{font-family:var(--mono);font-weight:800;font-size:15px;color:var(--z900);margin-top:3px}
+  .lk-strip.c2 .v{color:var(--ee);font-size:16px}
+  .lk-strip.c2 .v small{font-size:11px;font-weight:700}
+  .lk-linkrow{padding:0 16px 13px}
+  .lk-linklabel{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--z500);margin-bottom:7px}
+  .lk-linkin{display:flex;gap:8px}
+  .lk-linkin .box{flex:1;min-width:0;height:42px;border-radius:8px;background:rgba(0,0,0,.03);border:1px solid var(--z200);display:flex;align-items:center;padding:0 12px;font-family:var(--mono);font-size:13px;color:var(--z700);overflow:hidden}
+  .lk-linkin .sqbtn{width:42px;height:42px;border-radius:8px;display:grid;place-items:center;flex:0 0 auto;font-size:17px}
+  .lk-linkin .sqbtn.gray{background:rgba(0,0,0,.03);border:1px solid var(--z200);color:var(--z700)}
+  .lk-linkin .sqbtn.brand{background:rgba(238,77,45,.10);border:1px solid rgba(238,77,45,.3);color:var(--ee)}
+  .lk-buy{display:flex;gap:8px;padding:0 16px 16px}
+  .lk-save{flex:0 0 auto;height:48px;padding:0 16px;border-radius:12px;border:1px solid var(--z200);background:rgba(0,0,0,.03);color:var(--z700);font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
+  .lk-save .ic{font-size:17px}
+  .lk-mua{flex:1;height:48px;border-radius:12px;background:var(--ee-grad);color:#fff;font-weight:800;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px -6px rgba(238,77,45,.5)}
+  .lk-mua .ic{font-size:19px}
+  .is-loading .lk-result{display:none}
+
+  /* convert loading — inline spinner below input */
+  .lk-loading{display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:50px 0 40px}
+  .is-loading .lk-loading{display:flex}
+  .lk-spin{width:42px;height:42px;border-radius:50%;border:4px solid rgba(238,77,45,.18);border-top-color:var(--ee);animation:spin .75s linear infinite}
+  .lk-loadtext{color:var(--z500);font-size:14px;font-weight:600}
+
+  /* dashboard / wallet */
+  .balcard{position:relative;overflow:hidden;border-radius:16px;border:1px solid #fed7aa;background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 55%,#fed7aa 100%);padding:20px;box-shadow:0 16px 48px -20px rgba(0,0,0,.18),0 8px 20px -12px rgba(238,77,45,.22)}
+  .balcard .glow{position:absolute;top:-90px;right:-60px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(238,77,45,.45),transparent 70%);filter:blur(10px)}
+  .balcard .grd{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px);background-size:20px 20px}
+  .bal-row1{display:flex;align-items:flex-start;justify-content:space-between;position:relative}
+  .bal-k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#7c5a3a;line-height:1}
+  .bal-v{font-family:var(--mono);font-weight:800;font-size:34px;color:var(--z900);line-height:1.05;letter-spacing:-.01em;margin-top:7px}
+  .bal-verify{display:inline-flex;align-items:center;gap:4px;background:#d1fae5;color:var(--emerald-fg);border:1px solid var(--emerald-bd);border-radius:7px;padding:4px 7px;font-size:11px;font-weight:700;line-height:1}
+  .bal-verify .ic{font-size:12px;color:#059669}
+  .bal-div{height:1px;margin:15px 0;background:linear-gradient(90deg,transparent,rgba(0,0,0,.13),transparent)}
+  .bal-row2{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .bal-stats{display:flex;align-items:center;gap:18px}
+  .bal-stat .k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7c5a3a;margin-bottom:5px;line-height:1}
+  .bal-stat .v{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--z900);line-height:1}
+  .bal-sep{width:1px;height:30px;background:rgba(0,0,0,.14)}
+  .bal-btn{height:38px;padding:0 15px;border-radius:10px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;background:var(--ee);color:#fff;box-shadow:0 6px 16px -4px rgba(238,77,45,.55)}
+  .bal-btn .ic{font-size:15px}
+
+  .toast{position:absolute;left:16px;right:16px;bottom:18px;z-index:8;background:#fff;border-radius:14px;padding:13px 15px;display:flex;gap:12px;align-items:center;box-shadow:0 -10px 36px -10px rgba(0,0,0,.28);border-left:4px solid var(--emerald);transform:translateY(160%);opacity:0;transition:transform .55s cubic-bezier(.2,.85,.25,1),opacity .4s}
+  .toast.on{transform:translateY(0);opacity:1}
+  .toast .em{font-size:26px}
+  .toast .tx b{display:block;font-size:15px;color:var(--z900);font-weight:700}
+  .toast .tx b .amt{color:var(--emerald);font-family:var(--mono)}
+  .toast .tx span{font-size:13px;color:var(--z500)}
+
+  .insight-row{display:flex;gap:11px;margin-top:14px}
+  .insight{flex:1;background:#fff;border:1px solid var(--z200);border-radius:12px;padding:13px;display:flex;gap:10px;align-items:center}
+  .insight .ib{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:19px;flex:0 0 auto}
+  .insight .ib.g{background:var(--emerald-bg);color:var(--emerald)}
+  .insight .ib.o{background:rgba(238,77,45,.1);color:var(--ee)}
+  .insight .k{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--z500);line-height:1.1}
+  .insight .v{font-family:var(--mono);font-weight:700;font-size:16px;color:var(--z900);margin-top:4px;line-height:1}
+
+  .continue-wrap{margin-top:16px}
+  .continue{height:56px;border-radius:14px;background:var(--ee-grad);color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 12px 28px -8px rgba(238,77,45,.6)}
+  .continue .ic{font-size:20px}
+  .continue-hint{text-align:center;font-size:13px;color:var(--z500);margin-top:10px}
+
+  .coin{position:absolute;width:30px;height:30px;border-radius:50%;z-index:6;background:radial-gradient(circle at 35% 30%,#ffe08a,#f5a623);border:2px solid #e08e00;color:#9a5b00;font-weight:900;font-size:15px;display:grid;place-items:center;font-family:var(--mono);bottom:150px;opacity:0}
+  .coin.fly{animation:coinfly 1s ease-out forwards}
+  @keyframes coinfly{0%{opacity:0;transform:translateY(20px) scale(.5)}18%{opacity:1}100%{opacity:0;transform:translateY(-200px) scale(1)}}
+
+  /* ===== SHOPEE checkout ===== */
+  .co-head{flex:0 0 auto;padding:62px 16px 14px;background:#fff;color:var(--z900);display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--z200)}
+  .co-head .bk{color:var(--sp);font-size:23px}
+  .co-head .ttl{flex:1;text-align:center;font-weight:600;font-size:19px;margin-right:35px}
+  .co-body{flex:1;overflow:hidden;background:var(--z100);padding:12px;display:flex;flex-direction:column;gap:10px;position:relative}
+  .co-card{background:#fff;border-radius:10px;padding:14px}
+  .co-addr{display:flex;gap:11px;align-items:flex-start}
+  .co-addr .pin{color:var(--sp);font-size:19px;flex:0 0 auto}
+  .co-addr b{font-size:15px;color:var(--z900)}
+  .co-addr b .ph{color:var(--z400);font-weight:400;font-size:13.5px}
+  .co-addr span{color:var(--z700);font-size:13.5px;display:block;margin-top:3px;line-height:1.45}
+  .co-addr .chev{margin-left:auto;color:var(--z400);font-size:16px;align-self:center}
+  .co-store{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--z900);margin-bottom:12px}
+  .co-mall{background:var(--sp-red);color:#fff;font-size:12px;font-weight:700;font-style:italic;padding:1px 6px;border-radius:3px}
+  .co-prod{display:flex;gap:12px}
+  .co-prod .th{width:64px;height:64px;border-radius:8px;background:radial-gradient(circle at 50% 40%,#fff,#f1e7e1);display:grid;place-items:center;font-size:34px;flex:0 0 auto;border:1px solid var(--z200)}
+  .co-prod .nm{font-size:14px;color:var(--z900);font-weight:400;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .co-prod .sub{font-size:12.5px;color:var(--z500);margin-top:3px}
+  .co-prod .spl{display:inline-block;border:1px solid var(--sp);color:var(--sp);font-size:11px;border-radius:3px;padding:1px 5px;margin-top:6px}
+  .co-prod .prow{display:flex;align-items:baseline;gap:8px;margin-top:7px}
+  .co-prod .pr{color:var(--sp);font-weight:600;font-size:16px}
+  .co-prod .was{color:var(--z400);font-size:12.5px;text-decoration:line-through}
+  .co-prod .qty{margin-left:auto;color:var(--z500);font-size:13px;align-self:flex-end}
+  .co-line2{display:flex;align-items:center;font-size:14.5px;color:var(--z900);padding:13px 14px;background:#fff;border-radius:10px}
+  .co-line2 .lbl{flex:1}
+  .co-line2 .vchtag{border:1px solid var(--sp);color:var(--sp);font-size:12px;border-radius:3px;padding:2px 7px;margin-right:6px}
+  .co-line2 .muted{color:var(--z400);font-size:13.5px;margin-right:6px}
+  .co-line2 .chev{color:var(--z400);font-size:16px}
+  .co-ship{background:#fff;border-radius:10px;padding:13px 14px}
+  .co-ship .hd{display:flex;align-items:center;font-size:14.5px;color:var(--z900)}
+  .co-ship .hd .all{margin-left:auto;color:var(--z500);font-size:13px;display:flex;align-items:center;gap:3px}
+  .co-ship .opt{margin-top:10px;border:1px solid #bbf0e0;background:#f0fbf7;border-radius:8px;padding:11px 12px;display:flex;align-items:center;gap:8px;position:relative}
+  .co-ship .opt .ck{color:#fff;background:var(--teal);width:20px;height:20px;border-radius:5px 0 5px 0;display:grid;place-items:center;font-size:12px;position:absolute;left:0;top:0}
+  .co-ship .opt .d{font-size:14px;color:var(--z900);margin-left:18px}
+  .co-ship .opt .d .nh{color:var(--z500);font-size:12.5px}
+  .co-ship .opt .free{margin-left:auto;color:var(--teal);font-weight:600;font-size:14px}
+  .co-ship .opt .free s{color:var(--z400);font-weight:400;font-size:12px;margin-right:6px}
+  .co-total{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:14px;font-size:14.5px;color:var(--z900)}
+  .co-total .mono{font-family:var(--mono);color:var(--sp);font-weight:700;font-size:16px}
+  .co-bar{flex:0 0 auto;margin-top:auto;display:flex;align-items:stretch;background:#fff;border-top:1px solid var(--z200);height:64px}
+  .co-bar .sum{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;padding:0 14px;line-height:1.25}
+  .co-bar .sum .t{font-size:13px;color:var(--z700)}
+  .co-bar .sum .t b{font-family:var(--mono);color:var(--sp);font-size:18px;margin-left:5px}
+  .co-bar .sum .save{font-size:11.5px;color:var(--z500)}
+  .co-bar .sum .save b{color:var(--sp);font-family:var(--mono)}
+  .co-bar .place{padding:0 32px;display:flex;align-items:center;background:var(--sp);color:#fff;font-weight:600;font-size:17px}
+  .co-success{position:absolute;inset:0;background:rgba(255,255,255,.98);z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:36px;opacity:0;visibility:hidden;transition:.4s}
+  .co-success.on{opacity:1;visibility:visible}
+  .check{width:96px;height:96px;border-radius:50%;background:var(--emerald-bg);display:grid;place-items:center}
+  .check svg{width:52px;height:52px}
+  .check path{stroke:var(--emerald);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:48;stroke-dashoffset:48}
+  .co-success.on .check path{animation:draw .5s .15s ease forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .co-success h3{margin:0;font-size:23px;font-weight:700;color:var(--z900)}
+  .co-success p{margin:0;color:var(--z500);font-size:15px;line-height:1.5}
+  .co-success .badge{display:inline-flex;align-items:center;gap:6px;background:var(--ee-grad);color:#fff;font-size:14px;font-weight:700;padding:8px 16px;border-radius:24px;margin-top:6px}
+
+  /* tap pointer */
+  .tap{position:absolute;width:46px;height:46px;z-index:90;pointer-events:none;transform:translate(-50%,-50%);opacity:0}
+  .tap.go{animation:tapfx 1.05s ease forwards}
+  .tap .halo{position:absolute;inset:-6px;border-radius:50%;border:3px solid rgba(238,77,45,.9);opacity:0}
+  .tap.go .halo{animation:halo 1.05s ease forwards}
+  .tap .disc{position:absolute;inset:0;border-radius:50%;background:rgba(255,255,255,.92);border:2px solid rgba(0,0,0,.4);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  @keyframes tapfx{0%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}22%{opacity:1;transform:translate(-50%,-50%) scale(.8)}42%{transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
+  @keyframes halo{0%{opacity:0;transform:scale(.3)}30%{opacity:.9}100%{opacity:0;transform:scale(2.1)}}
+
+  .caption{width:312px;text-align:center;min-height:60px}
+  .cap-step{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ee2);text-transform:uppercase}
+  .cap-title{font-weight:700;font-size:16px;margin:5px 0 4px;color:var(--stage-text)}
+  .cap-desc{font-size:12.5px;color:var(--stage-muted);line-height:1.45}
+  .progress-track{width:312px;height:4px;border-radius:3px;background:var(--line);overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--ee-grad);border-radius:3px}
+  .controls{display:flex;align-items:center;gap:12px;margin-top:2px}
+  .ctrl{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--stage-text);cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .ctrl:hover{background:rgba(255,255,255,.1);border-color:var(--ee2)}
+  .ctrl.play{width:52px;height:52px;background:var(--ee-grad);border-color:transparent;box-shadow:0 8px 20px -8px rgba(238,77,45,.7)}
+  .ctrl svg{width:18px;height:18px;fill:currentColor}
+  .ctrl.play svg{width:20px;height:20px;fill:#fff}
+  .ctrl:focus-visible{outline:2px solid #43d999;outline-offset:2px}
+  .footnote{margin-top:28px;text-align:center;color:var(--stage-muted);font-size:12px;opacity:.7;font-family:var(--mono);letter-spacing:.03em}
+
+  /* App Store full-bleed portrait mode (toàn màn hình dọc, xuất 1242×2688) */
+  body.store{background:#000}
+  body.store .stage{max-width:none;padding:0;min-height:100vh;display:grid;place-items:center}
+  body.store header,body.store .rail,body.store .caption,body.store .progress-track,body.store .footnote{display:none}
+  body.store .player{margin:0;gap:0}
+  body.store .phone-col{gap:0}
+  body.store .phone-scaler{width:390px;height:844px;overflow:hidden}
+  body.store .phone{position:static;transform:none;width:390px;height:844px;padding:0;border-radius:0;background:none;box-shadow:none}
+  body.store .viewport{border-radius:0}
+  body.store .controls{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:200;background:rgba(20,14,18,.55);backdrop-filter:blur(8px);padding:7px 12px;border-radius:40px;margin:0}
+  .ctrl#store svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  body.store .ctrl#store{background:var(--ee-grad);border-color:transparent;color:#fff}
+
+  @media (max-width:820px){.player{flex-direction:column;align-items:center;gap:30px}.rail{width:312px;order:2}.phone-col{order:1}}
+  @media (prefers-reduced-motion:reduce){.screen{transition:opacity .12s linear}.rail-head .ring,.lk-spin,.coin,.appicon.pulse .sq{animation:none}}
+</style>
+
+<div class="stage">
+  <header>
+    <div class="brandline">
+      <svg width="26" height="26" viewBox="0 0 64 64" aria-label="hoantien.shop">
+        <defs><linearGradient id="bl0" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ee4d2d"/><stop offset="1" stop-color="#ff7a5c"/></linearGradient></defs>
+        <rect width="64" height="64" rx="14" fill="url(#bl0)"/>
+        <g stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="19" y1="14" x2="19" y2="50"/><path d="M19 32 Q19 24 28 24 Q37 24 37 32 L37 50"/></g>
+      </svg>
+      <span class="wm"><span class="o">oantien</span><span class="s">.shop</span></span>
+      <span class="tag">· Hướng dẫn</span>
+    </div>
+    <h1>Mua Shopee như thường.<br>Tiền tự <span class="glow">về ví</span>.</h1>
+    <p class="sub">Trước khi mua, chia sẻ sản phẩm vào hoantien.shop một lần — link hoàn tiền tạo sẵn, bạn mua y như cũ và tiền tự cộng vào ví. Xem cách hoạt động:</p>
+  </header>
+
+  <div class="player">
+    <aside class="rail" aria-label="Các bước">
+      <p class="rail-head"><span class="ring">↻</span> Cách hoàn tiền Shopee</p>
+      <ol class="steps" id="steps">
+        <li class="step" data-i="0"><span class="dot">1</span><span class="txt">Chọn sản phẩm trên Shopee</span></li>
+        <li class="step" data-i="1"><span class="dot">2</span><span class="txt">Bấm nút Chia sẻ</span></li>
+        <li class="step" data-i="2"><span class="dot">3</span><span class="txt">Chọn app hoantien.shop</span></li>
+        <li class="step" data-i="3"><span class="dot">4</span><span class="txt">Nhận link &amp; xem hoàn tiền</span></li>
+        <li class="step" data-i="4"><span class="dot">5</span><span class="txt">Bấm “Mua hàng ngay”</span></li>
+        <li class="step" data-i="5"><span class="dot">6</span><span class="txt">Đặt hàng như bình thường</span></li>
+        <li class="step" data-i="6"><span class="dot">7</span><span class="txt">Tiền về ví — mua thêm ngay</span></li>
+      </ol>
+    </aside>
+
+    <div class="phone-col">
+      <div class="phone-scaler">
+        <div class="phone">
+          <div class="viewport" id="vp">
+            <div class="island"></div>
+            <div class="statusbar" id="sb">
+              <span class="clock">9:41</span>
+              <span class="sbr">
+                <span class="bars"><i></i><i></i><i></i><i></i></span>
+                <span class="g5">5G</span>
+                <svg class="bt" viewBox="0 0 26 13" aria-hidden><rect x="1" y="1" width="21" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".4"/><rect x="2.6" y="2.6" width="17.8" height="7.8" rx="1.8" fill="currentColor"/><rect x="23.4" y="4.4" width="1.7" height="4.2" rx=".8" fill="currentColor" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <!-- 1) SHOPEE product -->
+            <section class="screen" data-screen="shopee">
+              <div class="sh-photo">
+                <div class="sh-top">
+                  <div class="rnd"><span class="ic" data-icon="chevron-left"></span></div>
+                  <div class="sp"></div>
+                  <div class="rnd tappable" data-tap="share" aria-label="Chia sẻ"><span class="ic" data-icon="forward"></span></div>
+                  <div class="rnd"><span class="ic" data-icon="cart"></span><span class="cartbadge">99+</span></div>
+                  <div class="rnd"><span class="ic" data-icon="more-v"></span></div>
+                </div>
+                <span class="emoji">☕️</span>
+                <span class="sh-pageno">7/13</span>
+              </div>
+              <div class="sh-scroll">
+                <div class="sh-price-block">
+                  <div class="sh-price">
+                    <span class="now"><span class="u">₫</span>1.290.000</span>
+                    <span class="vch"><span class="ic" data-icon="ticket" style="font-size:11px"></span>Giá Sau Voucher</span>
+                    <span class="soldwrap"><span>Đã bán 2,1k</span><span class="ic" data-icon="heart-o" style="font-size:17px"></span></span>
+                  </div>
+                  <div class="sh-spaylater">Chỉ từ <b>215.000₫</b> x 6 kỳ với SPayLater ›</div>
+                  <div class="sh-tags"><span class="sh-tag">Giảm ₫50k cho đơn từ ₫1,2tr</span><span class="sh-tag">SPayLater 0%</span></div>
+                </div>
+                <div class="sh-name-block">
+                  <div class="sh-name"><span class="mall">Mall</span>Máy Pha Cà Phê Espresso Mini Cầm Tay, Áp Suất 15 Bar — Bảo Hành 1 Năm 1 Đổi 1</div>
+                </div>
+                <div class="sh-variants"><span class="lbl">3 phân loại có sẵn</span><span class="vt">☕️</span><span class="vt">🫖</span><span class="vt">⚙️</span></div>
+                <div class="sh-row"><span class="lic ic" data-icon="truck"></span><span>24 Th06 - 27 Th06 · <span class="gray">Phí ship 0₫</span></span><span class="chev ic" data-icon="chevron-right"></span></div>
+                <div class="sh-row"><span class="lic g ic" data-icon="shield"></span><span>Trả hàng miễn phí 15 ngày · Chính hãng 100%</span><span class="chev ic" data-icon="chevron-right"></span></div>
+              </div>
+              <div class="sh-buybar">
+                <div class="sh-bb-ic"><span class="ic" data-icon="message"></span>Chat ngay</div>
+                <div class="sh-bb-ic"><span class="ic" data-icon="cart-plus"></span>Thêm giỏ</div>
+                <div class="sh-bb-voucher"><span class="l1">Mua với voucher</span><span class="l2">₫1.290.000</span></div>
+              </div>
+            </section>
+
+            <!-- 4) LINK tool -->
+            <section class="screen is-loading" data-screen="link">
+              <div class="ht-head">
+                <div class="greet"><div class="hi">Xin chào</div><div class="nm"><b>Hải Văn</b><span class="rankchip"><span class="ic" data-icon="crown"></span>Vàng</span></div></div>
+                <div class="sp"></div>
+                <div class="hbtn"><span class="ic" data-icon="bell"></span><span class="dotred"></span></div>
+                <div class="ava">H</div>
+              </div>
+              <div class="ht-body bg-dot">
+                <div class="lk-input-card">
+                  <div class="lk-eyebrow">Tạo link hoàn tiền</div>
+                  <div class="lk-h1">Dán link Shopee hoặc tìm sản phẩm</div>
+                  <div class="lk-inrow">
+                    <div class="lk-field"><div class="inner"><span class="wand ic" data-icon="wand"></span><span class="val">shopee.vn/May-pha-ca-phe-Espresso…</span><span class="paste ic" data-icon="clipboard"></span></div></div>
+                    <div class="lk-go">Lấy link<span class="ic" data-icon="arrow-right"></span></div>
+                  </div>
+                </div>
+
+                <div class="lk-result">
+                  <div class="lk-prod">
+                    <div class="img">☕️</div>
+                    <div class="col">
+                      <span class="lk-pill"><span class="ic" data-icon="cart"></span> SHOPEE</span>
+                      <div class="lk-pn">Máy pha cà phê Espresso mini cầm tay 15 Bar</div>
+                      <div class="lk-pp"><span class="now">₫1.290.000</span><span class="was">₫1.890.000</span></div>
+                      <div class="lk-meta"><span class="st"><span class="ic" data-icon="star"></span>4.9</span><span class="shop"><span class="ic" data-icon="tag"></span>Đồ Gia Dụng</span></div>
+                    </div>
+                  </div>
+                  <div class="lk-strips">
+                    <div class="lk-strip c1"><div class="k">Hoa hồng đối tác</div><div class="v">4%</div></div>
+                    <div class="lk-strip c2"><div class="k">Hoàn tiền của bạn</div><div class="v">₫36.120 <small>(GOLD)</small></div></div>
+                  </div>
+                  <div class="lk-linkrow">
+                    <div class="lk-linklabel">Link hoàn tiền</div>
+                    <div class="lk-linkin">
+                      <div class="box">s.shopee.vn/2qY8xKpR</div>
+                      <div class="sqbtn gray"><span class="ic" data-icon="copy"></span></div>
+                      <div class="sqbtn brand"><span class="ic" data-icon="qr"></span></div>
+                    </div>
+                  </div>
+                  <div class="lk-buy">
+                    <div class="lk-save"><span class="ic" data-icon="bookmark"></span>Lưu</div>
+                    <div class="lk-mua tappable" data-tap="buy"><span class="ic" data-icon="cart"></span>MUA HÀNG NGAY</div>
+                  </div>
+                </div>
+
+                <div class="lk-loading">
+                  <div class="lk-spin"></div>
+                  <div class="lk-loadtext">Đang lấy link hoàn tiền…</div>
+                </div>
+              </div>
+              <nav class="ht-nav">
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-dashboard"></span>Dashboard</div>
+                <div class="ht-tab on"><span class="ti ic" data-icon="nav-link"></span>Link</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-orders"></span>Đơn hàng</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-finance"></span>Tài chính</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-more"></span>Khác</div>
+              </nav>
+            </section>
+
+            <!-- 6) SHOPEE checkout -->
+            <section class="screen" data-screen="checkout">
+              <div class="co-head"><span class="bk ic" data-icon="arrow-left"></span><span class="ttl">Thanh toán</span></div>
+              <div class="co-body">
+                <div class="co-card co-addr">
+                  <span class="pin ic" data-icon="map-pin"></span>
+                  <div><b>Hải Văn <span class="ph">(+84) 912 000 000</span></b><span>123 Đường Hoa Hồng, Phường Bến Nghé<br>Quận 1, Thành phố Hồ Chí Minh</span></div>
+                  <span class="chev ic" data-icon="chevron-right"></span>
+                </div>
+                <div class="co-card">
+                  <div class="co-store"><span class="co-mall">Mall</span> Đồ Gia Dụng Official Store</div>
+                  <div class="co-prod">
+                    <div class="th">☕️</div>
+                    <div style="min-width:0;flex:1">
+                      <div class="nm">Máy pha cà phê Espresso mini cầm tay 15 Bar</div>
+                      <div class="sub">Phân loại: Trắng + Máy xay tay</div>
+                      <span class="spl">0% SPayLater (đến 6 kỳ)</span>
+                      <div class="prow"><span class="pr">₫1.290.000</span><span class="was">₫1.890.000</span><span class="qty">x1</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="co-line2"><span class="lbl">Voucher của Shop</span><span class="vchtag">-50k₫</span><span class="chev ic" data-icon="chevron-right"></span></div>
+                <div class="co-card co-ship">
+                  <div class="hd"><span>Phương thức vận chuyển</span><span class="all">Xem tất cả <span class="ic" data-icon="chevron-right" style="font-size:14px"></span></span></div>
+                  <div class="opt">
+                    <span class="ck ic" data-icon="check-sm"></span>
+                    <div class="d">24 Th06 - 29 Th06 · <span class="nh">Nhanh</span></div>
+                    <span class="free"><s>₫163.600</s>Miễn Phí</span>
+                  </div>
+                </div>
+                <div class="co-total"><span>Tổng số tiền (1 sản phẩm)</span><span class="mono">₫1.290.000</span></div>
+                <div class="co-bar">
+                  <div class="sum"><span class="t">Tổng cộng<b>₫1.290.000</b></span><span class="save">Tiết kiệm <b>₫600.000</b></span></div>
+                  <div class="place tappable" data-tap="place">Đặt hàng</div>
+                </div>
+                <div class="co-success">
+                  <div class="check"><svg viewBox="0 0 52 52"><path d="M14 27 l8 8 l16 -18"/></svg></div>
+                  <h3>Đặt hàng thành công!</h3>
+                  <p>Đơn #SP2026 đang được xử lý.</p>
+                  <span class="badge"><span class="ic" data-icon="shield-check"></span> hoantien.shop đã ghi nhận đơn</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- 7) wallet -->
+            <section class="screen" data-screen="wallet">
+              <div class="ht-head">
+                <div class="greet"><div class="hi">Xin chào</div><div class="nm"><b>Hải Văn</b><span class="rankchip"><span class="ic" data-icon="crown"></span>Vàng</span></div></div>
+                <div class="sp"></div>
+                <div class="hbtn"><span class="ic" data-icon="bell"></span><span class="dotred"></span></div>
+                <div class="ava">H</div>
+              </div>
+              <div class="ht-body bg-dot">
+                <div class="toast" id="toast">
+                  <span class="em">🎉</span>
+                  <div class="tx"><b>Hoàn tiền <span class="amt">+₫36.120</span></b><span>Đơn ☕️ Máy pha cà phê đã hoàn tất</span></div>
+                </div>
+
+                <div class="balcard">
+                  <div class="glow"></div><div class="grd"></div>
+                  <div class="bal-row1">
+                    <div><div class="bal-k">Số dư khả dụng</div><div class="bal-v" id="balv">₫248.000</div></div>
+                    <div class="bal-verify"><span class="ic" data-icon="shield-check"></span> Đã xác minh</div>
+                  </div>
+                  <div class="bal-div"></div>
+                  <div class="bal-row2">
+                    <div class="bal-stats">
+                      <div class="bal-stat"><div class="k">Đang chờ</div><div class="v">₫84.000</div></div>
+                      <div class="bal-sep"></div>
+                      <div class="bal-stat"><div class="k">Tổng đã hoàn</div><div class="v">₫1.284.500</div></div>
+                    </div>
+                    <div class="bal-btn"><span class="ic" data-icon="arrow-down"></span>Rút tiền</div>
+                  </div>
+                </div>
+
+                <div class="insight-row">
+                  <div class="insight"><span class="ib o"><span class="ic" data-icon="receipt"></span></span><div><div class="k">Đơn tháng này</div><div class="v">12</div></div></div>
+                  <div class="insight"><span class="ib g"><span class="ic" data-icon="coins"></span></span><div><div class="k">Hoàn tháng này</div><div class="v">₫312k</div></div></div>
+                </div>
+
+                <div class="continue-wrap">
+                  <div class="continue tappable" data-tap="continue"><span class="ic" data-icon="cart"></span>Tiếp tục mua hàng hoàn tiền</div>
+                  <div class="continue-hint">Mỗi lần mua qua hoantien.shop đều được hoàn tiền</div>
+                </div>
+              </div>
+              <nav class="ht-nav">
+                <div class="ht-tab on"><span class="ti ic" data-icon="nav-dashboard"></span>Dashboard</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-link"></span>Link</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-orders"></span>Đơn hàng</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-finance"></span>Tài chính</div>
+                <div class="ht-tab"><span class="ti ic" data-icon="nav-more"></span>Khác</div>
+              </nav>
+            </section>
+
+            <!-- share sheet -->
+            <div class="scrim" id="scrim"></div>
+            <div class="sheet" id="sheet">
+              <div class="grip"></div>
+              <div class="sheet-prev"><div class="th">☕️</div><div class="meta"><b>Máy pha cà phê Espresso 15 Bar</b><span>shopee.vn</span></div></div>
+              <div class="sheet-row">
+                <div class="appicon zalo"><div class="sq">
+                  <svg viewBox="0 0 50 50" width="60" height="60" fill="none" aria-label="Zalo" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.782 0.166016H27.199C33.2653 0.166016 36.8103 1.05701 39.9572 2.74421C43.1041 4.4314 45.5875 6.89585 47.2557 10.0428C48.9429 13.1897 49.8339 16.7347 49.8339 22.801V27.1991C49.8339 33.2654 48.9429 36.8104 47.2557 39.9573C45.5685 43.1042 43.1041 45.5877 39.9572 47.2559C36.8103 48.9431 33.2653 49.8341 27.199 49.8341H22.8009C16.7346 49.8341 13.1896 48.9431 10.0427 47.2559C6.89583 45.5687 4.41243 43.1042 2.7442 39.9573C1.057 36.8104 0.166016 33.2654 0.166016 27.1991V22.801C0.166016 16.7347 1.057 13.1897 2.7442 10.0428C4.43139 6.89585 6.89583 4.41245 10.0427 2.74421C13.1707 1.05701 16.7346 0.166016 22.782 0.166016Z" fill="#0068FF"/>
+                    <path opacity="0.12" fill-rule="evenodd" clip-rule="evenodd" d="M49.8336 26.4736V27.1994C49.8336 33.2657 48.9427 36.8107 47.2555 39.9576C45.5683 43.1045 43.1038 45.5879 39.9569 47.2562C36.81 48.9434 33.265 49.8344 27.1987 49.8344H22.8007C17.8369 49.8344 14.5612 49.2378 11.8104 48.0966L7.27539 43.4267L49.8336 26.4736Z" fill="#001A33"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.779 43.5892C10.1019 43.846 13.0061 43.1836 15.0682 42.1825C24.0225 47.1318 38.0197 46.8954 46.4923 41.4732C46.8209 40.9803 47.1279 40.4677 47.4128 39.9363C49.1062 36.7779 50.0004 33.22 50.0004 27.1316V22.7175C50.0004 16.629 49.1062 13.0711 47.4128 9.91273C45.7385 6.75436 43.2461 4.28093 40.0877 2.58758C36.9293 0.894239 33.3714 0 27.283 0H22.8499C17.6644 0 14.2982 0.652754 11.4699 1.89893C11.3153 2.03737 11.1636 2.17818 11.0151 2.32135C2.71734 10.3203 2.08658 27.6593 9.12279 37.0782C9.13064 37.0921 9.13933 37.1061 9.14889 37.1203C10.2334 38.7185 9.18694 41.5154 7.55068 43.1516C7.28431 43.399 7.37944 43.5512 7.779 43.5892Z" fill="white"/>
+                    <path d="M20.5632 17H10.8382V19.0853H17.5869L10.9329 27.3317C10.7244 27.635 10.5728 27.9194 10.5728 28.5639V29.0947H19.748C20.203 29.0947 20.5822 28.7156 20.5822 28.2606V27.1421H13.4922L19.748 19.2938C19.8428 19.1801 20.0134 18.9716 20.0893 18.8768L20.1272 18.8199C20.4874 18.2891 20.5632 17.8341 20.5632 17.2844V17Z" fill="#0068FF"/>
+                    <path d="M32.9416 29.0947H34.3255V17H32.2402V28.3933C32.2402 28.7725 32.5435 29.0947 32.9416 29.0947Z" fill="#0068FF"/>
+                    <path d="M25.814 19.6924C23.1979 19.6924 21.0747 21.8156 21.0747 24.4317C21.0747 27.0478 23.1979 29.171 25.814 29.171C28.4301 29.171 30.5533 27.0478 30.5533 24.4317C30.5723 21.8156 28.4491 19.6924 25.814 19.6924ZM25.814 27.2184C24.2785 27.2184 23.0273 25.9672 23.0273 24.4317C23.0273 22.8962 24.2785 21.645 25.814 21.645C27.3495 21.645 28.6007 22.8962 28.6007 24.4317C28.6007 25.9672 27.3685 27.2184 25.814 27.2184Z" fill="#0068FF"/>
+                    <path d="M40.4867 19.6162C37.8516 19.6162 35.7095 21.7584 35.7095 24.3934C35.7095 27.0285 37.8516 29.1707 40.4867 29.1707C43.1217 29.1707 45.2639 27.0285 45.2639 24.3934C45.2639 21.7584 43.1217 19.6162 40.4867 19.6162ZM40.4867 27.2181C38.9322 27.2181 37.681 25.9669 37.681 24.4124C37.681 22.8579 38.9322 21.6067 40.4867 21.6067C42.0412 21.6067 43.2924 22.8579 43.2924 24.4124C43.2924 25.9669 42.0412 27.2181 40.4867 27.2181Z" fill="#0068FF"/>
+                    <path d="M29.4562 29.0944H30.5747V19.957H28.6221V28.2793C28.6221 28.7153 29.0012 29.0944 29.4562 29.0944Z" fill="#0068FF"/>
+                  </svg>
+                </div>Zalo</div>
+                <div class="appicon msg"><div class="sq">
+                  <svg viewBox="0 0 66.145836 66.145836" width="60" height="60" aria-label="Tin nhắn" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="imsgG" x1="-25.272568" y1="207.52057" x2="-25.272568" y2="152.9982" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.98209275,0,0,0.98209275,-1.0651782,3.7961838)"><stop offset="0" stop-color="#0cbd2a"/><stop offset="1" stop-color="#5bf675"/></linearGradient></defs>
+                    <g transform="translate(59.483067,-145.8456)">
+                      <rect ry="14.567832" rx="14.567832" y="145.8456" x="-59.483067" height="66.145836" width="66.145836" fill="url(#imsgG)"/>
+                      <path d="m -26.410149,157.29606 a 24.278298,20.222157 0 0 0 -24.278105,20.22202 24.278298,20.222157 0 0 0 11.79463,17.31574 27.365264,20.222157 0 0 1 -4.245218,5.94228 23.85735,20.222157 0 0 0 9.86038,-3.87367 24.278298,20.222157 0 0 0 6.868313,0.83768 24.278298,20.222157 0 0 0 24.2781059,-20.22203 24.278298,20.222157 0 0 0 -24.2781059,-20.22202 z" fill="#ffffff"/>
+                    </g>
+                  </svg>
+                </div>Tin nhắn</div>
+                <div class="appicon ht tappable" data-tap="hoantien">
+                  <div class="sq">
+                    <svg width="60" height="60" viewBox="0 0 64 64" aria-label="hoantien.shop">
+                      <defs><linearGradient id="bl1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ee4d2d"/><stop offset="1" stop-color="#ff7a5c"/></linearGradient></defs>
+                      <rect width="64" height="64" rx="15" fill="url(#bl1)"/>
+                      <g stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="19" y1="14" x2="19" y2="50"/><path d="M19 32 Q19 24 28 24 Q37 24 37 32 L37 50"/></g>
+                      <circle cx="48" cy="50" r="4.5" fill="#fff"/>
+                    </svg>
+                  </div>Hoantien</div>
+                <div class="appicon copy"><div class="sq"><span class="ic" data-icon="copy"></span></div>Sao chép</div>
+                <div class="appicon more"><div class="sq"><span class="ic" data-icon="more"></span></div>Khác</div>
+              </div>
+            </div>
+
+            <div class="tap" id="tap"><div class="halo"></div><div class="disc"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption">
+        <div class="cap-step" id="capStep">Bước 1 / 7</div>
+        <div class="cap-title" id="capTitle">Chọn sản phẩm trên Shopee</div>
+        <div class="cap-desc" id="capDesc">Thấy món ưng ý trong app Shopee như mọi khi.</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="prog"></div></div>
+
+      <div class="controls">
+        <button class="ctrl" id="restart" aria-label="Chạy lại" title="Chạy lại"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></button>
+        <button class="ctrl play" id="play" aria-label="Phát / Dừng" title="Phát / Dừng"><svg id="playIcon" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+        <button class="ctrl" id="nextBtn" aria-label="Bước sau" title="Bước sau"><svg viewBox="0 0 24 24"><path d="M7 5l9 7-9 7V5z"/><rect x="17" y="5" width="2.4" height="14" rx="1"/></svg></button>
+        <button class="ctrl" id="store" aria-label="Chế độ App Store" title="Chế độ App Store — toàn màn hình dọc 1242×2688"><svg viewBox="0 0 24 24"><rect x="6.5" y="2" width="11" height="20" rx="2.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <p class="footnote">Demo minh hoạ cách dùng app hoantien.shop</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var S='stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"';
+  var ICONS={
+    'chevron-left':'<path d="m15 18-6-6 6-6"/>',
+    'chevron-right':'<path d="m9 18 6-6-6-6"/>',
+    'arrow-left':'<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+    'forward':'<polyline points="15 17 20 12 15 7"/><path d="M4 18v-2a4 4 0 0 1 4-4h12"/>',
+    'cart':'<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+    'cart-plus':'FILL<path d="M11 9H13V6H16V4H13V1H11V4H8V6H11M7 18C5.9 18 5 18.9 5 20S5.9 22 7 22 9 21.1 9 20 8.1 18 7 18M17 18C15.9 18 15 18.9 15 20S15.9 22 17 22 19 21.1 19 20 18.1 18 17 18M7.2 14.8V14.7L8.1 13H15.5C16.2 13 16.9 12.6 17.2 12L21.1 5L19.4 4L15.5 11H8.5L4.3 2H1V4H3L6.6 11.6L5.2 14C5.1 14.3 5 14.6 5 15C5 16.1 5.9 17 7 17H19V15H7.4C7.3 15 7.2 14.9 7.2 14.8Z"/>',
+    'more-v':'<circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>',
+    'more':'<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>',
+    'play':'FILL<path d="M6 3.5v17l14-8.5z"/>',
+    'heart-o':'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+    'ticket':'<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>',
+    'truck':'<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+    'shield':'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+    'check-sm':'FILL<path d="M20.3 5.7a1 1 0 0 0-1.4 0L9 15.6l-3.9-3.9a1 1 0 1 0-1.4 1.4l4.6 4.6a1 1 0 0 0 1.4 0L20.3 7.1a1 1 0 0 0 0-1.4z"/>',
+    'message':'FILL<path d="M12 3C6.5 3 2 6.58 2 11C2.05 13.15 3.06 15.17 4.75 16.5C4.75 17.1 4.33 18.67 2 21C4.37 20.89 6.64 20 8.47 18.5C9.61 18.83 10.81 19 12 19C17.5 19 22 15.42 22 11S17.5 3 12 3M12 17C7.58 17 4 14.31 4 11S7.58 5 12 5 20 7.69 20 11 16.42 17 12 17M17 12V10H15V12H17M13 12V10H11V12H13M9 12V10H7V12H9Z"/>',
+    'bubble':'FILL<path d="M12 3.2C6.9 3.2 3 6.7 3 10.9c0 2.4 1.3 4.5 3.4 5.9-.1 1.1-.8 2.6-1.6 3.5 1.8-.2 3.5-1 4.7-1.9 .8.2 1.7.3 2.5.3 5.1 0 9-3.5 9-7.8S17.1 3.2 12 3.2z"/>',
+    'bell':'<path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>',
+    'crown':'<path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z"/><path d="M5 20h14"/>',
+    'wand':'<path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/>',
+    'clipboard':'<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>',
+    'arrow-right':'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+    'star':'FILL<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+    'tag':'<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.41 2.41 0 0 0 3.41 0l6.59-6.59a2.41 2.41 0 0 0 0-3.41z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>',
+    'copy':'<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+    'qr':'<rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/>',
+    'bookmark':'<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>',
+    'shield-check':'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+    'arrow-down':'<path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/>',
+    'receipt':'<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+    'coins':'<circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/>',
+    'map-pin':'FILL<path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>',
+    'nav-dashboard':'<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
+    'nav-link':'<path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/>',
+    'nav-orders':'<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+    'nav-finance':'<path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>',
+    'nav-more':'<line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>'
+  };
+  document.querySelectorAll('[data-icon]').forEach(function(el){
+    var raw=ICONS[el.getAttribute('data-icon')]; if(!raw)return;
+    var fill=false; if(raw.indexOf('FILL')===0){fill=true;raw=raw.slice(4);}
+    el.innerHTML='<svg viewBox="0 0 24 24" width="1em" height="1em" '+(fill?'fill="currentColor" stroke="none"':S)+'>'+raw+'</svg>';
+  });
+
+  var vp=document.getElementById('vp'),tap=document.getElementById('tap');
+  var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim');
+  var prog=document.getElementById('prog');
+  var capStep=document.getElementById('capStep'),capTitle=document.getElementById('capTitle'),capDesc=document.getElementById('capDesc');
+  var linkScreen=document.querySelector('[data-screen="link"]');
+  var coSuccess=document.querySelector('.co-success');
+  var toast=document.getElementById('toast'),balv=document.getElementById('balv');
+  var screens=Array.prototype.slice.call(vp.querySelectorAll('.screen'));
+  var stepEls=Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var playBtn=document.getElementById('play'),playIcon=document.getElementById('playIcon');
+  var htTile=document.querySelector('.appicon.ht');
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  function vnd(n){return '₫'+Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+  function setScreen(name){screens.forEach(function(s){s.classList.toggle('is-active',s.dataset.screen===name);});}
+  function pressFx(el){if(!el)return;el.classList.add('pressing');setTimeout(function(){el.classList.remove('pressing');},300);}
+  function tapAt(sel){
+    var el=vp.querySelector('[data-tap="'+sel+'"]'); if(!el)return;
+    var vr=vp.getBoundingClientRect(),er=el.getBoundingClientRect();
+    tap.style.left=((er.left+er.width/2-vr.left)/vr.width*100)+'%';
+    tap.style.top=((er.top+er.height/2-vr.top)/vr.height*100)+'%';
+    tap.classList.remove('go'); void tap.offsetWidth; tap.classList.add('go');
+    setTimeout(function(){pressFx(el);},220);
+  }
+  function sheetUp(v){sheet.classList.toggle('is-up',v);scrim.classList.toggle('is-up',v);}
+
+  var countTok=0;
+  function countUp(el,from,to,dur){
+    var start=performance.now(),tok=++countTok;
+    (function tick(now){if(tok!==countTok)return;var p=Math.min(1,(now-start)/dur),e=1-Math.pow(1-p,3);el.textContent=vnd(from+(to-from)*e);if(p<1)requestAnimationFrame(tick);})(performance.now());
+  }
+  function flyCoins(){
+    var body=document.querySelector('[data-screen="wallet"] .ht-body'); if(!body)return;
+    body.querySelectorAll('.coin').forEach(function(c){c.remove();});
+    var n=reduce?0:8;
+    for(var i=0;i<n;i++){(function(i){
+      var c=document.createElement('div'); c.className='coin'; c.textContent='₫'; c.style.left=(28+i*42)+'px';
+      setTimeout(function(){c.classList.add('fly');c.style.left=(28+Math.random()*300)+'px';},i*80);
+      body.appendChild(c); setTimeout(function(){c.remove();},i*80+1100);
+    })(i);}
+  }
+  function resetAll(){sheetUp(false);linkScreen.classList.add('is-loading');coSuccess.classList.remove('on');toast.classList.remove('on');htTile.classList.remove('pressing');htTile.classList.remove('pulse');balv.textContent=vnd(248000);countTok++;}
+
+  var START_BAL=248000,CASH=36120;
+  var steps=[
+    {t:'Chọn sản phẩm trên Shopee',d:'Thấy món ưng ý trong app Shopee như mọi khi.',dur:1050,
+     enter:function(){resetAll();setScreen('shopee');}},
+    {t:'Bấm nút Chia sẻ',d:'Chạm biểu tượng Chia sẻ ở góc trên sản phẩm.',dur:1600,
+     enter:function(){setScreen('shopee');},
+     keys:[{at:300,fn:function(){tapAt('share');}},{at:780,fn:function(){sheetUp(true);}}]},
+    {t:'Chọn app hoantien.shop',d:'Trong bảng chia sẻ, chạm vào hoantien.shop.',dur:1450,
+     enter:function(){setScreen('shopee');sheetUp(true);htTile.classList.add('pulse');},
+     keys:[{at:500,fn:function(){tapAt('hoantien');}}]},
+    {t:'Nhận link & xem hoàn tiền',d:'App tạo link rất nhanh, rồi hiện số tiền bạn được hoàn.',dur:1700,
+     enter:function(){sheetUp(false);setScreen('link');linkScreen.classList.add('is-loading');},
+     keys:[{at:750,fn:function(){linkScreen.classList.remove('is-loading');}}]},
+    {t:'Bấm “Mua hàng ngay”',d:'App mở lại Shopee qua link hoàn tiền của bạn.',dur:1200,
+     enter:function(){setScreen('link');linkScreen.classList.remove('is-loading');},
+     keys:[{at:320,fn:function(){tapAt('buy');}}]},
+    {t:'Đặt hàng như bình thường',d:'Bấm “Đặt hàng” và thanh toán y hệt mọi lần.',dur:3000,
+     enter:function(){setScreen('checkout');coSuccess.classList.remove('on');},
+     keys:[{at:850,fn:function(){tapAt('place');}},{at:1550,fn:function(){coSuccess.classList.add('on');}}]},
+    {t:'Tiền về ví — mua thêm ngay',d:'Đơn hoàn tất, tiền về ví tự động. Chạm “Tiếp tục” để tiếp tục mua sắm.',dur:4000,
+     enter:function(){setScreen('wallet');balv.textContent=vnd(START_BAL);toast.classList.remove('on');},
+     keys:[{at:300,fn:function(){flyCoins();}},{at:650,fn:function(){toast.classList.add('on');countUp(balv,START_BAL,START_BAL+CASH,1100);}},{at:2800,fn:function(){tapAt('continue');}}]}
+  ];
+
+  var idx=0,stepStart=0,paused=false,pauseStart=0,fired=[];
+  function enterStep(i){
+    idx=((i%steps.length)+steps.length)%steps.length; var st=steps[idx];
+    fired=(st.keys||[]).map(function(){return false;});
+    st.enter&&st.enter();
+    capStep.textContent='Bước '+(idx+1)+' / '+steps.length; capTitle.textContent=st.t; capDesc.textContent=st.d;
+    stepEls.forEach(function(e,k){e.classList.toggle('active',k===idx);e.classList.toggle('done',k<idx);});
+    stepStart=performance.now(); prog.style.width='0%';
+  }
+  function frame(now){
+    if(!paused){var st=steps[idx],el=now-stepStart;
+      (st.keys||[]).forEach(function(k,ki){if(!fired[ki]&&el>=k.at){fired[ki]=true;k.fn();}});
+      prog.style.width=Math.min(100,el/st.dur*100)+'%';
+      if(el>=st.dur)enterStep(idx+1);
+    }
+    requestAnimationFrame(frame);
+  }
+  function setPaused(v){
+    if(v&&!paused){paused=true;pauseStart=performance.now();}
+    else if(!v&&paused){paused=false;stepStart+=performance.now()-pauseStart;}
+    playIcon.innerHTML=paused?'<path d="M7 5l12 7-12 7V5z"/>':'<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+  }
+  playBtn.addEventListener('click',function(){setPaused(!paused);});
+  document.getElementById('restart').addEventListener('click',function(){enterStep(0);if(paused)setPaused(false);});
+  document.getElementById('nextBtn').addEventListener('click',function(){enterStep(idx+1);});
+  stepEls.forEach(function(e){e.addEventListener('click',function(){enterStep(+e.dataset.i);});});
+  document.addEventListener('keydown',function(e){if(e.code==='Space'){e.preventDefault();setPaused(!paused);}if(e.code==='ArrowRight')enterStep(idx+1);if(e.code==='ArrowLeft')enterStep(idx-1);});
+  document.getElementById('store').addEventListener('click',function(){document.body.classList.toggle('store');});
+  if(typeof location!=='undefined'&&new URLSearchParams(location.search).get('embed')){document.body.classList.add('store');}
+  enterStep(0); requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>

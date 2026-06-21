@@ -57,6 +57,7 @@ export interface Project {
   cover: ProjectCover
   screenshots: ProjectScreenshot[]
   links: ProjectLink[]
+  demoUrl?: string
 }
 
 export const projects: Project[] = [
@@ -115,7 +116,15 @@ export const projects: Project[] = [
       image: '/images/projects/keothom-cover.png',
       logo: '/images/projects/keothom-logo.svg',
     },
-    screenshots: [],
+    screenshots: [
+      { src: '/images/apps/keothom/00-dashboard.webp', alt: { en: 'hoantien.shop — cashback wallet', vi: 'hoantien.shop — ví hoàn tiền' } },
+      { src: '/images/apps/keothom/01-link.webp', alt: { en: 'hoantien.shop — paste a Shopee link for cashback', vi: 'hoantien.shop — dán link Shopee để nhận hoàn tiền' } },
+      { src: '/images/apps/keothom/02-savedlinks.webp', alt: { en: 'hoantien.shop — saved links with sale reminders', vi: 'hoantien.shop — lưu link kèm nhắc giờ sale' } },
+      { src: '/images/apps/keothom/03-flashsale.webp', alt: { en: 'hoantien.shop — flash sale deals', vi: 'hoantien.shop — săn flash sale hoàn tiền' } },
+      { src: '/images/apps/keothom/04-orders.webp', alt: { en: 'hoantien.shop — order & cashback tracking', vi: 'hoantien.shop — theo dõi đơn & hoàn tiền' } },
+      { src: '/images/apps/keothom/05-finance.webp', alt: { en: 'hoantien.shop — withdraw to bank', vi: 'hoantien.shop — rút tiền về ngân hàng' } },
+    ],
+    demoUrl: '/onboarding-demo.html',
     links: [{ label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://hoantien.shop', kind: 'live' }],
   },
   {

@@ -210,6 +210,28 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
           </div>
         )}
 
+        {/* Interactive demo */}
+        {project.demoUrl && (
+          <div className="mt-10">
+            <h2 className="font-display text-2xl font-bold text-slate-900">
+              {locale === 'vi' ? 'Xem thực tế' : 'See it in action'}
+            </h2>
+            <p className="mt-1 text-sm text-slate-500">
+              {locale === 'vi'
+                ? 'Demo tương tác — tự phát, bấm để điều khiển từng bước.'
+                : 'Interactive walkthrough — plays automatically, click to control each step.'}
+            </p>
+            <div className="mt-5 overflow-hidden rounded-2xl ring-1 ring-slate-200/80 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
+              <iframe
+                src={project.demoUrl}
+                title={locale === 'vi' ? 'Demo hoàn tiền Shopee' : 'Shopee cashback demo'}
+                className="w-full h-[680px] border-0 block"
+                allow="autoplay"
+              />
+            </div>
+          </div>
+        )}
+
         {/* CTA */}
         {primaryLink && (
           <div className="mt-12 overflow-hidden rounded-3xl bg-blue-gradient p-6 text-center text-white lg:p-10">
