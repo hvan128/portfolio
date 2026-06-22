@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import { getProject, getProjectSlugs, projects, type ProjectLink } from '@/lib/projects'
 import { pick, type Locale } from '@/lib/i18n-content'
 import ProjectCover from '@/components/projects/ProjectCover'
+import DemoFrame from '@/components/projects/DemoFrame'
 
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }))
@@ -222,11 +223,9 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
                 : 'Interactive walkthrough — plays automatically, click to control each step.'}
             </p>
             <div className="mt-5 overflow-hidden rounded-2xl ring-1 ring-slate-200/80 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
-              <iframe
+              <DemoFrame
                 src={project.demoUrl}
                 title={locale === 'vi' ? 'Demo hoàn tiền Shopee' : 'Shopee cashback demo'}
-                className="w-full h-[680px] border-0 block"
-                allow="autoplay"
               />
             </div>
           </div>

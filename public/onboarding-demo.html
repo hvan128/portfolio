@@ -791,4 +791,25 @@
 })();
 </script>
 
+<script>
+/* Embedded auto-height: when running inside the portfolio iframe, drop the
+   100vh body floor and report the real content height to the host so it can
+   size the frame to fit — the demo then scrolls with the page, never inside
+   a nested scrollbar. */
+(function(){
+  if(window===top)return;
+  document.body.style.minHeight='0';
+  var last=0;
+  function report(){
+    var h=Math.ceil(Math.max(document.body.scrollHeight,document.documentElement.scrollHeight));
+    if(h&&h!==last){last=h;parent.postMessage({__demoHeight:h},'*');}
+  }
+  addEventListener('load',report);
+  addEventListener('resize',report);
+  if(window.ResizeObserver)new ResizeObserver(report).observe(document.body);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(report);
+  report();
+})();
+</script>
+
 </body></html>
