@@ -16,7 +16,7 @@
   body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--stage-text);
     background:radial-gradient(120% 90% at 50% -10%,#2e1722 0%,transparent 60%),linear-gradient(180deg,var(--ground) 0%,var(--ground-2) 100%);
     overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  .stage{max-width:980px;margin:0 auto;padding:30px 20px 46px}
+  .stage{max-width:1080px;margin:0 auto;padding:0 20px 46px}
   .ic{display:inline-grid;place-items:center;line-height:0}
   .ic svg{width:1em;height:1em;display:block}
 
@@ -28,9 +28,10 @@
   h1 .glow{color:#43d999}
   .sub{max-width:56ch;margin:0;color:var(--stage-muted);font-size:14.5px;line-height:1.55}
 
-  .player{display:flex;gap:40px;align-items:flex-start;justify-content:center;margin-top:34px}
+  .player{display:flex;gap:48px;align-items:center;justify-content:center;padding:40px 0 0}
+  .player>header{flex:1;min-width:0;order:1;align-self:flex-start;padding-top:24px}
 
-  .rail{width:250px;flex:0 0 auto;padding-top:4px}
+  .rail{width:220px;flex:0 0 auto;padding-top:4px;order:3;align-self:flex-start}
   .rail-head{display:flex;align-items:center;gap:9px;font-weight:700;font-size:13px;letter-spacing:.03em;color:var(--stage-muted);margin:0 0 18px 4px}
   .rail-head .ring{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ee2);color:var(--ee2);display:grid;place-items:center;font-size:13px;animation:spin 9s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
@@ -43,7 +44,7 @@
   .step.active .dot{background:var(--ee-grad);color:#fff;border-color:transparent;box-shadow:0 6px 18px -4px rgba(238,77,45,.7);transform:scale(1.12)}
   .step.active .txt{color:var(--stage-text);font-weight:700}
 
-  .phone-col{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .phone-col{display:flex;flex-direction:column;align-items:center;gap:18px;order:2}
   .phone-scaler{width:312px;height:658px;position:relative}
   .phone{position:absolute;top:0;left:0;width:410px;transform:scale(.761);transform-origin:top left;
     border-radius:52px;padding:10px;background:#0a0a0c;
@@ -339,28 +340,28 @@
   .ctrl#store svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   body.store .ctrl#store{background:var(--ee-grad);border-color:transparent;color:#fff}
 
-  @media (max-width:820px){.player{flex-direction:column;align-items:center;gap:30px}.rail{width:312px;order:2}.phone-col{order:1}}
+  @media (max-width:820px){.player{flex-direction:column;align-items:center;gap:30px;padding:20px 0 0}.player>header{order:0;width:100%;max-width:340px;padding-top:0}.rail{width:312px;order:2}.phone-col{order:1}}
   @media (prefers-reduced-motion:reduce){.screen{transition:opacity .12s linear}.rail-head .ring,.lk-spin,.coin,.appicon.pulse .sq{animation:none}}
+  .caption,.progress-track,.footnote{display:none}
 </style>
 
 <div class="stage">
-  <header>
-    <div class="brandline">
-      <svg width="26" height="26" viewBox="0 0 64 64" aria-label="hoantien.shop">
-        <defs><linearGradient id="bl0" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ee4d2d"/><stop offset="1" stop-color="#ff7a5c"/></linearGradient></defs>
-        <rect width="64" height="64" rx="14" fill="url(#bl0)"/>
-        <g stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="19" y1="14" x2="19" y2="50"/><path d="M19 32 Q19 24 28 24 Q37 24 37 32 L37 50"/></g>
-      </svg>
-      <span class="wm"><span class="o">oantien</span><span class="s">.shop</span></span>
-      <span class="tag">· Hướng dẫn</span>
-    </div>
-    <h1>Mua Shopee như thường.<br>Tiền tự <span class="glow">về ví</span>.</h1>
-    <p class="sub">Trước khi mua, chia sẻ sản phẩm vào hoantien.shop một lần — link hoàn tiền tạo sẵn, bạn mua y như cũ và tiền tự cộng vào ví. Xem cách hoạt động:</p>
-  </header>
-
   <div class="player">
+    <header>
+      <div class="brandline">
+        <svg width="26" height="26" viewBox="0 0 64 64" aria-label="hoantien.shop">
+          <defs><linearGradient id="bl0" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ee4d2d"/><stop offset="1" stop-color="#ff7a5c"/></linearGradient></defs>
+          <rect width="64" height="64" rx="14" fill="url(#bl0)"/>
+          <g stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="19" y1="14" x2="19" y2="50"/><path d="M19 32 Q19 24 28 24 Q37 24 37 32 L37 50"/></g>
+        </svg>
+        <span class="wm"><span class="o">oantien</span><span class="s">.shop</span></span>
+        <span class="tag">· Hướng dẫn</span>
+      </div>
+      <h1>Mua Shopee như thường.<br>Tiền tự <span class="glow">về ví</span>.</h1>
+      <p class="sub">Trước khi mua, chia sẻ sản phẩm vào hoantien.shop một lần — link hoàn tiền tạo sẵn, bạn mua y như cũ và tiền tự cộng vào ví. Xem cách hoạt động:</p>
+    </header>
+
     <aside class="rail" aria-label="Các bước">
-      <p class="rail-head"><span class="ring">↻</span> Cách hoàn tiền Shopee</p>
       <ol class="steps" id="steps">
         <li class="step" data-i="0"><span class="dot">1</span><span class="txt">Chọn sản phẩm trên Shopee</span></li>
         <li class="step" data-i="1"><span class="dot">2</span><span class="txt">Bấm nút Chia sẻ</span></li>
