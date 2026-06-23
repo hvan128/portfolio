@@ -125,7 +125,10 @@ export const projects: Project[] = [
       { src: '/images/apps/keothom/05-finance.webp', alt: { en: 'hoantien.shop — withdraw to bank', vi: 'hoantien.shop — rút tiền về ngân hàng' } },
     ],
     demoUrl: '/onboarding-demo.html',
-    links: [{ label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://hoantien.shop', kind: 'live' }],
+    links: [
+      { label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://hoantien.shop', kind: 'live' },
+      { label: { en: 'App Store', vi: 'App Store' }, href: 'https://apps.apple.com/vn/app/hoantien-mua-s%E1%BA%AFm-ho%C3%A0n-ti%E1%BB%81n/id6782406077?l=vi', kind: 'appstore' },
+    ],
   },
   {
     slug: 'gradeai',
