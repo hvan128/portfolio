@@ -13,6 +13,7 @@
     "projects": "Dự án",
     "experience": "Kinh nghiệm",
     "education": "Học vấn",
+    "achievements": "Thành tích",
     "skills": "Kỹ năng",
     "contact": "Liên hệ",
     "resume": "CV",
@@ -75,6 +76,16 @@
     "headingBefore": "Luôn ",
     "headingHighlight": "học hỏi",
     "intro": "Nền tảng khoa học máy tính, nay được mài giũa thêm qua một chương trình AI ứng dụng, nơi mình xây dựng và ra mắt sản phẩm thật."
+  },
+  "achievementsSection": {
+    "eyebrow": "Thành tích",
+    "headingBefore": "Thành tích & ",
+    "headingHighlight": "ghi nhận",
+    "intro": "Nơi mình đem ý tưởng ra thử lửa — xây, ra mắt và giành giải ở các hackathon.",
+    "organizedBy": "Tổ chức bởi",
+    "track": "track",
+    "prize": "Giải thưởng",
+    "viewProject": "Xem dự án"
   },
   "skillsSection": {
     "eyebrow": "Kỹ năng & Công cụ",

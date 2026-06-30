@@ -13,6 +13,7 @@
     "projects": "Projects",
     "experience": "Experience",
     "education": "Education",
+    "achievements": "Achievements",
     "skills": "Skills",
     "contact": "Contact",
     "resume": "Résumé",
@@ -75,6 +76,16 @@
     "headingBefore": "Always ",
     "headingHighlight": "learning",
     "intro": "A computer-science foundation, now sharpened by an applied AI program where I build and ship real products."
+  },
+  "achievementsSection": {
+    "eyebrow": "Achievements",
+    "headingBefore": "Achievements & ",
+    "headingHighlight": "recognition",
+    "intro": "Where I put ideas to the test — building, shipping, and winning at hackathons.",
+    "organizedBy": "Organized by",
+    "track": "track",
+    "prize": "Prize",
+    "viewProject": "View project"
   },
   "skillsSection": {
     "eyebrow": "Skills & Tools",
