@@ -40,7 +40,6 @@ export const achievements: AchievementItem[] = [
         name: 'WonderLens',
         track: { en: 'Reach the Market', vi: 'Reach the Market' },
         result: { en: '1st Place', vi: 'Quán quân' },
-        prize: { en: '1 year of Codex Pro ($200/mo)', vi: '1 năm Codex Pro ($200/tháng)' },
         winner: true,
         description: {
           en: 'An edtech app for curious kids: snap any everyday object and watch its origin story come alive — how it’s made and its place in history — as a narrated journey with images, voice and AI-generated video.',
@@ -51,7 +50,7 @@ export const achievements: AchievementItem[] = [
       {
         name: 'VCareer',
         track: { en: 'Startup', vi: 'Startup' },
-        result: { en: '$5,000 Codex credits', vi: '$5,000 credit Codex' },
+        result: { en: '2nd Place', vi: 'Á quân' },
         projectSlug: 'vcareer',
         description: {
           en: 'AI mock interviews you actually talk to — plus instant AI-built portfolios.',
