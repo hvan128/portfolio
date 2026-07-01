@@ -105,10 +105,10 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
+      { value: { en: '900+', vi: '900+' }, label: { en: 'shoppers', vi: 'người dùng' } },
       { value: { en: 'Web + App', vi: 'Web + App' }, label: { en: 'one experience', vi: 'một trải nghiệm' } },
       { value: { en: 'Secure', vi: 'Bảo mật' }, label: { en: 'sign-in everywhere', vi: 'đăng nhập ở mọi nơi' } },
-      { value: { en: 'Fast', vi: 'Tốc độ cao' }, label: { en: 'cloud database', vi: 'cơ sở dữ liệu đám mây' } },
-      { value: { en: 'Reliable', vi: 'Đáng tin' }, label: { en: 'safe data layer', vi: 'tầng dữ liệu an toàn' } },
+      { value: { en: 'Reliable', vi: 'Đáng tin' }, label: { en: 'cashback & payouts', vi: 'hoàn tiền & rút tiền' } },
     ],
     tech: ['Next.js', 'Prisma', 'Neon Postgres', 'Auth.js', 'Flutter', 'React Email'],
     cover: {
@@ -163,18 +163,18 @@ export const projects: Project[] = [
       en: [
         'Reads messy, photographed handwriting — even at awkward angles or lighting.',
         'AI drafts a grade against the teacher’s rubric, with the teacher always in control.',
-        'Built as a multi-school product with secure accounts and storage.',
-        'Built and shipped to production during the AI20K build phase.',
+        'Multi-tenant design with secure accounts and storage — ready to onboard schools.',
+        'Built end-to-end and live at gradeai.site, developed during the AI20K program.',
       ],
       vi: [
         'Đọc được chữ viết tay lộn xộn từ ảnh chụp — kể cả khi góc nghiêng hay thiếu sáng.',
         'AI chấm nháp theo ba-rem của giáo viên, còn quyền quyết định luôn thuộc về giáo viên.',
-        'Xây dựng như một sản phẩm cho nhiều trường, với tài khoản và lưu trữ an toàn.',
-        'Hoàn thiện và đưa lên production ngay trong giai đoạn build của AI20K.',
+        'Thiết kế đa người dùng với tài khoản và lưu trữ an toàn — sẵn sàng đưa vào các trường.',
+        'Hoàn thiện đầu-cuối và chạy thật tại gradeai.site, phát triển trong chương trình AI20K.',
       ],
     },
     metrics: [
-      { value: { en: 'Hours → min', vi: 'Giờ → phút' }, label: { en: 'grading time per class', vi: 'thời gian chấm mỗi lớp' } },
+      { value: { en: 'Hours → min', vi: 'Giờ → phút' }, label: { en: 'grading per class', vi: 'chấm mỗi lớp' } },
       { value: { en: 'Handwriting', vi: 'Chữ viết tay' }, label: { en: 'reads VN essays', vi: 'đọc bài tự luận tiếng Việt' } },
       { value: { en: 'Rubric', vi: 'Ba-rem' }, label: { en: 'AI scoring', vi: 'AI chấm điểm' } },
       { value: { en: 'Live', vi: 'Đang chạy' }, label: { en: 'gradeai.site', vi: 'gradeai.site' } },
@@ -232,10 +232,10 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: '2-sided', vi: 'Hai chiều' }, label: { en: 'owners + garages', vi: 'chủ xe + gara' } },
+      { value: { en: '5,000+', vi: '5,000+' }, label: { en: 'downloads', vi: 'lượt tải' } },
+      { value: { en: '400+', vi: '400+' }, label: { en: 'partner garages', vi: 'gara đối tác' } },
+      { value: { en: '3,000+', vi: '3,000+' }, label: { en: 'booking & quote requests', vi: 'lượt đặt & báo giá' } },
       { value: { en: 'Realtime', vi: 'Thời gian thực' }, label: { en: 'push notifications', vi: 'thông báo đẩy' } },
-      { value: { en: 'Scalable', vi: 'Mở rộng tốt' }, label: { en: 'clean architecture', vi: 'kiến trúc gọn gàng' } },
-      { value: { en: 'Automated', vi: 'Tự động' }, label: { en: 'app + server releases', vi: 'phát hành app + máy chủ' } },
     ],
     tech: ['Flutter', 'Riverpod', 'Flask', 'Docker', 'Firebase FCM', 'Next.js', 'REST API'],
     cover: {
@@ -304,10 +304,10 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: 'Realtime', vi: 'Thời gian thực' }, label: { en: 'voice AI conversation', vi: 'trò chuyện AI giọng nói' } },
-      { value: { en: 'Fast', vi: 'Tốc độ cao' }, label: { en: 'global cloud database', vi: 'CSDL đám mây toàn cầu' } },
-      { value: { en: 'Next.js', vi: 'Next.js' }, label: { en: 'modern web stack', vi: 'web stack hiện đại' } },
-      { value: { en: 'Secure', vi: 'Bảo mật' }, label: { en: 'sign-in with Google', vi: 'đăng nhập bằng Google' } },
+      { value: { en: '120+', vi: '120+' }, label: { en: 'students practiced', vi: 'sinh viên luyện tập' } },
+      { value: { en: 'Realtime', vi: 'Thời gian thực' }, label: { en: 'voice AI mock interviews', vi: 'phỏng vấn thử AI giọng nói' } },
+      { value: { en: 'Flagship MVP', vi: 'MVP chủ lực' }, label: { en: 'for VinUni CECS', vi: 'cho VinUni CECS' } },
+      { value: { en: '1-click', vi: '1 chạm' }, label: { en: 'AI portfolio', vi: 'portfolio bằng AI' } },
     ],
     tech: [
       'Next.js 16',
@@ -432,9 +432,9 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
+      { value: { en: '300+', vi: '300+' }, label: { en: 'travelers', vi: 'người dùng' } },
       { value: { en: 'Released', vi: 'Đã phát hành' }, label: { en: 'in production', vi: 'đang chạy chính thức' } },
       { value: { en: 'Collaborative', vi: 'Cộng tác' }, label: { en: 'shared trips', vi: 'chuyến đi chung' } },
-      { value: { en: 'Maps', vi: 'Bản đồ' }, label: { en: 'in-app booking', vi: 'đặt chỗ trong app' } },
     ],
     tech: ['Flutter', 'Google Maps', 'Firebase', 'REST API'],
     cover: { type: 'mobile', logo: '/images/projects/ondetour-logo.png' },
@@ -490,9 +490,9 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
+      { value: { en: '400+', vi: '400+' }, label: { en: 'learners', vi: 'người học' } },
       { value: { en: 'Speaking-first', vi: 'Ưu tiên nói' }, label: { en: 'pronunciation + shadowing', vi: 'phát âm + nói nhại' } },
       { value: { en: 'AI chat', vi: 'Hội thoại AI' }, label: { en: 'conversation practice', vi: 'luyện giao tiếp' } },
-      { value: { en: 'Cross-platform', vi: 'Đa nền tảng' }, label: { en: 'iOS + more', vi: 'iOS và hơn thế' } },
     ],
     tech: ['Flutter', 'React Native', 'AI Speech', 'Apple Sign-In', 'In-app Payments'],
     cover: { type: 'mobile', logo: '/images/projects/vocaberry-logo.png' },
