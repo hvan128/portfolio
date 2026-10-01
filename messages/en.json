@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "Ngô Hải Văn — Full-Stack & AI Engineer",
-    "description": "Full-stack & AI engineer with 4+ years of experience building real-time AI products, scalable web platforms, and cross-platform mobile apps. Working with Next.js, GPT-4o Realtime, Flutter, Node.js and payment systems.",
-    "ogDescription": "Full-stack & AI engineer building real-time AI products, scalable web platforms, and cross-platform mobile apps."
+    "title": "Ngô Hải Văn — Software Engineer & Tech Lead",
+    "description": "Software engineer & tech lead building AI-powered web and mobile products used by 40K+ users, with 5 apps shipped to the App Store and Google Play. Currently leading VLearn at VinUniversity.",
+    "ogDescription": "Software engineer & tech lead building AI-powered products used by 40K+ users."
   },
   "language": {
     "english": "English",
@@ -28,8 +28,8 @@
     "resume": "Résumé",
     "stats": [
       { "label": "4+ Years", "sub": "Experience" },
-      { "label": "6,000+ Users", "sub": "Across shipped apps" },
-      { "label": "20+ Projects", "sub": "Delivered" }
+      { "label": "40K+ Users", "sub": "Across shipped products" },
+      { "label": "5 Apps", "sub": "On App Store & Google Play" }
     ]
   },
   "about": {
@@ -69,7 +69,7 @@
     "eyebrow": "Experience",
     "headingBefore": "Where I've ",
     "headingHighlight": "worked",
-    "intro": "4+ years shipping full-stack web platforms, hybrid mobile apps, and payment systems across startups and enterprise-scale teams."
+    "intro": "From banking apps to a 25K-user marketplace to leading VLearn — shipping web, mobile and AI products for real users."
   },
   "educationSection": {
     "eyebrow": "Education",

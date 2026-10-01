@@ -105,7 +105,7 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: '900+', vi: '900+' }, label: { en: 'shoppers', vi: 'người dùng' } },
+      { value: { en: '2K+', vi: '2K+' }, label: { en: 'users', vi: 'người dùng' } },
       { value: { en: 'Web + App', vi: 'Web + App' }, label: { en: 'one experience', vi: 'một trải nghiệm' } },
       { value: { en: 'Secure', vi: 'Bảo mật' }, label: { en: 'sign-in everywhere', vi: 'đăng nhập ở mọi nơi' } },
       { value: { en: 'Reliable', vi: 'Đáng tin' }, label: { en: 'cashback & payouts', vi: 'hoàn tiền & rút tiền' } },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     },
     tags: ['AI', 'Full-Stack'],
     ai: true,
-    featured: true,
+    featured: false,
     period: { en: '2026 · AI in Actions (AI20K)', vi: '2026 · AI in Actions (AI20K)' },
     role: { en: 'Builder · VinUni "AI in Actions"', vi: 'Nhà phát triển · VinUni "AI in Actions"' },
     accent: { from: '#0ea5e9', to: '#14b8a6' },
@@ -232,8 +232,8 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: '5,000+', vi: '5,000+' }, label: { en: 'downloads', vi: 'lượt tải' } },
-      { value: { en: '400+', vi: '400+' }, label: { en: 'partner garages', vi: 'gara đối tác' } },
+      { value: { en: '25K+', vi: '25K+' }, label: { en: 'users', vi: 'người dùng' } },
+      { value: { en: '1,000+', vi: '1,000+' }, label: { en: 'partner garages', vi: 'gara đối tác' } },
       { value: { en: '3,000+', vi: '3,000+' }, label: { en: 'booking & quote requests', vi: 'lượt đặt & báo giá' } },
       { value: { en: 'Realtime', vi: 'Thời gian thực' }, label: { en: 'push notifications', vi: 'thông báo đẩy' } },
     ],
@@ -304,7 +304,7 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: '120+', vi: '120+' }, label: { en: 'students practiced', vi: 'sinh viên luyện tập' } },
+      { value: { en: '1,000+', vi: '1,000+' }, label: { en: 'students practiced', vi: 'sinh viên luyện tập' } },
       { value: { en: 'Realtime', vi: 'Thời gian thực' }, label: { en: 'voice AI mock interviews', vi: 'phỏng vấn thử AI giọng nói' } },
       { value: { en: 'Flagship MVP', vi: 'MVP chủ lực' }, label: { en: 'for VinUni CECS', vi: 'cho VinUni CECS' } },
       { value: { en: '1-click', vi: '1 chạm' }, label: { en: 'AI portfolio', vi: 'portfolio bằng AI' } },
@@ -327,7 +327,7 @@ export const projects: Project[] = [
       logo: '/images/projects/vcareer-logo.svg',
     },
     screenshots: [],
-    links: [{ label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://topportfolio-sage.vercel.app/vi', kind: 'live' }],
+    links: [{ label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://vcareer.vn', kind: 'live' }],
   },
   {
     slug: 'dk-bank',
@@ -399,7 +399,7 @@ export const projects: Project[] = [
     },
     tags: ['Mobile'],
     ai: false,
-    featured: false,
+    featured: true,
     period: { en: '2026 · Released', vi: '2026 · Đã phát hành' },
     role: { en: 'Mobile Engineer (Flutter)', vi: 'Kỹ sư Mobile (Flutter)' },
     accent: { from: '#10b981', to: '#0ea5e9' },
@@ -432,7 +432,7 @@ export const projects: Project[] = [
       ],
     },
     metrics: [
-      { value: { en: '300+', vi: '300+' }, label: { en: 'travelers', vi: 'người dùng' } },
+      { value: { en: '15K+', vi: '15K+' }, label: { en: 'travelers', vi: 'người dùng' } },
       { value: { en: 'Released', vi: 'Đã phát hành' }, label: { en: 'in production', vi: 'đang chạy chính thức' } },
       { value: { en: 'Collaborative', vi: 'Cộng tác' }, label: { en: 'shared trips', vi: 'chuyến đi chung' } },
     ],
@@ -610,7 +610,11 @@ export const projects: Project[] = [
   },
 ]
 
-export const featuredProjects = projects.filter((p) => p.featured)
+// Featured cards follow the résumé order (biggest real-user signal first), not array order.
+const featuredOrder = ['garageviet', 'ondetour', 'vcareer', 'keothom']
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort((a, b) => featuredOrder.indexOf(a.slug) - featuredOrder.indexOf(b.slug))
 export const moreProjects = projects.filter((p) => !p.featured)
 
 export function getProject(slug: string): Project | undefined {

@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "Ngô Hải Văn — Kỹ sư Full-Stack & AI",
-    "description": "Kỹ sư full-stack & AI với hơn 4 năm kinh nghiệm xây dựng sản phẩm AI thời gian thực, nền tảng web dễ mở rộng và ứng dụng mobile đa nền tảng. Thành thạo Next.js, GPT-4o Realtime, Flutter, Node.js và các hệ thống thanh toán.",
-    "ogDescription": "Kỹ sư full-stack & AI xây dựng sản phẩm AI thời gian thực, nền tảng web dễ mở rộng và ứng dụng mobile đa nền tảng."
+    "title": "Ngô Hải Văn — Software Engineer & Tech Lead",
+    "description": "Software engineer & tech lead xây dựng sản phẩm web và mobile ứng dụng AI với hơn 40K người dùng, 5 app đã phát hành trên App Store và Google Play. Hiện dẫn dắt VLearn tại VinUniversity.",
+    "ogDescription": "Software engineer & tech lead xây dựng sản phẩm ứng dụng AI với hơn 40K người dùng."
   },
   "language": {
     "english": "English",
@@ -28,8 +28,8 @@
     "resume": "Résumé",
     "stats": [
       { "label": "4+ Năm", "sub": "Kinh nghiệm" },
-      { "label": "6,000+ Users", "sub": "Trên các app đã phát hành" },
-      { "label": "20+ Dự án", "sub": "Hoàn thành" }
+      { "label": "40K+ Users", "sub": "Trên các sản phẩm đã phát hành" },
+      { "label": "5 App", "sub": "Trên App Store & Google Play" }
     ]
   },
   "about": {
@@ -69,7 +69,7 @@
     "eyebrow": "Kinh nghiệm",
     "headingBefore": "Những nơi mình đã ",
     "headingHighlight": "làm việc",
-    "intro": "Hơn 4 năm xây dựng nền tảng web full-stack, ứng dụng mobile hybrid và hệ thống thanh toán — từ startup cho đến những đội ngũ quy mô doanh nghiệp."
+    "intro": "Từ app ngân hàng, một sàn 25K người dùng đến dẫn dắt VLearn — mình xây sản phẩm web, mobile và AI cho người dùng thật."
   },
   "educationSection": {
     "eyebrow": "Học vấn",

@@ -12,87 +12,59 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    company: 'VinUniversity — AI in Actions (AI20K)',
-    position: { en: 'Applied AI Builder', vi: 'Nhà phát triển AI ứng dụng' },
-    period: { en: 'Apr 2026 — Present', vi: '04/2026 — Hiện tại' },
+    company: 'VinUniversity — VLearn, AI Learning Platform',
+    position: { en: 'Tech Lead', vi: 'Tech Lead' },
+    period: { en: 'Jul 2026 — Present', vi: '07/2026 — Hiện tại' },
     details: {
       en: [
-        'Building real AI products end-to-end — LLMs, OCR, agentic workflows, and production deployment.',
-        'Shipped GradeAI, an AI handwritten-essay grader, during the program’s build phase.',
-        'Rapid prototyping from idea to live product, with hands-on evaluation and iteration.',
+        'Lead system architecture and technical delivery across core learning workflows, AI integrations, SSO and production infrastructure.',
+        'Drive production readiness with Vingroup architecture, security and infrastructure teams across technical reviews and deployment.',
       ],
       vi: [
-        'Xây dựng sản phẩm AI thực thụ từ đầu đến cuối — LLM, OCR, quy trình agentic và triển khai lên production.',
-        'Hoàn thiện GradeAI — công cụ chấm bài tự luận viết tay bằng AI — ngay trong giai đoạn build của chương trình.',
-        'Dựng prototype nhanh từ ý tưởng đến sản phẩm chạy thật, trực tiếp đánh giá và cải tiến liên tục.',
+        'Dẫn dắt kiến trúc hệ thống và triển khai kỹ thuật cho các luồng học tập cốt lõi, tích hợp AI, SSO và hạ tầng production.',
+        'Cùng các đội kiến trúc, bảo mật và hạ tầng của Vingroup đưa hệ thống đạt chuẩn production, từ review kỹ thuật đến triển khai.',
       ],
     },
   },
   {
-    company: 'Automotive Service Platform (GarageViet)',
-    position: { en: 'Full-Stack Web & Mobile Developer', vi: 'Lập trình viên Web & Mobile Full-Stack' },
+    company: 'GarageViet — Automotive Service Platform',
+    position: { en: 'Full-Stack & Mobile Engineer', vi: 'Kỹ sư Full-Stack & Mobile' },
     period: { en: 'Feb 2025 — Present', vi: '02/2025 — Hiện tại' },
     details: {
       en: [
-        'Built a two-sided marketplace mobile app in Flutter with Clean Architecture and Riverpod state management.',
-        'Implemented booking workflows, quotation requests, and real-time push notifications via Firebase Cloud Messaging.',
-        'Automated CI/CD with Fastlane and GitHub Actions to streamline mobile and backend releases.',
+        '25K users · 1,000+ partner garages on a live automotive service marketplace.',
+        'Built and shipped the mobile app and backend powering booking, quotation and service workflows.',
       ],
       vi: [
-        'Xây dựng ứng dụng mobile dạng sàn hai chiều bằng Flutter, theo Clean Architecture và quản lý state với Riverpod.',
-        'Triển khai luồng đặt lịch, xin báo giá và thông báo đẩy theo thời gian thực qua Firebase Cloud Messaging.',
-        'Tự động hoá CI/CD bằng Fastlane và GitHub Actions để việc phát hành mobile lẫn backend trơn tru hơn.',
+        '25K người dùng · 1.000+ gara đối tác trên một sàn dịch vụ ô tô đang vận hành.',
+        'Xây dựng và phát hành app mobile cùng backend cho các luồng đặt lịch, báo giá và dịch vụ.',
       ],
     },
   },
   {
     company: 'EPOSO AI',
-    position: { en: 'Full-Stack Developer (Remote)', vi: 'Lập trình viên Full-Stack (Remote)' },
+    position: { en: 'AI Engineer', vi: 'AI Engineer' },
     period: { en: 'Nov 2024 — Jan 2025', vi: '11/2024 — 01/2025' },
     details: {
-      en: [
-        'Delivered the Energy Simulator web app that calculates cost savings for new HVAC models.',
-        'Partnered with distributed teams on UX flows, Nest.js APIs, and Redux Toolkit state.',
-        'Packaged the solution with Docker for parity from local development to production demos.',
-      ],
-      vi: [
-        'Hoàn thiện web app Energy Simulator giúp tính toán mức tiết kiệm chi phí cho các dòng máy HVAC mới.',
-        'Phối hợp cùng các nhóm ở nhiều nơi về luồng UX, API Nest.js và quản lý state bằng Redux Toolkit.',
-        'Đóng gói giải pháp bằng Docker để môi trường local và bản demo production luôn đồng nhất.',
-      ],
+      en: ['Built an edge AI voice system with an on-device speech pipeline designed for low-latency, offline operation.'],
+      vi: ['Xây dựng hệ thống AI giọng nói chạy trên thiết bị edge, với pipeline xử lý tiếng nói ngay trên máy, độ trễ thấp và hoạt động offline.'],
     },
   },
   {
     company: 'OpenWay Vietnam',
-    position: { en: 'Associate Implementation Engineer', vi: 'Kỹ sư Triển khai' },
-    period: { en: 'Jul 2024 — Nov 2024', vi: '07/2024 — 11/2024' },
-    details: {
-      en: [
-        'Integrated Way4 ATM flows for withdrawals, balance inquiry, and fund transfers across test → prod.',
-        'Mapped ISO-like routing between core banking services and Way4, ensuring compliance and resilience.',
-        'Accelerated incident resolution by ≈45% through improved transaction-log tracing and documentation.',
-      ],
-      vi: [
-        'Tích hợp các luồng ATM trên Way4 cho rút tiền, tra cứu số dư và chuyển khoản, từ môi trường test đến prod.',
-        'Thiết lập định tuyến theo chuẩn ISO giữa các dịch vụ core banking và Way4, đảm bảo tuân thủ và ổn định.',
-        'Rút ngắn khoảng 45% thời gian xử lý sự cố nhờ cải thiện việc lần vết log giao dịch và tài liệu hoá.',
-      ],
+    position: {
+      en: 'Associate Implementation Engineer · Frontend & Mobile Developer',
+      vi: 'Kỹ sư Triển khai · Lập trình viên Frontend & Mobile',
     },
-  },
-  {
-    company: 'OpenWay Vietnam',
-    position: { en: 'Frontend Web & Hybrid Mobile Developer', vi: 'Lập trình viên Frontend Web & Mobile Hybrid' },
-    period: { en: 'Oct 2022 — Jul 2024', vi: '10/2022 — 07/2024' },
+    period: { en: 'Oct 2022 — Nov 2024', vi: '10/2022 — 11/2024' },
     details: {
       en: [
-        'Developed banking mobile apps and admin portals using React, React Native, Flutter, and Next.js.',
-        'Built reusable UI for card management, transaction history, and role-based admin controls.',
-        'Collaborated with backend, QA, and product to optimize GraphQL integrations and performance.',
+        'Increased face-verification onboarding completion by ~10% for DK Bank’s mobile banking app.',
+        'Improved core banking experiences across foreign exchange, OTP authentication and ATM services for DK Bank.',
       ],
       vi: [
-        'Phát triển ứng dụng ngân hàng trên mobile và các cổng quản trị bằng React, React Native, Flutter và Next.js.',
-        'Xây dựng các thành phần UI tái sử dụng cho quản lý thẻ, lịch sử giao dịch và phân quyền quản trị theo vai trò.',
-        'Phối hợp với backend, QA và product để tối ưu tích hợp GraphQL và hiệu năng.',
+        'Tăng ~10% tỷ lệ hoàn tất onboarding xác thực khuôn mặt trên app ngân hàng di động DK Bank.',
+        'Cải thiện các trải nghiệm ngân hàng cốt lõi của DK Bank: ngoại hối, xác thực OTP và dịch vụ ATM.',
       ],
     },
   },

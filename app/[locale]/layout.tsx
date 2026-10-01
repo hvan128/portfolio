@@ -88,7 +88,7 @@ export default async function LocaleLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Ngô Hải Văn',
-    jobTitle: 'Full-Stack & AI Engineer',
+    jobTitle: 'Software Engineer & Tech Lead',
     description: t('ogDescription'),
     url: 'https://ngohaivan.dev',
     image: 'https://ngohaivan.dev/images/profile.jpg',
