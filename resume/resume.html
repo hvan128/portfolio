@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Source for public/resume/ngo_hai_van_resume.pdf (metric-first CV).
+  Source for public/resume/ngo_hai_van_resume.pdf (one-page, metric-first CV).
   Regenerate the PDF with headless Chrome (matches the original Skia/PDF render):
 
     CHROME="$HOME/Library/Caches/ms-playwright/chromium-1228/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
@@ -18,7 +18,7 @@
 <style>
   @page {
     size: A4;
-    margin: 12mm 14mm;
+    margin: 12mm 15mm;
   }
   * { box-sizing: border-box; }
   html, body {
@@ -28,8 +28,8 @@
     color: #111;
   }
   body {
-    font-size: 10.3pt;
-    line-height: 1.32;
+    font-size: 10.4pt;
+    line-height: 1.34;
   }
 
   /* ---- Header ---- */
@@ -79,7 +79,7 @@
     align-items: baseline;
     gap: 12px;
   }
-  .row .title { font-weight: 700; }
+  .row .title, .title { font-weight: 700; }
   .row .date { color: #333; font-size: 9.3pt; white-space: nowrap; }
   .sub { font-weight: 700; margin-top: 1px; }
   .meta { margin-top: 1px; }
@@ -123,156 +123,60 @@
   </div>
 
   <!-- ================= SUMMARY ================= -->
-  <h2 class="section">Professional Summary</h2>
-  <p class="summary-lead"><span class="label">Full-Stack &amp; AI Engineer</span> with <span class="label">4+ years</span> shipping products end-to-end.</p>
-  <p class="summary-metric">20+ products shipped end-to-end &nbsp;·&nbsp; 5 live on the App Store &amp; Google Play &nbsp;·&nbsp; 6,000+ users across shipped apps.</p>
-  <ul class="summary-list">
-    <li><span class="lead">AI Product Engineering</span> — LLM apps, realtime voice agents, OCR &amp; vision</li>
-    <li><span class="lead">Full-Stack Web</span> — Next.js, React, Node.js, Flask</li>
-    <li><span class="lead">Cross-Platform Mobile</span> — Flutter, React Native</li>
-    <li><span class="lead">Payment &amp; Banking Systems</span> — Way4, ISO 8583</li>
-  </ul>
+  <h2 class="section">Summary</h2>
+  <p class="summary-lead"><span class="label">Software Engineer &amp; Tech Lead</span> building AI-powered products used by <span class="label">40K+ users</span>, with <span class="label">5 apps shipped</span> to the App&nbsp;Store / Google&nbsp;Play. Currently leading <span class="label">VLearn at VinUniversity</span> across AI product engineering, system architecture and production delivery.</p>
 
-  <!-- ================= EDUCATION ================= -->
-  <h2 class="section">Education</h2>
+  <!-- ================= EXPERIENCE ================= -->
+  <h2 class="section">Experience</h2>
   <div class="entry">
-    <div class="row"><span class="title">VinUniversity — “AI in Actions” (AI20K)</span><span class="date">04/2026 – Present</span></div>
-    <div class="meta"><span class="label">Program:</span> Applied AI — building real products end-to-end</div>
-    <div class="meta"><span class="label">Focus:</span> LLMs, OCR, agentic workflows, production deployment</div>
+    <div class="row"><span class="title">VinUniversity — VLearn, AI Learning Platform</span><span class="date">07/2026 – Present</span></div>
+    <div class="sub">Tech Lead &nbsp;·&nbsp; <a class="link" href="https://vlearn.dev">vlearn.dev</a></div>
+    <ul>
+      <li>Lead system architecture and technical delivery across core learning workflows, AI integrations, SSO and production infrastructure.</li>
+      <li>Drive production readiness with Vingroup architecture, security and infrastructure teams across technical reviews and deployment.</li>
+    </ul>
   </div>
   <div class="entry">
-    <div class="row"><span class="title">Hanoi University of Science and Technology</span><span class="date">10/2020 – 07/2024</span></div>
-    <div class="meta"><span class="label">Major:</span> Computer Science &nbsp;·&nbsp; <span class="label">Graduation Grade:</span> Very Good</div>
+    <div class="row"><span class="title">GarageViet — Automotive Service Platform</span><span class="date">02/2025 – Present</span></div>
+    <div class="sub">Full-Stack &amp; Mobile Engineer &nbsp;·&nbsp; <a class="link" href="https://garageviet.vn">garageviet.vn</a></div>
+    <ul>
+      <li><span class="lead">25K users · 1,000+ partner garages</span> on a live automotive service marketplace.</li>
+      <li>Built and shipped the mobile app and backend powering booking, quotation and service workflows.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">EPOSO AI</span><span class="date">11/2024 – 01/2025</span></div>
+    <div class="sub">AI Engineer</div>
+    <ul>
+      <li>Built an edge AI voice system with an on-device speech pipeline designed for low-latency, offline operation.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span class="title">OpenWay Vietnam</span><span class="date">10/2022 – 11/2024</span></div>
+    <div class="sub">Associate Implementation Engineer · Frontend &amp; Mobile Developer</div>
+    <ul>
+      <li><span class="lead">Increased face-verification onboarding completion by ~10%</span> for DK Bank’s mobile banking app.</li>
+      <li>Improved core banking experiences across foreign exchange, OTP authentication and ATM services for DK&nbsp;Bank.</li>
+    </ul>
+  </div>
+
+  <!-- ================= PROJECTS ================= -->
+  <h2 class="section">Selected Products</h2>
+  <div class="entry tight">
+    <div class="title">OnDetour — 15K users · <a class="link" href="https://apps.apple.com/vn/app/ondetour/id6775022752?l=vi">App Store</a></div>
+    <div class="meta">Built the end-to-end mobile product for collaborative trip planning, itineraries and shared budgets.</div>
+  </div>
+  <div class="entry tight">
+    <div class="title"><a class="link" href="https://hoantien.shop">hoantien.shop</a> — 2K users · Web &amp; iOS</div>
+    <div class="meta">Built the web platform and iOS companion app with cashback and payout tracking.</div>
   </div>
 
   <!-- ================= SKILLS ================= -->
   <h2 class="section">Skills</h2>
-  <table class="skills">
-    <tr>
-      <td class="k">Key Technical Skills</td>
-      <td>
-        <ul>
-          <li><span class="label">AI &amp; LLM:</span> Realtime voice agents, agentic workflows, OCR &amp; vision, LLM app integration, AI speech</li>
-          <li><span class="label">Frontend:</span> React, Next.js, TypeScript, Tailwind CSS</li>
-          <li><span class="label">Mobile:</span> Flutter (Clean Architecture, Riverpod), React Native</li>
-          <li><span class="label">Backend:</span> Node.js, Python (Flask), GraphQL, RESTful API</li>
-          <li><span class="label">Database:</span> PostgreSQL, Prisma / Drizzle, Supabase, Oracle, Firebase</li>
-          <li><span class="label">DevOps &amp; Cloud:</span> Docker, Vercel, GitHub Actions, Fastlane</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td class="k">Soft Skills</td>
-      <td>
-        <ul>
-          <li>Read and synthesize English technical documentation quickly</li>
-          <li>Strong collaboration with business / QA / Infra teams; proactive problem-solving</li>
-          <li>End-to-end product thinking with a full-stack mindset (web + mobile)</li>
-          <li>Clean-coding advocate focused on performance, profiling and maintainability</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-
-  <!-- ================= EXPERIENCE ================= -->
-  <h2 class="section">Work Experience</h2>
-  <div class="entry tight">
-    <div class="row"><span class="title">VinUniversity — AI in Actions (AI20K)</span><span class="date">04/2026 – Present</span></div>
-    <div class="sub">Applied AI Builder</div>
-  </div>
-  <div class="entry tight">
-    <div class="row"><span class="title">Automotive Service Platform (GarageViet)</span><span class="date">02/2025 – Present</span></div>
-    <div class="sub">Full-Stack Web &amp; Hybrid Mobile Developer</div>
-  </div>
-  <div class="entry tight">
-    <div class="row"><span class="title">EPOSO AI</span><span class="date">11/2024 – 01/2025</span></div>
-    <div class="sub">Full-Stack Developer (Remote)</div>
-  </div>
-  <div class="entry tight">
-    <div class="row"><span class="title">OpenWay Vietnam</span><span class="date">07/2024 – 11/2024</span></div>
-    <div class="sub">Associate Implementation Engineer</div>
-  </div>
-  <div class="entry tight">
-    <div class="row"><span class="title">OpenWay Vietnam</span><span class="date">10/2022 – 07/2024</span></div>
-    <div class="sub">Frontend Web Developer &amp; Hybrid Mobile App Developer</div>
-  </div>
-
-  <!-- ================= PROJECTS ================= -->
-  <h2 class="section">Projects</h2>
-
-  <div class="entry">
-    <div class="row"><span class="title">GarageViet — Automotive Service Platform</span><span class="date">2025 – Present</span></div>
-    <div class="sub">Full-Stack &amp; Mobile Engineer</div>
-    <div class="meta"><span class="label">Tech:</span> Flutter (Clean Architecture, Riverpod), Flask, Firebase FCM, Docker, Next.js, REST API &nbsp;·&nbsp; <a class="link" href="https://garageviet.vn">garageviet.vn</a> · <a class="link" href="https://apps.apple.com/vn/app/garage-vi%E1%BB%87t/id6754981981?l=vi">App Store</a> · <a class="link" href="https://play.google.com/store/apps/details?id=com.garageviet.app">Google Play</a></div>
-    <ul>
-      <li><span class="lead">5,000+ downloads · 400+ partner garages · 3,000+ booking &amp; quotation requests</span> on a two-sided marketplace.</li>
-      <li>Built the Flutter app (Clean Architecture + Riverpod) and a Flask REST backend with booking and quotation flows.</li>
-      <li>Containerized the backend with Docker and automated app + server releases with Fastlane &amp; GitHub Actions; live on the App Store &amp; Google Play.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">VCareer — AI Career Platform (VinUni CECS)</span><span class="date">2026 – Present</span></div>
-    <div class="sub">Full-Stack Engineer · flagship MVP for VinUni CECS</div>
-    <div class="meta"><span class="label">Tech:</span> Next.js, TypeScript, realtime voice AI, Neon Postgres, Drizzle ORM, Better Auth, Vercel &nbsp;·&nbsp; <a class="link" href="https://topportfolio-sage.vercel.app/vi">Live demo</a></div>
-    <ul>
-      <li><span class="lead">120+ students</span> ran realtime voice mock-interviews with instant AI feedback before real interviews.</li>
-      <li>Built and shipped the entire platform end-to-end — the flagship MVP for VinUni CECS.</li>
-      <li>AI-assisted CV improvement plus one-click AI portfolio generation and tools for career-services staff.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">GradeAI — AI Handwritten-Essay Grader</span><span class="date">2026 · VinUni AI20K</span></div>
-    <div class="sub">Builder</div>
-    <div class="meta"><span class="label">Tech:</span> Next.js, Supabase, OCR, LLM Grading, PostgreSQL, Tailwind CSS &nbsp;·&nbsp; <a class="link" href="https://gradeai.site">gradeai.site</a></div>
-    <ul>
-      <li>Cuts grading of a full class <span class="lead">from hours to minutes</span> — teachers review and adjust every grade before it is final.</li>
-      <li>Reads handwritten Vietnamese essays with OCR + LLM and drafts a score against each teacher’s rubric.</li>
-      <li>Built end-to-end and live at <span class="lead">gradeai.site</span>, developed during the VinUni AI20K program.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">hoantien.shop — Shopee Cashback Platform</span><span class="date">2026</span></div>
-    <div class="sub">Full-Stack &amp; Mobile Engineer</div>
-    <div class="meta"><span class="label">Tech:</span> Next.js, Node.js, Prisma, Neon Postgres, Auth.js, Flutter, React Email &nbsp;·&nbsp; <a class="link" href="https://hoantien.shop">hoantien.shop</a> · <a class="link" href="https://apps.apple.com/vn/app/hoantien-mua-s%E1%BA%AFm-ho%C3%A0n-ti%E1%BB%81n/id6782406077?l=vi">App Store</a></div>
-    <ul>
-      <li><span class="lead">900+ users</span> earning cashback across web and a companion iOS app.</li>
-      <li>Carefully versioned API so updates never break the app already in users’ hands.</li>
-      <li>Secure sign-in with reliable cashback &amp; payout tracking.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">OnDetour &amp; Vocaberry — Mobile Apps (App Store)</span><span class="date">2026</span></div>
-    <div class="sub">Mobile Engineer (Flutter / React Native)</div>
-    <div class="meta"><a class="link" href="https://apps.apple.com/vn/app/ondetour/id6775022752?l=vi">OnDetour — App Store</a> · <a class="link" href="https://apps.apple.com/vn/app/vocaberry/id6757450822?l=vi">Vocaberry — App Store</a></div>
-    <ul>
-      <li><span class="lead">OnDetour — 300+ travelers</span> plan trips, split budgets and travel together; live on the App Store.</li>
-      <li><span class="lead">Vocaberry — 400+ learners</span> practice speaking-first English with AI pronunciation feedback; live on the App Store.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">Way4 ATM Payments — Banking Platform</span><span class="date">2024 · OpenWay</span></div>
-    <div class="sub">Associate Implementation Engineer</div>
-    <div class="meta"><span class="label">Tech:</span> Way4, Oracle, PL/SQL, ISO 8583</div>
-    <ul>
-      <li>Integrated ATM flows (withdrawal, balance, transfer) on Way4 with ISO 8583-style routing and detailed logging in Oracle PL/SQL.</li>
-      <li>Validated flows from test to production; <span class="lead">cut issue-isolation time ~45%</span>.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="row"><span class="title">DK Bank — Digital Bank, Bhutan</span><span class="date">2022 – 2024 · OpenWay</span></div>
-    <div class="sub">Frontend &amp; Mobile Developer</div>
-    <div class="meta"><span class="label">Tech:</span> React, React Native, Flutter, Next.js, GraphQL &nbsp;·&nbsp; <a class="link" href="https://apps.apple.com/vn/app/dk-bank/id6462849899?l=vi">App Store</a> · <a class="link" href="https://play.google.com/store/apps/details?id=bt.digitalkidu.DigitalKiduApp">Google Play</a></div>
-    <ul>
-      <li>Built customer banking apps &amp; admin portals for a <span class="lead">national digital bank in Bhutan</span>, integrated over GraphQL.</li>
-      <li>Reusable UI for card management, transfers, transaction history and role-based controls; <span class="lead">cut re-renders and load time ~40%</span>.</li>
-    </ul>
-  </div>
+  <div class="meta"><span class="label">AI Engineering:</span> Agent orchestration, RAG &amp; evaluation, realtime voice, OCR/vision</div>
+  <div class="meta"><span class="label">Web &amp; Backend:</span> TypeScript, Next.js, React, Node.js, Python, FastAPI, PostgreSQL</div>
+  <div class="meta"><span class="label">Mobile:</span> Flutter, React Native</div>
+  <div class="meta"><span class="label">Infrastructure:</span> AWS, GCP, Docker, Cloudflare, CI/CD (GitHub Actions)</div>
 
   <!-- ================= ACHIEVEMENTS ================= -->
   <h2 class="section">Achievements</h2>
@@ -280,9 +184,19 @@
     <div class="row"><span class="title">Codex Community Hackathon — Codex Community Vietnam</span><span class="date">06/2026</span></div>
     <ul>
       <li><span class="lead">1st Place</span> — “Reach the Market” track with <span class="label">WonderLens</span>, an edtech AI app.</li>
-      <li><span class="lead">2nd Place</span> — Startup track with <span class="label">VCareer</span>, an AI mock-interview platform.</li>
+      <li><span class="lead">2nd Place</span> — Startup track with <span class="label">VCareer</span>, an AI mock-interview platform now used by 1,000+ students.</li>
     </ul>
   </div>
+
+  <!-- ================= EDUCATION ================= -->
+  <h2 class="section">Education</h2>
+  <div class="entry">
+    <div class="row"><span><span class="title">Hanoi University of Science and Technology</span> — B.Sc. Computer Science · Very Good</span><span class="date">10/2020 – 07/2024</span></div>
+  </div>
+  <div class="entry nomb">
+    <div class="row"><span><span class="title">VinUniversity — AI20K “AI in Actions”</span> — Applied AI Program</span><span class="date">04/2026 – Present</span></div>
+  </div>
+
 
 </body>
 </html>
