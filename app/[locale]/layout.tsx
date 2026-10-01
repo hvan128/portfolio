@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Lexend, Sora } from 'next/font/google'
+import { JetBrains_Mono, Lexend, Sora } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
@@ -19,6 +19,14 @@ const sora = Sora({
   weight: ['500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-sora',
+})
+
+// Mono face for HUD labels, metrics and code.
+const mono = JetBrains_Mono({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-mono',
 })
 
 // Pre-render both locales at build time.
@@ -101,8 +109,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} className={`${lexend.variable} ${sora.variable}`}>
-      <body className="font-sans">
+    <html lang={locale} className={`${lexend.variable} ${sora.variable} ${mono.variable}`}>
+      <body className="font-sans text-slate-300">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>

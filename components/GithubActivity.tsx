@@ -17,8 +17,8 @@ interface ContribResponse {
 
 const PROXY = `https://github-contributions-api.jogruber.de/v4/${site.githubUser}?y=last`
 
-// Blue scale matching the site identity.
-const levelClass = ['bg-slate-200/70', 'bg-primary-200', 'bg-primary-400', 'bg-primary-600', 'bg-primary-800']
+// Cyan scale matching the dark theme.
+const levelClass = ['bg-white/[0.05]', 'bg-cyan-900/80', 'bg-cyan-700', 'bg-cyan-500', 'bg-cyan-300']
 
 async function getContributions(): Promise<ContribResponse | null> {
   try {
@@ -62,12 +62,12 @@ export default async function GithubActivity() {
       <section className="relative z-10 py-10">
         <div className="section-shell">
           <div className="glass-card flex items-center justify-between p-6">
-            <p className="text-slate-600">{t('fallback')}</p>
+            <p className="text-slate-400">{t('fallback')}</p>
             <a
               href={`https://github.com/${site.githubUser}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-primary-700 hover:text-primary-800"
+              className="text-sm font-semibold text-cyan-300 hover:text-cyan-100"
             >
               {t('viewGithub')} →
             </a>
@@ -103,7 +103,7 @@ export default async function GithubActivity() {
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 {t('eyebrow')}
               </span>
-              <h2 className="font-display text-2xl font-bold text-slate-900">
+              <h2 className="font-display text-2xl font-bold text-white">
                 {t.rich('contributions', {
                   count: total.toLocaleString(locale === 'vi' ? 'vi-VN' : 'en-US'),
                   g: (chunks) => <span className="text-gradient">{chunks}</span>,
@@ -114,7 +114,7 @@ export default async function GithubActivity() {
               href={`https://github.com/${site.githubUser}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-100"
             >
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -127,7 +127,7 @@ export default async function GithubActivity() {
           <div className="overflow-x-auto pb-2">
             <div className="flex min-w-[960px] flex-col gap-2">
               {/* month labels — flex-1 slots stay aligned with the week columns below */}
-              <div className="flex gap-1 text-xs text-slate-400">
+              <div className="flex gap-1 text-xs text-slate-500">
                 <div className="w-7 shrink-0" />
                 {weeks.map((_, col) => {
                   const label = monthLabels.find((m) => m.col === col)?.label
@@ -141,7 +141,7 @@ export default async function GithubActivity() {
 
               <div className="flex items-stretch gap-1">
                 {/* weekday labels — flex rows stay aligned with the square cells */}
-                <div className="flex w-7 shrink-0 flex-col gap-1 text-[10px] text-slate-400">
+                <div className="flex w-7 shrink-0 flex-col gap-1 text-[10px] text-slate-500">
                   {weekdays.map((d, i) => (
                     <div key={i} className="flex flex-1 items-center">{d}</div>
                   ))}
@@ -156,7 +156,7 @@ export default async function GithubActivity() {
                         <div
                           key={row}
                           title={t('dayTooltip', { count: day.count, date: day.date })}
-                          className={`aspect-square w-full rounded-sm ${levelClass[day.level]} ring-1 ring-inset ring-black/[0.03]`}
+                          className={`aspect-square w-full rounded-sm ${levelClass[day.level]} ring-1 ring-inset ring-white/[0.03]`}
                         />
                       )
                     })}
@@ -165,7 +165,7 @@ export default async function GithubActivity() {
               </div>
 
               {/* legend */}
-              <div className="flex items-center justify-end gap-1.5 pt-1 text-[11px] text-slate-400">
+              <div className="flex items-center justify-end gap-1.5 pt-1 text-[11px] text-slate-500">
                 <span>{t('less')}</span>
                 {levelClass.map((c, i) => (
                   <span key={i} className={`h-4 w-4 rounded-sm ${c}`} />

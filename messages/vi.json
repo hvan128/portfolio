@@ -21,15 +21,16 @@
     "toggleMenu": "Mở menu"
   },
   "hero": {
-    "greeting": "xin chào!",
-    "namePrefix": "Mình là",
-    "intro": "Một <b>kỹ sư phần mềm</b> thích tạo ra những thứ giúp cuộc sống đơn giản hơn một chút. Có gì đó rất đã khi biến một ý tưởng thành sản phẩm mà mọi người thật sự thích dùng. Vẫn đang học hỏi, vẫn đang thử nghiệm, và luôn đi tìm điều tiếp theo đáng để bắt tay vào làm.",
-    "viewWork": "Xem những gì tôi làm",
-    "resume": "Résumé",
+    "status": "Hiện là Tech Lead @ VLearn · VinUniversity",
+    "greeting": "xin chào — mình là",
+    "role": "Software Engineer & Tech Lead",
+    "intro": "Mình xây <b>sản phẩm web và mobile ứng dụng AI</b> cho người dùng thật — từ một sàn dịch vụ ô tô 25K người dùng đến VLearn, nền tảng học tập AI mình đang dẫn dắt tại VinUniversity.",
+    "viewWork": "Xem những gì mình làm",
+    "resume": "CV",
     "stats": [
-      { "label": "4+ Năm", "sub": "Kinh nghiệm" },
-      { "label": "40K+ Users", "sub": "Trên các sản phẩm đã phát hành" },
-      { "label": "5 App", "sub": "Trên App Store & Google Play" }
+      { "value": 40, "suffix": "K+", "label": "Người dùng trên các sản phẩm" },
+      { "value": 5, "suffix": "", "label": "App trên App Store & Play" },
+      { "value": 4, "suffix": "+", "label": "Năm làm sản phẩm" }
     ]
   },
   "about": {
@@ -93,13 +94,7 @@
     "headingHighlight": "đồ nghề",
     "intro": "Những năng lực và công cụ mình dùng đến mỗi ngày.",
     "beyondTheCode": "Ngoài việc code",
-    "aiCapabilities": [
-      "Voice agent (thời gian thực)",
-      "RAG / truy hồi",
-      "Chatbot agentic",
-      "Tích hợp LLM vào ứng dụng",
-      "OCR & thị giác"
-    ],
+    "aiCapabilities": ["Điều phối agent", "RAG & đánh giá", "Giọng nói thời gian thực", "OCR & thị giác máy", "Tích hợp LLM vào ứng dụng"],
     "softSkills": [
       "Đọc và tổng hợp tài liệu kỹ thuật tiếng Anh nhanh chóng.",
       "Phối hợp chặt chẽ với các đội business, QA và hạ tầng; chủ động xử lý vấn đề.",

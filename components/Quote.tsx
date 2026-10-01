@@ -27,15 +27,15 @@ const codeLines: React.ReactNode[] = [
   </>,
   <>
     {'  '}<span className={C.key}>role</span><span className={C.pun}>:</span>{' '}
-    <span className={C.str}>&quot;Full-Stack &amp; AI Engineer&quot;</span><span className={C.pun}>,</span>
+    <span className={C.str}>&quot;Software Engineer &amp; Tech Lead&quot;</span><span className={C.pun}>,</span>
   </>,
   <>
     {'  '}<span className={C.key}>based</span><span className={C.pun}>:</span>{' '}
     <span className={C.str}>&quot;Hanoi, VN&quot;</span><span className={C.pun}>,</span>
   </>,
   <>
-    {'  '}<span className={C.key}>experience</span><span className={C.pun}>:</span>{' '}
-    <span className={C.str}>&quot;4+ years&quot;</span><span className={C.pun}>,</span>
+    {'  '}<span className={C.key}>leading</span><span className={C.pun}>:</span>{' '}
+    <span className={C.str}>&quot;VLearn @ VinUniversity&quot;</span><span className={C.pun}>,</span>
   </>,
   <>
     {'  '}<span className={C.key}>focus</span><span className={C.pun}>: [</span>
@@ -43,18 +43,18 @@ const codeLines: React.ReactNode[] = [
     <span className={C.str}>&quot;Full-Stack&quot;</span><span className={C.pun}>],</span>
   </>,
   <>
-    {'  '}<span className={C.key}>english</span><span className={C.pun}>:</span>{' '}
-    <span className={C.str}>&quot;Working proficiency&quot;</span><span className={C.pun}>,</span>
+    {'  '}<span className={C.key}>users</span><span className={C.pun}>:</span>{' '}
+    <span className={C.str}>&quot;40K+&quot;</span><span className={C.pun}>,</span>
   </>,
   <>
     {'  '}<span className={C.key}>shipped</span><span className={C.pun}>:</span>{' '}
-    <span className={C.num}>9</span><span className={C.pun}>,</span> <span className={C.com}>//and more products in prod</span>
+    <span className={C.num}>20</span><span className={C.pun}>,</span> <span className={C.com}>// products in prod, 5 on the stores</span>
   </>,
   <span key="close" className={C.pun}>{'}'}</span>,
   <span key="blank">&nbsp;</span>,
   <>
     <span className={C.id}>haiVan</span><span className={C.pun}>.</span><span className={C.fn}>build</span>
-    <span className={C.pun}>()</span> <span className={C.com}>// currently @ VinUni</span>
+    <span className={C.pun}>()</span> <span className={C.com}>// shipping daily</span>
   </>,
 ]
 
@@ -74,16 +74,16 @@ export default function Quote() {
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="lg:order-last"
           >
-            <h2 className="font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-slate-900 lg:text-[2.6rem]">
+            <h2 className="font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-white lg:text-[2.6rem]">
               {t('headingBefore')}
               <span className="text-gradient">{t('headingHighlight')}</span>
               {t('headingAfter')}
             </h2>
-            <p className="mt-5 max-w-md leading-relaxed text-slate-600">{t('intro')}</p>
+            <p className="mt-5 max-w-md leading-relaxed text-slate-400">{t('intro')}</p>
             <ul className="mt-7 space-y-3">
               {builds.map((b) => (
-                <li key={b} className="flex gap-3 text-slate-700">
-                  <span className="mt-0.5 select-none font-mono font-bold text-primary-500">▹</span>
+                <li key={b} className="flex gap-3 text-slate-300">
+                  <span className="mt-0.5 select-none font-mono font-bold text-cyan-400">▹</span>
                   <span className="leading-relaxed">{b}</span>
                 </li>
               ))}
@@ -100,7 +100,7 @@ export default function Quote() {
           >
             {/* glow */}
             <div className="absolute -inset-2 rounded-3xl bg-ai-gradient opacity-20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900 shadow-2xl">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070a16]/90 shadow-2xl backdrop-blur">
               {/* window chrome */}
               <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-400/90" />
@@ -125,7 +125,7 @@ export default function Quote() {
                     <div key={i} className="min-h-[1.7em]">
                       {line}
                       {i === codeLines.length - 1 && (
-                        <span className="ml-0.5 inline-block h-[1.05em] w-[7px] translate-y-[2px] animate-pulse bg-primary-400" />
+                        <span className="ml-0.5 inline-block h-[1.05em] w-[7px] translate-y-[2px] animate-pulse bg-cyan-400/70" />
                       )}
                     </div>
                   ))}

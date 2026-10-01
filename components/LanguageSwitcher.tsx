@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
     <div
       role="group"
       aria-label={t('switch')}
-      className="flex items-center rounded-lg border border-slate-200/80 bg-white/70 p-0.5 backdrop-blur"
+      className="flex items-center rounded-lg border border-white/10 bg-white/[0.03] p-0.5 backdrop-blur"
     >
       {routing.locales.map((l) => {
         const active = l === locale
@@ -40,8 +40,8 @@ export default function LanguageSwitcher() {
             disabled={isPending}
             aria-pressed={active}
             aria-label={(l as Locale) === 'vi' ? t('vietnamese') : t('english')}
-            className={`rounded-md px-2 py-1 text-xs font-semibold uppercase transition-colors ${
-              active ? 'bg-blue-gradient text-white shadow-sm' : 'text-slate-500 hover:text-primary-700'
+            className={`rounded-md px-2 py-1 font-mono text-xs font-semibold uppercase transition-colors ${
+              active ? 'bg-white/10 text-white' : 'text-slate-500 hover:text-slate-200'
             }`}
           >
             {l}

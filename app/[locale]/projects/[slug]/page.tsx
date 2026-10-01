@@ -47,8 +47,8 @@ function LinkButton({ link, label, primary }: { link: ProjectLink; label: string
       rel="noopener noreferrer"
       className={
         primary
-          ? 'inline-flex items-center gap-2 rounded-xl bg-blue-gradient px-5 py-3 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-[1.03]'
-          : 'inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 backdrop-blur transition-colors hover:border-primary-400 hover:text-primary-700'
+          ? 'inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-neon transition-transform hover:scale-[1.03]'
+          : 'inline-flex items-center gap-2 rounded-xl border-2 border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-300 backdrop-blur transition-colors hover:border-cyan-300/50 hover:text-cyan-200'
       }
     >
       {brandPath ? (
@@ -75,9 +75,9 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
   const t = await getTranslations('projectDetail')
 
   const blocks = [
-    { key: 'problem', label: t('problem'), value: pick(project.problem, locale), tone: 'text-rose-600', bar: 'bg-rose-400' },
-    { key: 'solution', label: t('solution'), value: pick(project.solution, locale), tone: 'text-primary-600', bar: 'bg-primary-500' },
-    { key: 'impact', label: t('impact'), value: pick(project.impact, locale), tone: 'text-emerald-600', bar: 'bg-emerald-400' },
+    { key: 'problem', label: t('problem'), value: pick(project.problem, locale), tone: 'text-rose-300', bar: 'bg-rose-400' },
+    { key: 'solution', label: t('solution'), value: pick(project.solution, locale), tone: 'text-cyan-300', bar: 'bg-cyan-400' },
+    { key: 'impact', label: t('impact'), value: pick(project.impact, locale), tone: 'text-emerald-300', bar: 'bg-emerald-400' },
   ]
 
   const primaryLink =
@@ -88,14 +88,14 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
   return (
     <main className="relative z-10">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-blue-200/30 bg-white/80 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-white/[0.08] bg-[#04050d]/80 backdrop-blur-md">
         <div className="section-shell flex h-14 items-center justify-between">
-          <Link href="/" className="font-display text-lg font-bold text-primary-700 hover:text-primary-800">
+          <Link href="/" className="font-display text-lg font-bold text-white hover:text-cyan-100">
             Ngô Hải Văn
           </Link>
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-primary-700"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-200"
           >
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -112,18 +112,18 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               {project.ai && <span className="ai-badge">AI</span>}
               {project.tags.map((tag) => (
-                <span key={tag} className="rounded-full border border-primary-200/70 bg-white/70 px-3 py-1 text-xs font-semibold text-primary-700">
+                <span key={tag} className="rounded-full border border-cyan-400/25 bg-white/[0.04] px-3 py-1 text-xs font-semibold text-cyan-300">
                   {tag}
                 </span>
               ))}
             </div>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
               {project.name}
             </h1>
-            <p className="mt-3 text-lg text-slate-600">{pick(project.tagline, locale)}</p>
+            <p className="mt-3 text-lg text-slate-400">{pick(project.tagline, locale)}</p>
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500">
-              <span className="font-medium text-primary-600">{pick(project.period, locale)}</span>
-              <span className="text-slate-300">·</span>
+              <span className="font-medium text-cyan-300">{pick(project.period, locale)}</span>
+              <span className="text-slate-600">·</span>
               <span>{pick(project.role, locale)}</span>
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
@@ -134,13 +134,13 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
             </div>
           </div>
 
-          <div className="aspect-[16/10] overflow-hidden rounded-2xl border border-white/60 shadow-glow">
+          <div className="aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 shadow-neon">
             <ProjectCover project={project} priority variant="detail" locale={locale} />
           </div>
         </div>
 
         {/* Summary */}
-        <p className="mx-auto mt-10 max-w-3xl text-balance text-center text-xl leading-relaxed text-slate-700">
+        <p className="mx-auto mt-10 max-w-3xl text-balance text-center text-xl leading-relaxed text-slate-300">
           {pick(project.summary, locale)}
         </p>
 
@@ -152,7 +152,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
                 <span className={`h-5 w-1 rounded-full ${b.bar}`} />
                 <span className={`text-sm font-bold uppercase tracking-wide ${b.tone}`}>{b.label}</span>
               </div>
-              <p className="text-sm leading-relaxed text-slate-600">{b.value}</p>
+              <p className="text-sm leading-relaxed text-slate-400">{b.value}</p>
             </div>
           ))}
         </div>
@@ -160,7 +160,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
         {/* Metrics */}
         <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {project.metrics.map((m, i) => (
-            <div key={i} className="rounded-2xl border border-primary-100 bg-white/70 p-5 text-center backdrop-blur">
+            <div key={i} className="rounded-2xl border border-cyan-400/15 bg-white/[0.04] p-5 text-center backdrop-blur">
               <div className="font-display text-2xl font-extrabold text-gradient">{pick(m.value, locale)}</div>
               <div className="mt-1 text-xs text-slate-500">{pick(m.label, locale)}</div>
             </div>
@@ -170,11 +170,11 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
         {/* Highlights + Tech */}
         <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <h2 className="font-display text-2xl font-bold text-slate-900">{t('whatIWorkedOn')}</h2>
+            <h2 className="font-display text-2xl font-bold text-white">{t('whatIWorkedOn')}</h2>
             <ul className="mt-5 space-y-3">
               {pick(project.highlights, locale).map((h) => (
-                <li key={h} className="flex items-start gap-3 text-slate-700">
-                  <svg className="mt-1 h-5 w-5 flex-shrink-0 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li key={h} className="flex items-start gap-3 text-slate-300">
+                  <svg className="mt-1 h-5 w-5 flex-shrink-0 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span className="leading-relaxed">{h}</span>
@@ -183,10 +183,10 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-2xl font-bold text-slate-900">{t('techStack')}</h2>
+            <h2 className="font-display text-2xl font-bold text-white">{t('techStack')}</h2>
             <div className="mt-5 flex flex-wrap gap-2">
               {project.tech.map((tech) => (
-                <span key={tech} className="rounded-full bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700">
+                <span key={tech} className="rounded-full bg-cyan-400/10 px-3 py-1.5 text-sm font-medium text-cyan-300">
                   {tech}
                 </span>
               ))}
@@ -197,7 +197,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
         {/* Screenshot gallery (when available) — horizontal scroll handles any aspect */}
         {project.screenshots.length > 0 && (
           <div className="mt-10">
-            <h2 className="font-display text-2xl font-bold text-slate-900">{t('screens')}</h2>
+            <h2 className="font-display text-2xl font-bold text-white">{t('screens')}</h2>
             <div className="mt-5 overflow-x-auto pb-4">
               <div className="flex gap-5">
                 {project.screenshots.map((s) => (
@@ -207,7 +207,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
                     alt={pick(s.alt, locale)}
                     width={600}
                     height={1300}
-                    className="h-[440px] w-auto shrink-0 rounded-2xl border border-white/60 shadow-card"
+                    className="h-[440px] w-auto shrink-0 rounded-2xl border border-white/10 shadow-panel"
                   />
                 ))}
               </div>
@@ -218,7 +218,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
         {/* Interactive demo */}
         {project.demoUrl && (
           <div className="mt-10">
-            <h2 className="font-display text-2xl font-bold text-slate-900">
+            <h2 className="font-display text-2xl font-bold text-white">
               {locale === 'vi' ? 'Xem thực tế' : 'See it in action'}
             </h2>
             <p className="mt-1 text-sm text-slate-500">
@@ -226,7 +226,7 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
                 ? 'Demo tương tác — tự phát, bấm để điều khiển từng bước.'
                 : 'Interactive walkthrough — plays automatically, click to control each step.'}
             </p>
-            <div className="mt-5 overflow-hidden rounded-2xl ring-1 ring-slate-200/80 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
+            <div className="mt-5 overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)]">
               <DemoFrame
                 src={project.demoUrl}
                 title={locale === 'vi' ? 'Demo hoàn tiền Shopee' : 'Shopee cashback demo'}
@@ -237,15 +237,15 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
 
         {/* CTA */}
         {primaryLink && (
-          <div className="mt-12 overflow-hidden rounded-3xl bg-blue-gradient p-6 text-center text-white lg:p-10">
+          <div className="mt-12 overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(34,211,238,0.18),rgba(59,130,246,0.14)_45%,rgba(139,92,246,0.2))] p-6 text-center text-white lg:p-10">
             <h2 className="font-display text-2xl font-bold lg:text-3xl">{t('ctaTitle', { name: project.name })}</h2>
-            <p className="mx-auto mt-2 max-w-xl text-blue-50">{t('ctaSubtitle')}</p>
+            <p className="mx-auto mt-2 max-w-xl text-slate-300">{t('ctaSubtitle')}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a
                 href={primaryLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-primary-700 transition-transform hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition-transform hover:scale-[1.03]"
               >
                 {pick(primaryLink.label, locale)}
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -264,13 +264,13 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
 
         {/* Related */}
         <div className="mt-10">
-          <h2 className="mb-5 font-display text-xl font-bold text-slate-900">{t('otherProjects')}</h2>
+          <h2 className="mb-5 font-display text-xl font-bold text-white">{t('otherProjects')}</h2>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
             {related.map((p) => (
               <Link
                 key={p.slug}
                 href={`/projects/${p.slug}`}
-                className="group overflow-hidden rounded-2xl border border-white/60 bg-white/70 backdrop-blur transition-shadow hover:shadow-card-hover"
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur transition-shadow hover:border-white/20"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <ProjectCover project={p} locale={locale} />
@@ -278,8 +278,8 @@ export default async function ProjectDetailPage({ params }: { params: { locale: 
                 </div>
                 <div className="p-4">
                   <span className="text-xs text-slate-500">{p.tags.join(' · ')}</span>
-                  <div className="mt-1 font-display font-bold text-slate-900 group-hover:text-primary-700">{p.name}</div>
-                  <p className="mt-1 line-clamp-2 text-sm text-slate-600">{pick(p.tagline, locale)}</p>
+                  <div className="mt-1 font-display font-bold text-white group-hover:text-cyan-200">{p.name}</div>
+                  <p className="mt-1 line-clamp-2 text-sm text-slate-400">{pick(p.tagline, locale)}</p>
                 </div>
               </Link>
             ))}

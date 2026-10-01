@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import type { Project } from '@/lib/projects'
 import { pick, type Locale } from '@/lib/i18n-content'
+import { spotlightHandler } from '../ui/spotlight'
 import ProjectCover from './ProjectCover'
 
 interface ProjectCardProps {
@@ -40,10 +41,11 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       whileHover={{ y: -8 }}
       transition={{ type: 'spring', stiffness: 350, damping: 26 }}
       style={accentVars}
-      className={`group relative flex flex-col overflow-hidden rounded-3xl border bg-white/85 backdrop-blur-md transition-[box-shadow,border-color] duration-300 ${
+      onMouseMove={spotlightHandler}
+      className={`spotlight group relative flex flex-col overflow-hidden rounded-3xl border bg-white/[0.03] backdrop-blur-md transition-[box-shadow,border-color] duration-300 ${
         project.ai
-          ? 'border-indigo-200/60 shadow-card hover:shadow-ai-glow'
-          : 'border-slate-200/60 shadow-card hover:shadow-card-hover'
+          ? 'border-violet-400/20 hover:border-violet-400/40'
+          : 'border-white/[0.08] hover:border-white/20'
       }`}
     >
       {/* Top accent hairline — brand signature, sweeps in on hover */}
@@ -64,7 +66,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </div>
 
         {/* Hover scrim + reveal arrow (desktop delight; footer link covers touch) */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#04050d]/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         <span
           style={{ backgroundImage: `linear-gradient(135deg, ${from}, ${to})` }}
           className="absolute bottom-3 right-3 z-20 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full text-white opacity-0 shadow-lg ring-1 ring-white/30 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
@@ -83,27 +85,27 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         {/* Meta row */}
         <div className="mb-2.5 flex items-center gap-2">
           <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: from }} />
-          <span className="text-xs font-semibold text-slate-700">{pick(project.period, locale)}</span>
-          <span className="text-slate-300">·</span>
-          <span className="truncate text-xs font-medium text-slate-400">{project.tags.join(' · ')}</span>
+          <span className="text-xs font-semibold text-slate-300">{pick(project.period, locale)}</span>
+          <span className="text-slate-600">·</span>
+          <span className="truncate text-xs font-medium text-slate-500">{project.tags.join(' · ')}</span>
         </div>
 
-        <h3 className="font-display text-xl font-bold tracking-tight text-slate-900 lg:text-[1.35rem]">
-          <Link href={`/projects/${project.slug}`} className="transition-colors group-hover:text-primary-700">
+        <h3 className="font-display text-xl font-bold tracking-tight text-white lg:text-[1.35rem]">
+          <Link href={`/projects/${project.slug}`} className="transition-colors group-hover:text-cyan-200">
             {project.name}
           </Link>
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-600">{pick(project.tagline, locale)}</p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-400">{pick(project.tagline, locale)}</p>
 
         {featured && (
           <div className="mt-5 grid grid-cols-2 gap-2.5">
             {project.metrics.slice(0, 2).map((m, i) => (
               <div
                 key={i}
-                style={{ backgroundColor: `${from}0d`, borderColor: `${from}1f` }}
+                style={{ backgroundColor: `${from}14`, borderColor: `${from}33` }}
                 className="rounded-xl border px-3.5 py-2.5"
               >
-                <div className="text-sm font-bold text-slate-900">{pick(m.value, locale)}</div>
+                <div className="font-mono text-base font-semibold text-white">{pick(m.value, locale)}</div>
                 <div className="mt-0.5 text-[11px] leading-tight text-slate-500">{pick(m.label, locale)}</div>
               </div>
             ))}
@@ -115,21 +117,21 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           {project.tech.slice(0, maxTech).map((tech) => (
             <span
               key={tech}
-              className="rounded-md bg-slate-100/80 px-2.5 py-1 text-[11px] font-medium text-slate-600"
+              className="chip"
             >
               {tech}
             </span>
           ))}
           {extraTech > 0 && (
-            <span className="px-1 text-[11px] font-semibold text-slate-400">+{extraTech}</span>
+            <span className="px-1 text-[11px] font-semibold text-slate-500">+{extraTech}</span>
           )}
         </div>
 
         {/* Actions — pinned to the bottom for uniform card heights */}
-        <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-4">
+        <div className="mt-auto flex items-center justify-between border-t border-white/[0.08] pt-4">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-100"
           >
             {t('viewCaseStudy')}
             <svg
@@ -146,7 +148,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               href={liveLink.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 transition-colors hover:text-primary-700"
+              className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 transition-colors hover:text-cyan-200"
             >
               {t('live')}
               <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

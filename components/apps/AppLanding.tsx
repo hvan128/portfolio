@@ -21,7 +21,7 @@ function AppStoreBadge({
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-3 rounded-xl px-5 py-3 transition-transform hover:scale-[1.03] ${
-        accent ? 'bg-white text-slate-900 shadow-lg' : 'bg-slate-900 text-white shadow-card'
+        accent ? 'bg-white text-slate-900 shadow-lg' : 'bg-white text-slate-900 shadow-panel'
       }`}
     >
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -48,14 +48,14 @@ export default async function AppLanding({ app, locale }: { app: AppLandingData;
   return (
     <main className="relative z-10">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-blue-200/30 bg-white/80 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-white/[0.08] bg-[#04050d]/80 backdrop-blur-md">
         <div className="section-shell flex h-14 items-center justify-between">
-          <Link href="/" className="font-display text-lg font-bold text-primary-700 hover:text-primary-800">
+          <Link href="/" className="font-display text-lg font-bold text-white hover:text-cyan-100">
             Ngô Hải Văn
           </Link>
           <Link
             href={`/projects/${app.caseStudySlug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-primary-700"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-200"
           >
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -103,36 +103,36 @@ export default async function AppLanding({ app, locale }: { app: AppLandingData;
 
       {/* Features */}
       <section className="section-shell py-10 lg:py-14">
-        <h2 className="font-display text-3xl font-bold text-slate-900">{t('everythingYouNeed')}</h2>
+        <h2 className="font-display text-3xl font-bold text-white">{t('everythingYouNeed')}</h2>
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {app.features.map((f, i) => (
-            <div key={i} className={`glass-card p-6 ${f.ai ? 'border-indigo-200/70' : ''}`}>
+            <div key={i} className={`glass-card p-6 ${f.ai ? 'border-violet-400/20' : ''}`}>
               <div className="mb-3 flex items-center gap-3">
                 <span
                   className={`flex h-10 w-10 items-center justify-center rounded-xl ${
-                    f.ai ? 'bg-ai-gradient text-white' : 'bg-primary-50 text-primary-600'
+                    f.ai ? 'bg-ai-gradient text-white' : 'bg-cyan-400/10 text-cyan-300'
                   }`}
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={f.icon} />
                   </svg>
                 </span>
-                <h3 className="flex items-center gap-2 font-display font-bold text-slate-900">
+                <h3 className="flex items-center gap-2 font-display font-bold text-white">
                   {pick(f.title, locale)}
                   {f.ai && <span className="ai-badge">AI</span>}
                 </h3>
               </div>
-              <p className="text-sm leading-relaxed text-slate-600">{pick(f.desc, locale)}</p>
+              <p className="text-sm leading-relaxed text-slate-400">{pick(f.desc, locale)}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Screenshot gallery */}
-      <section className="border-y border-slate-200/70 bg-white/50 py-10">
+      <section className="border-y border-white/[0.08] bg-white/[0.02] py-10">
         <div className="section-shell">
-          <h2 className="font-display text-3xl font-bold text-slate-900">{t('seeItInAction')}</h2>
-          <p className="mt-2 text-slate-600">{t('realScreens')}</p>
+          <h2 className="font-display text-3xl font-bold text-white">{t('seeItInAction')}</h2>
+          <p className="mt-2 text-slate-400">{t('realScreens')}</p>
         </div>
         <div className="mt-8 overflow-x-auto pb-4">
           <div className="section-shell flex gap-5">
@@ -143,7 +143,7 @@ export default async function AppLanding({ app, locale }: { app: AppLandingData;
                 alt={pick(s.alt, locale)}
                 width={600}
                 height={1300}
-                className="h-[420px] w-auto shrink-0 rounded-2xl shadow-card"
+                className="h-[420px] w-auto shrink-0 rounded-2xl shadow-panel"
               />
             ))}
           </div>

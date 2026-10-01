@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import SectionHeader from './ui/SectionHeader'
 import { featuredProjects, moreProjects } from '@/lib/projects'
 import ProjectCard from './projects/ProjectCard'
 
@@ -17,23 +18,13 @@ export default function Projects() {
     <section id="projects" className="relative z-10 py-8 lg:py-12">
       <div className="section-shell">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="max-w-2xl"
-        >
-          <span className="eyebrow">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
-            {t('eyebrow')}
-          </span>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
-            {t('headingBefore')}
-            <span className="text-gradient">{t('headingHighlight')}</span>
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">{t('intro')}</p>
-        </motion.div>
+        <SectionHeader
+          index="01"
+          eyebrow={t('eyebrow')}
+          headingBefore={t('headingBefore')}
+          headingHighlight={t('headingHighlight')}
+          intro={t('intro')}
+        />
 
         {/* Featured grid */}
         <motion.div
@@ -56,7 +47,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5 }}
-              className="mt-10 mb-5 font-display text-2xl font-bold text-slate-900"
+              className="mt-10 mb-5 font-display text-2xl font-bold text-white"
             >
               {t('moreProjects')}
             </motion.h3>

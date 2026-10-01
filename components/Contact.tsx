@@ -73,13 +73,13 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="overflow-hidden rounded-3xl border border-white/60 bg-white/70 shadow-glow backdrop-blur-md"
+          className="overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.03] shadow-panel backdrop-blur-md"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left — invite */}
-            <div className="relative overflow-hidden bg-blue-gradient p-6 text-white lg:p-8">
+            <div className="relative overflow-hidden bg-[linear-gradient(135deg,rgba(34,211,238,0.18),rgba(59,130,246,0.14)_45%,rgba(139,92,246,0.2))] p-6 text-white lg:p-8">
               {/* depth: glow blobs + faint grid */}
-              <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
+              <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-cyan-300/10 blur-2xl" />
               <div className="pointer-events-none absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-sky-300/20 blur-3xl" />
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -102,11 +102,11 @@ export default function Contact() {
                 </span>
 
                 <h2 className="mt-4 font-display text-3xl font-bold leading-tight lg:text-4xl">{t('heading')}</h2>
-                <p className="mt-3 max-w-md text-blue-50">{t('intro')}</p>
+                <p className="mt-3 max-w-md text-slate-300">{t('intro')}</p>
 
                 <a
                   href={`mailto:${site.email}`}
-                  className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-primary-700 shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-900/25"
+                  className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-neon transition-transform hover:-translate-y-0.5"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -117,7 +117,7 @@ export default function Contact() {
                   </svg>
                 </a>
 
-                <p className="mt-4 flex items-center gap-2 text-sm text-blue-100/90">
+                <p className="mt-4 flex items-center gap-2 text-sm text-slate-400">
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -132,27 +132,27 @@ export default function Contact() {
                 {rows.map((row) => (
                   <li
                     key={row.key}
-                    className="group flex items-center gap-4 rounded-2xl px-3 py-2.5 transition-colors hover:bg-slate-50"
+                    className="group flex items-center gap-4 rounded-2xl px-3 py-2.5 transition-colors hover:bg-white/[0.04]"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600 ring-1 ring-primary-100">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/20">
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d={row.icon} />
                       </svg>
                     </span>
 
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{row.label}</p>
+                      <p className="font-mono text-[11px] uppercase tracking-wider text-slate-500">{row.label}</p>
                       {row.href ? (
                         <a
                           href={row.href}
-                          className="block truncate font-semibold text-slate-800 transition-colors hover:text-primary-700"
+                          className="block truncate font-semibold text-slate-100 transition-colors hover:text-cyan-200"
                         >
                           {row.value}
                         </a>
                       ) : (
-                        <p className="truncate font-semibold text-slate-800">
+                        <p className="truncate font-semibold text-slate-100">
                           {row.value}
-                          {row.note && <span className="ml-1.5 text-xs font-normal text-slate-400">{row.note}</span>}
+                          {row.note && <span className="ml-1.5 text-xs font-normal text-slate-500">{row.note}</span>}
                         </p>
                       )}
                     </div>
@@ -165,8 +165,8 @@ export default function Contact() {
                         title={copied === row.key ? t('copied') : t('copy')}
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-all md:opacity-0 md:group-hover:opacity-100 ${
                           copied === row.key
-                            ? 'border-emerald-200 bg-emerald-50 text-emerald-600 md:opacity-100'
-                            : 'border-slate-200 text-slate-400 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600'
+                            ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300 md:opacity-100'
+                            : 'border-white/10 text-slate-500 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-200'
                         }`}
                       >
                         <svg className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -178,8 +178,8 @@ export default function Contact() {
                 ))}
               </ul>
 
-              <div className="mt-5 border-t border-slate-100 pt-5">
-                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-slate-400">{t('findMeOnline')}</p>
+              <div className="mt-5 border-t border-white/[0.08] pt-5">
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">{t('findMeOnline')}</p>
                 <div className="flex flex-wrap gap-2.5">
                   {socials.map((s) => (
                     <a
@@ -187,7 +187,7 @@ export default function Contact() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-600 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 hover:shadow-card"
+                      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm font-medium text-slate-300 transition-all hover:-translate-y-0.5 hover:border-cyan-300/40 hover:text-cyan-100"
                     >
                       <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d={s.icon} />

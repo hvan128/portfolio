@@ -13,15 +13,15 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 mt-8 border-t border-slate-200/70 bg-white/60 backdrop-blur">
+    <footer className="relative z-10 mt-8 border-t border-white/[0.08] bg-[#04050d]/60 backdrop-blur">
       <div className="section-shell py-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* About */}
           <div className="md:col-span-1">
-            <Link href="/" className="font-display text-xl font-bold text-primary-700">
+            <Link href="/" className="font-display text-xl font-bold text-white">
               {site.name}
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
               {t('about', { role: pick(site.role, locale) })}
             </p>
             <div className="mt-4 flex gap-3">
@@ -32,7 +32,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="text-slate-500 transition-colors hover:text-primary-700"
+                  className="text-slate-500 transition-colors hover:text-cyan-200"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d={s.icon} />
@@ -44,11 +44,11 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800">{t('navigate')}</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-100">{t('navigate')}</h3>
             <ul className="mt-4 space-y-2">
               {navLinks.map((l) => (
                 <li key={l.key}>
-                  <Link href={l.href} className="text-sm text-slate-600 transition-colors hover:text-primary-700">
+                  <Link href={l.href} className="text-sm text-slate-400 transition-colors hover:text-cyan-200">
                     {tNav(l.key)}
                   </Link>
                 </li>
@@ -58,15 +58,15 @@ export default function Footer() {
 
           {/* Get in touch */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800">{t('getInTouch')}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-slate-600">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-100">{t('getInTouch')}</h3>
+            <ul className="mt-4 space-y-2 text-sm text-slate-400">
               <li>
-                <a href={`mailto:${site.email}`} className="transition-colors hover:text-primary-700">
+                <a href={`mailto:${site.email}`} className="transition-colors hover:text-cyan-200">
                   {site.email}
                 </a>
               </li>
               <li>
-                <a href={site.phoneHref} className="transition-colors hover:text-primary-700">
+                <a href={site.phoneHref} className="transition-colors hover:text-cyan-200">
                   {site.phone}
                 </a>
               </li>
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <motion.div
-          className="mt-10 border-t border-slate-200/70 pt-6"
+          className="mt-10 border-t border-white/[0.08] pt-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useLocale, useTranslations } from 'next-intl'
+import SectionHeader from './ui/SectionHeader'
 import { Link } from '@/i18n/navigation'
 import { achievements } from '@/lib/achievements'
 import { pick, type Locale } from '@/lib/i18n-content'
@@ -18,23 +19,13 @@ export default function Achievements() {
   return (
     <section id="achievements" className="relative z-10 py-8 lg:py-12">
       <div className="section-shell">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="max-w-2xl"
-        >
-          <span className="eyebrow">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
-            {t('eyebrow')}
-          </span>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
-            {t('headingBefore')}
-            <span className="text-gradient">{t('headingHighlight')}</span>
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">{t('intro')}</p>
-        </motion.div>
+        <SectionHeader
+          index="04"
+          eyebrow={t('eyebrow')}
+          headingBefore={t('headingBefore')}
+          headingHighlight={t('headingHighlight')}
+          intro={t('intro')}
+        />
 
         <div className="mt-10 space-y-10">
           {achievements.map((a) => (
@@ -47,8 +38,8 @@ export default function Achievements() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-wrap items-baseline gap-x-3 gap-y-1"
               >
-                <h3 className="font-display text-xl font-bold text-slate-900">{a.event}</h3>
-                <span className="text-sm font-medium text-primary-600">{pick(a.period, locale)}</span>
+                <h3 className="font-display text-xl font-bold text-white">{a.event}</h3>
+                <span className="text-sm font-medium text-cyan-300">{pick(a.period, locale)}</span>
                 <span className="w-full text-sm text-slate-500 sm:w-auto">
                   {t('organizedBy')} {a.organizer}
                 </span>
@@ -67,14 +58,14 @@ export default function Achievements() {
                     key={e.name}
                     variants={itemVariants}
                     className={`glass-card flex flex-col p-6 lg:p-7 ${
-                      e.winner ? 'border-amber-200/80 ring-1 ring-amber-200/60' : ''
+                      e.winner ? 'border-amber-400/30 ring-1 ring-amber-400/20' : ''
                     }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h4 className="font-display text-lg font-bold text-slate-900">{e.name}</h4>
+                        <h4 className="font-display text-lg font-bold text-white">{e.name}</h4>
                         {e.track && (
-                          <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">
+                          <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">
                             {pick(e.track, locale)} · {t('track')}
                           </p>
                         )}
@@ -82,8 +73,8 @@ export default function Achievements() {
                       <span
                         className={`inline-flex flex-shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold ${
                           e.winner
-                            ? 'bg-amber-50 text-amber-700 ring-1 ring-amber-200'
-                            : 'bg-primary-50 text-primary-700 ring-1 ring-primary-100'
+                            ? 'bg-amber-400/10 text-amber-200 ring-1 ring-amber-400/30'
+                            : 'bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/20'
                         }`}
                       >
                         {e.winner && (
@@ -95,11 +86,11 @@ export default function Achievements() {
                       </span>
                     </div>
 
-                    <p className="mt-4 text-sm leading-relaxed text-slate-600">{pick(e.description, locale)}</p>
+                    <p className="mt-4 text-sm leading-relaxed text-slate-400">{pick(e.description, locale)}</p>
 
                     {e.prize && (
-                      <p className="mt-3 text-sm font-medium text-slate-700">
-                        <span className="text-slate-400">{t('prize')}: </span>
+                      <p className="mt-3 text-sm font-medium text-slate-300">
+                        <span className="text-slate-500">{t('prize')}: </span>
                         {pick(e.prize, locale)}
                       </p>
                     )}
@@ -111,7 +102,7 @@ export default function Achievements() {
                             {e.tech.map((tech) => (
                               <span
                                 key={tech}
-                                className="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-medium text-primary-700"
+                                className="rounded-full bg-cyan-400/10 px-2.5 py-1 text-xs font-medium text-cyan-300"
                               >
                                 {tech}
                               </span>
@@ -122,7 +113,7 @@ export default function Achievements() {
                         {e.projectSlug ? (
                           <Link
                             href={`/projects/${e.projectSlug}`}
-                            className={`inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 ${
+                            className={`inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-200 ${
                               e.tech?.length ? 'mt-3' : ''
                             }`}
                           >
@@ -134,7 +125,7 @@ export default function Achievements() {
                               href={e.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 ${
+                              className={`inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-200 ${
                                 e.tech?.length ? 'mt-3' : ''
                               }`}
                             >

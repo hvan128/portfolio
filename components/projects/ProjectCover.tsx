@@ -105,11 +105,11 @@ export default function ProjectCover({ project, priority = false, variant = 'car
     <div className="relative h-full w-full overflow-hidden" style={!hasShot ? undefined : gradient}>
       <div className="flex h-full w-full flex-col">
         {/* browser top bar */}
-        <div className="flex items-center gap-2 border-b border-black/5 bg-white/80 px-3 py-2 backdrop-blur">
+        <div className="flex items-center gap-2 border-b border-white/[0.06] bg-[#0b0f1c] px-3 py-2">
           <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-          <span className="ml-2 hidden truncate rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-500 sm:block">
+          <span className="ml-2 hidden truncate rounded-md bg-white/[0.05] px-3 py-1 font-mono text-xs text-slate-500 sm:block">
             {project.links.find((l) => l.kind === 'live' || l.kind === 'web')?.href?.replace(/^https?:\/\//, '') ??
               `${project.slug}.app`}
           </span>
