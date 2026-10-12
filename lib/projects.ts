@@ -62,6 +62,64 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'vlearn',
+    name: 'VLearn',
+    tagline: {
+      en: 'An AI learning platform for VinUniversity’s AI20K program — tutor, labs and daily practice in one place.',
+      vi: 'Nền tảng học tập AI cho chương trình AI20K của VinUniversity — tutor, lab và luyện tập mỗi ngày trong một nơi.',
+    },
+    tags: ['AI', 'Full-Stack'],
+    ai: true,
+    featured: true,
+    period: { en: 'Jul 2026 — Present', vi: '07/2026 — Hiện tại' },
+    role: { en: 'Tech Lead · VinUniversity', vi: 'Tech Lead · VinUniversity' },
+    accent: { from: '#1e3a8a', to: '#dc2626' },
+    summary: {
+      en: 'VLearn is the learning platform for VinUniversity’s “AI in Actions” (AI20K) program: learners read course slides, ask an AI tutor grounded in that material, do codelabs and quizzes, and review exactly where they are weak.',
+      vi: 'VLearn là nền tảng học tập của chương trình “AI in Actions” (AI20K) tại VinUniversity: học viên đọc slide bài giảng, hỏi AI tutor bám sát đúng tài liệu đó, làm codelab và quiz, rồi ôn lại đúng chỗ mình còn yếu.',
+    },
+    problem: {
+      en: 'A cohort of 1,000+ learners needed one place to study, practice and get help — and the platform had to pass Vingroup’s architecture, security and infrastructure reviews before going to production.',
+      vi: 'Một khoá hơn 1.000 học viên cần một nơi duy nhất để học, luyện tập và được hỗ trợ — và nền tảng phải vượt qua các vòng review kiến trúc, bảo mật và hạ tầng của Vingroup trước khi lên production.',
+    },
+    solution: {
+      en: 'As Tech Lead, I own the system architecture and technical delivery: core learning workflows, AI integrations, single sign-on across the platform and its codelabs, and the production infrastructure — working with Vingroup’s architecture, security and infrastructure teams through review and deployment.',
+      vi: 'Với vai trò Tech Lead, mình chịu trách nhiệm kiến trúc hệ thống và triển khai kỹ thuật: các luồng học tập cốt lõi, tích hợp AI, đăng nhập một lần giữa nền tảng và codelab, cùng hạ tầng production — phối hợp với các đội kiến trúc, bảo mật và hạ tầng của Vingroup từ khâu review đến triển khai.',
+    },
+    impact: {
+      en: 'A live platform serving the AI20K cohort, with an AI tutor that answers from the course material instead of guessing.',
+      vi: 'Một nền tảng đang vận hành cho khoá AI20K, với AI tutor trả lời dựa trên tài liệu khoá học thay vì đoán.',
+    },
+    highlights: {
+      en: [
+        'System architecture across learning workflows, AI services and platform integrations.',
+        'AI tutor grounded in course slides, fed by a PDF/OCR ingestion pipeline.',
+        'Single sign-on shared by the main app and the codelabs site.',
+        'Production readiness with Vingroup architecture, security and infrastructure teams.',
+      ],
+      vi: [
+        'Kiến trúc hệ thống cho các luồng học tập, dịch vụ AI và tích hợp nền tảng.',
+        'AI tutor bám theo slide bài giảng, lấy dữ liệu từ pipeline đọc PDF/OCR.',
+        'Đăng nhập một lần dùng chung cho ứng dụng chính và trang codelab.',
+        'Đưa hệ thống đạt chuẩn production cùng các đội kiến trúc, bảo mật và hạ tầng của Vingroup.',
+      ],
+    },
+    metrics: [
+      { value: { en: '1,000+', vi: '1.000+' }, label: { en: 'learners', vi: 'học viên' } },
+      { value: { en: 'Tech Lead', vi: 'Tech Lead' }, label: { en: 'architecture & delivery', vi: 'kiến trúc & triển khai' } },
+      { value: { en: 'AI tutor', vi: 'AI tutor' }, label: { en: 'grounded in course slides', vi: 'bám sát slide bài giảng' } },
+      { value: { en: 'Vingroup', vi: 'Vingroup' }, label: { en: 'production reviews', vi: 'review production' } },
+    ],
+    tech: ['FastAPI', 'PostgreSQL', 'Next.js', 'LangGraph', 'AWS Bedrock', 'Docker', 'Cloudflare'],
+    cover: {
+      type: 'browser',
+      image: '/images/projects/vlearn-cover.png',
+      logo: '/images/projects/vlearn-logo.svg',
+    },
+    screenshots: [],
+    links: [{ label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://vlearn.dev', kind: 'live' }],
+  },
+  {
     slug: 'keothom',
     name: 'hoantien.shop',
     tagline: {
@@ -70,7 +128,7 @@ export const projects: Project[] = [
     },
     tags: ['Full-Stack', 'Mobile'],
     ai: false,
-    featured: true,
+    featured: false,
     period: { en: '2026', vi: '2026' },
     role: { en: 'Full-Stack & Mobile Engineer', vi: 'Kỹ sư Full-Stack & Mobile' },
     accent: { from: '#f97316', to: '#2563eb' },
@@ -214,8 +272,8 @@ export const projects: Project[] = [
       vi: 'Xây dựng ứng dụng mobile theo kiến trúc gọn gàng, dễ bảo trì cho luồng đặt lịch và xin báo giá, kèm thông báo đẩy tức thì. Bổ sung bản web và một backend đóng gói container, cùng quy trình phát hành tự động cho cả ứng dụng lẫn máy chủ.',
     },
     impact: {
-      en: 'Connects owners and garages seamlessly with faster bookings and 24/7 availability through the mobile app.',
-      vi: 'Kết nối chủ xe và gara liền mạch, đặt lịch nhanh hơn và phục vụ 24/7 qua ứng dụng mobile.',
+      en: '25K users and 1,000+ partner garages now book, quote and manage services through the platform.',
+      vi: '25K người dùng và hơn 1.000 gara đối tác đang đặt lịch, báo giá và quản lý dịch vụ qua nền tảng.',
     },
     highlights: {
       en: [
@@ -347,36 +405,36 @@ export const projects: Project[] = [
       vi: 'Digital Kidu (DK Bank) là một trong những ngân hàng số tiên phong của Bhutan. Mình xây dựng các ứng dụng ngân hàng cho khách hàng và cổng quản trị nội bộ, dùng React, React Native, Flutter và Next.js.',
     },
     problem: {
-      en: 'Customers needed a consistent, dependable banking experience across devices, while staff needed fast internal tools — and the apps had to be reliable enough for real money.',
-      vi: 'Khách hàng cần một trải nghiệm ngân hàng nhất quán, đáng tin trên mọi thiết bị, còn nhân viên cần công cụ nội bộ nhanh gọn — và mọi ứng dụng phải đủ tin cậy để xử lý tiền thật.',
+      en: 'New customers dropped out during face-verification onboarding, and everyday banking flows — foreign exchange, OTP sign-in, ATM services — had to feel effortless while staying reliable enough for real money.',
+      vi: 'Khách hàng mới bỏ dở ở bước onboarding xác thực khuôn mặt, còn các luồng ngân hàng hằng ngày — ngoại hối, đăng nhập OTP, dịch vụ ATM — phải thật dễ dùng mà vẫn đủ tin cậy để xử lý tiền thật.',
     },
     solution: {
-      en: 'Built reusable UI for the mobile and web apps and optimized them with GraphQL, delivering a consistent experience across every channel, plus admin portals for back-office operations.',
-      vi: 'Xây dựng các thành phần UI tái sử dụng cho ứng dụng mobile và web, tối ưu bằng GraphQL để mang lại trải nghiệm nhất quán trên mọi kênh, cùng các cổng quản trị cho nghiệp vụ back-office.',
+      en: 'Reworked the face-verification onboarding in the mobile app and improved the core banking experiences — foreign exchange, OTP authentication and ATM services — alongside the admin portals used by back-office staff.',
+      vi: 'Làm lại luồng onboarding xác thực khuôn mặt trên app mobile và cải thiện các trải nghiệm ngân hàng cốt lõi — ngoại hối, xác thực OTP và dịch vụ ATM — cùng các cổng quản trị cho nhân viên back-office.',
     },
     impact: {
-      en: 'Shipped a live digital bank used by real customers in Bhutan, with noticeably faster apps and smoother back-office tools.',
-      vi: 'Đưa vào vận hành một ngân hàng số thực thụ, có khách hàng thật tại Bhutan, với ứng dụng nhanh hơn rõ rệt và công cụ back-office mượt mà hơn.',
+      en: 'Face-verification onboarding completion rose by about 10%, on a live digital bank used by real customers in Bhutan.',
+      vi: 'Tỷ lệ hoàn tất onboarding xác thực khuôn mặt tăng khoảng 10%, trên một ngân hàng số đang vận hành với khách hàng thật tại Bhutan.',
     },
     highlights: {
       en: [
-        'Customer apps for sign-up, transfers, eATM and account management.',
+        'Face-verification onboarding: completion up by about 10%.',
+        'Foreign exchange, OTP authentication and ATM services in the mobile app.',
         'Reusable UI for card management, transaction history and admin controls.',
-        'Performance work that cut re-renders and load time by around 40%.',
-        'Admin portals for faster back-office operations.',
+        'Admin portals for back-office operations.',
       ],
       vi: [
-        'Ứng dụng khách hàng cho đăng ký, chuyển khoản, eATM và quản lý tài khoản.',
+        'Onboarding xác thực khuôn mặt: tỷ lệ hoàn tất tăng khoảng 10%.',
+        'Ngoại hối, xác thực OTP và dịch vụ ATM trên app mobile.',
         'Thành phần UI tái sử dụng cho quản lý thẻ, lịch sử giao dịch và bảng điều khiển quản trị.',
-        'Tối ưu hiệu năng, giảm khoảng 40% số lần re-render và thời gian tải.',
-        'Cổng quản trị giúp nghiệp vụ back-office nhanh hơn.',
+        'Cổng quản trị cho nghiệp vụ back-office.',
       ],
     },
     metrics: [
       { value: { en: 'Live', vi: 'Đang vận hành' }, label: { en: 'digital bank in Bhutan', vi: 'ngân hàng số tại Bhutan' } },
-      { value: { en: '-40%', vi: '-40%' }, label: { en: 'app load time', vi: 'thời gian tải ứng dụng' } },
-      { value: { en: '3×', vi: '3×' }, label: { en: 'faster admin ops', vi: 'nghiệp vụ quản trị nhanh hơn' } },
-      { value: { en: 'Omni-channel', vi: 'Đa kênh' }, label: { en: 'consistent UI', vi: 'giao diện nhất quán' } },
+      { value: { en: '+10%', vi: '+10%' }, label: { en: 'face-verification onboarding', vi: 'onboarding xác thực khuôn mặt' } },
+      { value: { en: 'FX · OTP · ATM', vi: 'FX · OTP · ATM' }, label: { en: 'core banking flows', vi: 'luồng ngân hàng cốt lõi' } },
+      { value: { en: 'Web + Mobile', vi: 'Web + Mobile' }, label: { en: 'customer & admin apps', vi: 'app khách hàng & quản trị' } },
     ],
     tech: ['React', 'React Native', 'Flutter', 'Next.js', 'GraphQL'],
     cover: { type: 'mobile', logo: '/images/projects/dkbank-logo.png' },
@@ -611,7 +669,7 @@ export const projects: Project[] = [
 ]
 
 // Featured cards follow the résumé order (biggest real-user signal first), not array order.
-const featuredOrder = ['garageviet', 'ondetour', 'vcareer', 'keothom']
+const featuredOrder = ['vlearn', 'garageviet', 'ondetour', 'vcareer']
 export const featuredProjects = projects
   .filter((p) => p.featured)
   .sort((a, b) => featuredOrder.indexOf(a.slug) - featuredOrder.indexOf(b.slug))
