@@ -128,7 +128,7 @@ export const projects: Project[] = [
     },
     tags: ['Full-Stack', 'Mobile'],
     ai: false,
-    featured: false,
+    featured: true,
     period: { en: '2026', vi: '2026' },
     role: { en: 'Full-Stack & Mobile Engineer', vi: 'Kỹ sư Full-Stack & Mobile' },
     accent: { from: '#f97316', to: '#2563eb' },
@@ -186,6 +186,7 @@ export const projects: Project[] = [
     links: [
       { label: { en: 'Visit live', vi: 'Truy cập' }, href: 'https://hoantien.shop', kind: 'live' },
       { label: { en: 'App Store', vi: 'App Store' }, href: 'https://apps.apple.com/vn/app/hoantien-mua-s%E1%BA%AFm-ho%C3%A0n-ti%E1%BB%81n/id6782406077?l=vi', kind: 'appstore' },
+      { label: { en: 'Google Play', vi: 'Google Play' }, href: 'https://play.google.com/store/apps/details?id=shop.hoantien.hoantien', kind: 'playstore' },
     ],
   },
   {
@@ -324,7 +325,7 @@ export const projects: Project[] = [
     },
     tags: ['AI', 'Full-Stack'],
     ai: true,
-    featured: true,
+    featured: false,
     period: { en: '2026 — Present', vi: '2026 — Hiện tại' },
     role: {
       en: 'Full-Stack Engineer · VinUni CECS flagship',
@@ -669,7 +670,7 @@ export const projects: Project[] = [
 ]
 
 // Featured cards follow the résumé order (biggest real-user signal first), not array order.
-const featuredOrder = ['vlearn', 'garageviet', 'ondetour', 'vcareer']
+const featuredOrder = ['vlearn', 'garageviet', 'ondetour', 'keothom']
 export const featuredProjects = projects
   .filter((p) => p.featured)
   .sort((a, b) => featuredOrder.indexOf(a.slug) - featuredOrder.indexOf(b.slug))

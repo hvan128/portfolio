@@ -27,7 +27,7 @@ const codeLines: React.ReactNode[] = [
   </>,
   <>
     {'  '}<span className={C.key}>role</span><span className={C.pun}>:</span>{' '}
-    <span className={C.str}>&quot;Full-Stack &amp; AI Engineer&quot;</span><span className={C.pun}>,</span>
+    <span className={C.str}>&quot;Software Engineer &amp; Tech Lead&quot;</span><span className={C.pun}>,</span>
   </>,
   <>
     {'  '}<span className={C.key}>based</span><span className={C.pun}>:</span>{' '}
