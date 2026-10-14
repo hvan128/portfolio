@@ -20,14 +20,28 @@ const PROXY = `https://github-contributions-api.jogruber.de/v4/${site.githubUser
 // Blue scale matching the site identity.
 const levelClass = ['bg-slate-200/70', 'bg-primary-200', 'bg-primary-400', 'bg-primary-600', 'bg-primary-800']
 
+const ATTEMPTS = 3
+
+// The proxy is reachable but connections from the host intermittently time out,
+// so retry before giving up. If every attempt fails during an ISR revalidation we
+// throw: Next keeps serving the last good page instead of caching the fallback card
+// for a full hour. Only the initial build falls back, so a flaky proxy never fails
+// a deploy.
 async function getContributions(): Promise<ContribResponse | null> {
-  try {
-    const res = await fetch(PROXY, { next: { revalidate: 3600 } })
-    if (!res.ok) return null
-    return (await res.json()) as ContribResponse
-  } catch {
-    return null
+  let lastError: unknown
+  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    try {
+      const res = await fetch(PROXY, { next: { revalidate: 3600 } })
+      if (!res.ok) throw new Error(`contributions proxy responded ${res.status}`)
+      const data = (await res.json()) as ContribResponse
+      if (!data.contributions?.length) throw new Error('contributions proxy returned no days')
+      return data
+    } catch (error) {
+      lastError = error
+    }
   }
+  if (process.env.NEXT_PHASE === 'phase-production-build') return null
+  throw lastError
 }
 
 // Group days into week-columns (Sun→Sat), padding the first column.
